@@ -1,0 +1,95 @@
+{
+  "tag": "div",
+  "classes": ["center", "point-center"], 
+  "description": "root",
+  "children": [
+    {
+      "tag": "div",
+      "classes": ["sline"],
+      "description": "Container for the first 8 sets of exam variant blocks.",
+      "children": [
+        {
+          "repeat": {
+            "template": "exam_variant",
+            "count": 8
+          }
+        }
+      ]
+    },
+    {
+      "repeat": {
+        "template": "exam_variant",
+        "count": 25
+      }
+    }
+  ],
+  "templates": {
+    "exam_variant": {
+      "tag": "div",
+      "classes": ["test"],
+      "attrs": { "id": "st{index}" },
+      "description": "Exam variant block #{index} — contains subject title and subject list.",
+      "children": [
+        {
+          "tag": "div",
+          "classes": ["topline", "clearfix"],
+          "description": "Top header line — contains exam type.",
+          "children": [
+            {
+              "tag": "div",
+              "classes": ["head-fl", "clearfix"],
+              "children": [
+                {
+                  "tag": "span",
+                  "description": "Span containing exam type text."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "tag": "div",
+          "classes": ["sline"],
+          "description": "Container for the list of subjects within this variant.",
+          "children": [
+            {
+              "tag": "div",
+              "classes": ["gkzt-xueke", "mtT_30", "clearfix"],
+              "description": "Subject container  holds list items for each subject.",
+              "children": [
+                {
+                  "repeat": {
+                    "template": "subject_li",
+                    "count": "auto"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "subject_li": {
+      "tag": "li",
+      "description": "Represents a single subject entry.",
+      "children": [
+        {
+          "tag": "div",
+          "classes": ["word-xueke"],
+          "description": "Holds subject name and links.",
+          "children": [
+            {
+              "tag": "div",
+              "classes": ["xueke-a"],
+              "description": "Contains links for exam, solution, and analysis.",
+              "children": [
+                { "tag": "a", "description": "Link to the exam paper." },
+                { "tag": "a", "description": "Link to the solution." }  
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
