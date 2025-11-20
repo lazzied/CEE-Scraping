@@ -212,18 +212,39 @@ class TreeBuilder:
 
         #if "id" in node.attrs and node.attrs["id"].startswith("st") and node.attrs["id"][2:].isdigit() and node.web_element is None:
         if "annotate" in schema and node.description != "root":
+            # if you encounter a tag, get the elements of its parent and assign to its children the right one
+            # or i can get the the specified x path not the selector using find_element(By.XPATH, "//a[font[text()='真题']]") for questions and find_element(By.XPATH, "//a[font[text()='答案']]") for answers
             
-            
-            #print("the node with the classes:", node.classes,"has this closest landmark", closest_landmark)
-            selector = node.get_css_selector()
+            # Determine the selector based on node's tag and description
             closest_landmark = self.get_closest_landmark(node)
 
+            if node.tag == 'a':
+                if node.description == 'Link to the exam paper.':
+                    # <a> with <font> containing "真题"
+                    selector = "//a[font[text()='真题']]"
+                    node.web_element = closest_landmark.web_element.find_element(By.XPATH, selector)
 
-            node.web_element = closest_landmark.web_element.find_element(
-                    By.CSS_SELECTOR, 
-                    selector
-                )
-            #print("this node has been annotated with id:", node.attrs["id"] if "id" in node.attrs else None,"class:", node.classes, "tag",node.tag,"and closest landmark is:",closest_landmark,"with web_element:", node.web_element)
+                elif node.description == "Link to the solution.":
+                    # <a> with <font> containing "答案"
+                    selector = "//a[font[text()='答案']]"
+                    node.web_element = closest_landmark.web_element.find_element(By.XPATH, selector)
+
+                else:
+                    # Other <a> tags, fallback to CSS selector
+                    selector = node.get_css_selector()
+                    node.web_element = closest_landmark.web_element.find_element(By.CSS_SELECTOR, selector)
+
+            else:
+                # Non-<a> nodes, use CSS selector
+                selector = node.get_css_selector()
+                node.web_element = closest_landmark.web_element.find_element(By.CSS_SELECTOR, selector)
+
+            # Optional debug print
+            # print(
+            #     f"Node annotated with id: {node.attrs.get('id')} | class: {node.classes} | "
+            #     f"tag: {node.tag} | closest landmark: {closest_landmark} | "
+            #     f"web_element: {node.web_element}"
+            # )
 
         if "children" in schema:
             for child_schema in schema["children"]:
