@@ -116,6 +116,64 @@ class DOMNode:
             return 0
         return self.parent.children.index(self)
     
+    def find_in_node(self, selector_type=None, selector_value=None):
+        """
+        Recursively searches the entire tree (starting from the node)
+        for a node matching the selector.
+        
+        Args:
+            selector_type (str): 'id', 'class', 'tag', 'attr', or 'css' or "xpath'
+            selector_value (str): The value to match.
+        
+        Returns:
+            DOMNode or None: The first matching node, or None if not found.
+        """
+
+        def matches(node):
+            if not selector_type or not selector_value:
+                return False
+
+            if selector_type == "id":
+                return node.attrs.get("id") == selector_value
+
+            elif selector_type == "class":
+                return selector_value in node.classes
+
+            elif selector_type == "tag":
+                return node.tag == selector_value
+
+            elif selector_type == "attr":
+                if "=" in selector_value:
+                    key, val = selector_value.split("=", 1)
+                    return node.attrs.get(key) == val
+                return selector_value in node.attrs
+
+            elif selector_type == "css":
+                # Compare full CSS selector from node.get_css_selector()
+                try:
+                    node_selector = node.get_css_selector()
+                    return node_selector == selector_value
+                except Exception:
+                    return False
+            elif selector_type == "xpath" :
+                node_selector == node.get_node_xpath()
+                # this is hard to implement since i don"t have access to the element text
+
+            return False
+
+        # Depth-first search starting from the root node
+        stack = [self]
+        while stack:
+            current = stack.pop()
+            if matches(current):
+                return current
+            stack.extend(reversed(current.children))
+
+        return None
+    
+    def get_node_xpath(self):
+        return
+    
     def get_next_sibling(self):
         """Get the next sibling node."""
         if self.parent is None:
