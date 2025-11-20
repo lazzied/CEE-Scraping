@@ -2,6 +2,7 @@
   "tag": "div",
   "classes": ["center", "point-center"], 
   "description": "root",
+  "annotate": "True",
   "children": [
     {
       "tag": "div",
@@ -29,6 +30,7 @@
       "classes": ["test"],
       "attrs": { "id": "st{index}" },
       "description": "Exam variant block #{index} — contains subject title and subject list.",
+      "annotate": "True",
       "children": [
         {
           "tag": "div",
@@ -41,7 +43,9 @@
               "children": [
                 {
                   "tag": "span",
-                  "description": "Span containing exam type text."
+                  "description": "Span containing exam type text.",
+                  "annotate": "True"
+
                 }
               ]
             }
@@ -77,14 +81,16 @@
           "tag": "div",
           "classes": ["word-xueke"],
           "description": "Holds subject name and links.",
+          "annotate": "True",
+
           "children": [
             {
               "tag": "div",
               "classes": ["xueke-a"],
               "description": "Contains links for exam, solution, and analysis.",
               "children": [
-                { "tag": "a", "description": "Link to the exam paper." },
-                { "tag": "a", "description": "Link to the solution." }  
+                { "tag": "a", "description": "Link to the exam paper.",   "annotate": "True"},
+                { "tag": "a", "description": "Link to the solution.",   "annotate": "True"}  
               ]
             }
           ]

@@ -139,6 +139,8 @@ class DOMNode:
         print(
             f'{indent}{self.tag} — classes: {self.classes}'
             + (f' — id: {self.attrs["id"]}' if "id" in self.attrs else "")
+            +(f' — webElement: {self.web_element}')
+
         )
         for child in self.children:
             child.print_dom_tree( depth + 1)

@@ -130,8 +130,11 @@ class TreeBuilder:
         next step is annotate the desired elements:
             in the JSON you add to elements that you're going to interact with an attribute; "interaction" that's a bool true or false; if it's true the treebuilder will automatically annotate that element, and we're be able to interact with it either click on a link, download an image if it's <img> tag, get the <span> text, or get the fonts
             using the closest landmark algo.
-            to not lose my progress, upload this on github; and then create a branch; if it works just fine; merge it
-            
+            to not lose my progress, upload this on github; and then create a branch; if it works just fine; merge it (done)
+            i need to remove the hard encoding:
+            when looping check the annotate attribute, if it's true, mark it as annotate: true
+
+
 
         """
         
@@ -204,19 +207,23 @@ class TreeBuilder:
         if self.root_node is None:
             self.root_node = node
             print("root node has been set")
+        if node.description == "root":
+                self.annotate_root()
 
-        if "id" in node.attrs and node.attrs["id"].startswith("st") and node.attrs["id"][2:].isdigit() and node.web_element is None:
-                if self.root_node.web_element is None:
-                    self.annotate_root()
-                
-                #print("the node with the classes:", node.classes,"has this closest landmark", closest_landmark)
-                selector = node.get_css_selector()
+        #if "id" in node.attrs and node.attrs["id"].startswith("st") and node.attrs["id"][2:].isdigit() and node.web_element is None:
+        if "annotate" in schema and node.description != "root":
+            
+            
+            #print("the node with the classes:", node.classes,"has this closest landmark", closest_landmark)
+            selector = node.get_css_selector()
+            closest_landmark = self.get_closest_landmark(node)
 
-                node.web_element = self.root_node.web_element.find_element(
+
+            node.web_element = closest_landmark.web_element.find_element(
                     By.CSS_SELECTOR, 
                     selector
                 )
-                #print("this node has been annotated with id:", node.attrs["id"] if "id" in node.attrs else None,"class:", node.classes, "tag",node.tag,"and closest landmark is:",closest_landmark,"with web_element:", node.web_element)
+            #print("this node has been annotated with id:", node.attrs["id"] if "id" in node.attrs else None,"class:", node.classes, "tag",node.tag,"and closest landmark is:",closest_landmark,"with web_element:", node.web_element)
 
         if "children" in schema:
             for child_schema in schema["children"]:
@@ -259,14 +266,15 @@ class TreeBuilder:
         # this is harcoded af: 
         if self.root_node.web_element is None:
             self.annotate_root()
+            return self.root_node
         
         current = node
-        log(f'this is the node that we will start going up from: with id: {node.attrs.get("id")} class: {node.classes} tag: {node.tag}')
-        log(f'this node\'s parent is with id: {node.parent.attrs.get("id")} class: {node.parent.classes} tag: {node.parent.tag}')
+        #log(f'this is the node that we will start going up from: with id: {node.attrs.get("id")} class: {node.classes} tag: {node.tag}')
+        #log(f'this node\'s parent is with id: {node.parent.attrs.get("id")} class: {node.parent.classes} tag: {node.parent.tag}')
 
         
         while current:
-            log(f'this is going up one level to find the landmark node, these are the parent\'s characteristics: id: {current.attrs["id"] if "id" in current.attrs else None} with class:{current.classes} with the tag:{current.tag} with web_element:{current.web_element}')
+            #log(f'this is going up one level to find the landmark node, these are the parent\'s characteristics: id: {current.attrs["id"] if "id" in current.attrs else None} with class:{current.classes} with the tag:{current.tag} with web_element:{current.web_element}')
             if current.web_element:
 
                 return current

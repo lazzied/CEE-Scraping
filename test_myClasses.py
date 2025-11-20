@@ -123,10 +123,10 @@ builder = TreeBuilder(driver, "https://gaokao.eol.cn/e_html/gk/gkst/", schema)
 root = builder.build_and_annotate()
 
 log_counter= 0
-#root.print_dom_tree()
+root.print_dom_tree()
 #print("number of sti children:", len(root.children[1].children))
 #print("number of root children is:", len(root.children)) # should output 26 but only outputs 2
-(builder.find_in_tree("id","st33")).print_dom_tree()
+#(builder.find_in_tree("id","st33")).print_dom_tree()
 
 """
 current = root
