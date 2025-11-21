@@ -121,6 +121,10 @@ with open("schemas/gaokao_v1.json", "r") as f:
 builder = TreeBuilder(driver, "https://gaokao.eol.cn/e_html/gk/gkst/", schema)
 
 root = builder.build_and_annotate()
+# experimentation: get one link and and click on it to get to the next page
+
+st1_root_test= builder.find_in_tree('id', 'st1' )
+subject_st1_test= st1_root_test.
 
 log_counter= 0
 root.print_dom_tree()

@@ -33,3 +33,4 @@ locating is easy, they are predetermined by the node descriptions/ tag/ id/ clas
 for annotation, we use the shortest path to a landmark; we don't always use the root's node to find the web element, sometimes we use a parent node as the base to find child nodes, this is more efficient and less error-prone
 also we don't need to compare all the landmarks, like the sti range from 1 to 33, they are all landmarks, we compare parents/ grandparents/ cousins/uncles etc... then we compare the distance to the target node, this way we can find the target node more accurately
 """
+
