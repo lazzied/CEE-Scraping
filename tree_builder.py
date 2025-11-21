@@ -7,6 +7,8 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from my_queue import Queue
+
 from test_functions import log
 import os
 
@@ -16,6 +18,7 @@ class TreeBuilder:
         self.url = url
         self.schema = schema
         self.root_node = None # this is just the root node without its children it will be used for querying during scraping : its most important feature is the web_element that will be attached later
+
 
         self.template_instance_pair = {
             "exam_variant": 0,
@@ -41,7 +44,7 @@ class TreeBuilder:
         self.driver.get(self.url)
     
     # this will be harcoded for this example
-    def build_tree(self,schema,index=0,parent_node=None,template_name=None):
+    def build_tree(self,schema,index=0,parent_node=None,template_name=None, web_element=None):
         #schema is a json text
         """
         pseudo code:
@@ -134,6 +137,38 @@ class TreeBuilder:
             i need to remove the hard encoding:
             when looping check the annotate attribute, if it's true, mark it as annotate: true
 
+            now after annotating we treat one case meaning one examl then we build a looping mechanism / multiu threading/processing mechanism
+            foa what is the fastest/easiest/ solid proof way to fetch an exam?
+            each page in the caroussel has an image link that generally follow a specific pattern: base url + indexing
+            if we are sure of the base url; we just loop through the indexing and finish in seconds
+            how to be sure of the base url?
+            
+            a few issues in the exams:
+                sometimes the same exam gets repeated accross multiple exams and exam variants; meaning it is not normal and most likely non the official exam:
+                    for each year: we keep track of all the links that we visited; if a specific link has been visited more than one time under different subject/exam variant
+                    we flag it,then we continue to the next example 
+                the exam solution is in the same document as the exam
+                    this will happen in the multithreading and multi processing;
+                    here's how to identify the error: 
+                        THE SOLUTION link wil have the original exam+ solution but starts on the solution page; the same file is shareed between the solution and the exam but each one has a different starting point
+                        enter solution link, send warning to the exam link that the exam ends on page10 even though there are 13 pages
+                        this will help us later on on ML training keep the data clean
+                duplicates in the exam 
+
+            fix the tag annotation 
+
+        now experiment with clicking on a tag
+            get the specified link node
+            then get its web element and click() on it, 
+
+        a bug: 
+            only the sti with the number of subjects= 3 aren't logging right
+            how to solve:
+                only pass indexing for template == exam variant
+                  
+
+        
+
 
 
         """
@@ -144,24 +179,51 @@ class TreeBuilder:
             template_count = schema["repeat"]["count"]
             try:
                 if template_count == "auto":
-                    log(schema)
+                    #log(schema)
                     template_count = self.get_dynamic_count(parent_node)
-                    log(template_count)
+                    #log(template_count)
+                #log(f"Template: {template_name}, Expected count: {template_count}")
+
             except Exception as e:
                 print(f"this dynamic block is trippin{e}")
             
             template_schema= self.schema["templates"][template_name]
             children = []
 
-            for _ in range(template_count):
+            if template_name == "subject_li":
+                
+                closest_landmark = self.get_closest_landmark(parent_node)
+                subjects_web_elements = closest_landmark.web_element.find_elements(By.TAG_NAME,"li")
+                q= Queue()
+                for subj_web_element in subjects_web_elements:
+                    q.enqueue(subj_web_element)
+                    #print(subj_web_element.text)
+
+
+            for iteration in range(template_count):
                 # increment index
-                self.template_instance_pair[template_name] += 1
-                idx = self.template_instance_pair[template_name]
+                if template_name == "exam_variant":
+                    self.template_instance_pair[template_name] += 1
+                    idx = self.template_instance_pair[template_name]
+                    #print(idx)
+                    #log(f"Iteration {idx}/{template_count}: exam_variant_idx={idx}, template={template_name}")
                  #indexing only matters for  exam_variant not subject_li so this is an optimization i need to work on later
                 # skip 2 and 4 entirely, this is inconsistency in the html page, the html skips st2 and st4 for some reasons, but i have to adapt
-                if idx in (2, 4):
-                    continue
-                template_node = self.build_tree(schema=template_schema, index=idx, template_name=template_name,parent_node= parent_node)
+                
+                    if idx in (2, 4):
+                        continue
+
+                    template_node = self.build_tree(schema=template_schema, index=idx, template_name=template_name,parent_node= parent_node)
+
+                    #log(f"Iteration {iteration + 1}/{template_count}: exam_variant_idx={self.template_instance_pair["exam_variant"]}, template={template_name}")
+
+                elif template_name == "subject_li":
+                    template_node = self.build_tree(schema=template_schema, template_name=template_name,parent_node= parent_node, web_element= q.front())
+                    q.dequeue()
+
+                else:
+                    template_node = self.build_tree(schema=template_schema, template_name=template_name,parent_node= parent_node)
+                
 
 
 
@@ -169,6 +231,8 @@ class TreeBuilder:
                 children.append(
                     template_node
                 )
+                #log(f"Added child. Total children now: {len(children)}")
+
                 # annotate each template node here: get the closest landmark
                 """
                 if template_node.web_element is None:
@@ -181,14 +245,16 @@ class TreeBuilder:
                     )
                     #print("this node has been annotated with id:", node.attrs["id"] if "id" in node.attrs else None,"class:", node.classes, "tag",node.tag,"and closest landmark is:",closest_landmark.attrs["id"] if "id" in closest_landmark.attrs else None)
                 """
+            #log(f"Final children count for {template_name}: {len(children)}")
 
             return children
         
-        if "attrs" in schema:
+        if "attrs" in schema and template_name == "exam_variant":
             _attrs = {
                     k: (v.format(index=index) if k == "id" and "{index}" in v else v)
                     for k, v in schema["attrs"].items()
                 }
+            #print(_attrs)
         else:
             _attrs = {}
         
@@ -212,28 +278,55 @@ class TreeBuilder:
 
         #if "id" in node.attrs and node.attrs["id"].startswith("st") and node.attrs["id"][2:].isdigit() and node.web_element is None:
         if "annotate" in schema and node.description != "root":
-            # if you encounter a tag, get the elements of its parent and assign to its children the right one
-            # or i can get the the specified x path not the selector using find_element(By.XPATH, "//a[font[text()='真题']]") for questions and find_element(By.XPATH, "//a[font[text()='答案']]") for answers
-            
-            
-            # Determine the selector based on node's tag and description
             closest_landmark = self.get_closest_landmark(node)
-
+            links = closest_landmark.web_element.find_elements(By.TAG_NAME, "a")
             if node.tag == 'a':
+                """
+                links_web_elements = closest_landmark.web_element.find_elements(By.TAG_NAME,"a")
+                q=Queue()
+                for link_web_element in links_web_elements:
+                    q.enqueue(link_web_element)
+                log(f"a tags queue length {q.size}")
+                """
                 if node.description == 'Link to the exam paper.':
                     # <a> with <font> containing "真题"
-                    selector = "//a[font[text()='真题']]"
-                    node.web_element = closest_landmark.web_element.find_element(By.XPATH, selector)
-
+                    #selector = "//a[font[text()='真题']]"
+                    #node.web_element = closest_landmark.web_element.find_element(By.XPATH, selector)
+                    for link in links:
+                        if link.text=="真题":
+                            node.web_element=link
                 elif node.description == "Link to the solution.":
                     # <a> with <font> containing "答案"
-                    selector = "//a[font[text()='答案']]"
-                    node.web_element = closest_landmark.web_element.find_element(By.XPATH, selector)
-
+                    #selector = "//a[font[text()='']]"
+                    #node.web_element = closest_landmark.web_element.find_element(By.XPATH, selector)
+                    for link in links:
+                        if link.text=="答案":
+                            node.web_element=link
                 else:
                     # Other <a> tags, fallback to CSS selector
                     selector = node.get_css_selector()
                     node.web_element = closest_landmark.web_element.find_element(By.CSS_SELECTOR, selector)
+                # i need to make a case for li on how to select the right one
+                # i can get the parent of all of <li> web_elements put them in a stack and assign everyone/ ill do it with a list first
+                #find_element always return the first encounter, so that's wrong, it should be stored somewhere then get accessed to
+                """
+                 a — classes: [] — webElement: <selenium.webdriver.remote.webelement.WebElement (session="83141f35f2ad77da017226a8c5dce3b6", element="f.380949D28557B81A4B639539260DD52D.d.E215AA505EF606390B5320FA9CD5F4E5.e.29")>
+            a — classes: [] — webElement: <selenium.webdriver.remote.webelement.WebElement (session="83141f35f2ad77da017226a8c5dce3b6", element="f.380949D28557B81A4B639539260DD52D.d.E215AA505EF606390B5320FA9CD5F4E5.e.30")>
+                
+                """
+                """
+                this concerns the subject_li pattern;
+                    every sti got a subject_li template let's say we have 3 subject_li
+                    subject_li template detected:
+                        get all <li> elements
+                        put them in a stack in an ordered way
+                        enter the subject_li template loop:
+                            pop first element
+                            pass it into the build_tree
+                            now in the build_tree 
+                """
+            elif node.tag =="li" and web_element is not None:
+                node.web_element = web_element
 
             else:
                 # Non-<a> nodes, use CSS selector
@@ -322,11 +415,6 @@ class TreeBuilder:
     #here we have a fallback func and a bit of try/except for debugging
 
 
-            
-    def annotate_web_elements(self):
-        return
-
-
     def find_in_tree(self, selector_type=None, selector_value=None):
         """
         Recursively searches the entire tree (starting from root_node)
@@ -338,6 +426,8 @@ class TreeBuilder:
         
         Returns:
             DOMNode or None: The first matching node, or None if not found.
+
+        this is made mostly for testing
         """
         if not hasattr(self, "root_node") or self.root_node is None:
             raise Exception("Root node not initialized. Please build the tree first.")

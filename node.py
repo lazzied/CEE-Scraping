@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 class DOMNode:
     def __init__(self, tag, classes=None, attrs=None, description="", template_name=None):
         # Structure (always present)
@@ -48,7 +50,26 @@ class DOMNode:
     def click(self):
         """Click element"""
         if self.web_element:
-            self.web_element.click()
+            try:
+                # Debug info
+                print(f"Attempting to click: tag={self.tag}")
+                print(f"Href: {self.web_element.get_attribute("href")}")
+                print(f"Text: {self.web_element.text}")
+                print(f"Color: {self.web_element.find_element(By.TAG_NAME, "font").get_attribute("color")}")
+                print(f"Is displayed: {self.web_element.is_displayed()}")
+                print(f"Is enabled: {self.web_element.is_enabled()}")
+
+                
+               
+                # Actually, we need the driver - see fix below
+                
+                self.web_element.click()
+                print("Click executed successfully")
+                
+            except Exception as e:
+                print(f"Click failed with error: {e}")
+        else:
+            print("No web_element attached to this node!")
     
     
     def get_full_xpath(self):
@@ -116,60 +137,68 @@ class DOMNode:
             return 0
         return self.parent.children.index(self)
     
-    def find_in_node(self, selector_type=None, selector_value=None):
-        """
-        Recursively searches the entire tree (starting from the node)
-        for a node matching the selector.
-        
-        Args:
-            selector_type (str): 'id', 'class', 'tag', 'attr', or 'css' or "xpath'
-            selector_value (str): The value to match.
-        
-        Returns:
-            DOMNode or None: The first matching node, or None if not found.
-        """
+    def find_in_node(self, selector_type=None, selector_value=None, find_all=False):
+            """
+            Recursively searches the entire tree (starting from the node)
+            for a node matching the selector.
+            
+            Args:
+                selector_type (str): 'id', 'class', 'tag', 'attr', 'css', or 'xpath'
+                selector_value (str): The value to match.
+                find_all (bool): If True, returns all matching nodes. If False, returns first match.
+            
+            Returns:
+                DOMNode, list[DOMNode], or None: 
+                    - If find_all=True: list of all matching nodes (empty list if none found)
+                    - If find_all=False: the first matching node, or None if not found.
+            """
 
-        def matches(node):
-            if not selector_type or not selector_value:
+            def matches(node):
+                if not selector_type or not selector_value:
+                    return False
+
+                if selector_type == "id":
+                    return node.attrs.get("id") == selector_value
+
+                elif selector_type == "class":
+                    return selector_value in node.classes
+
+                elif selector_type == "tag":
+                    return node.tag == selector_value
+                elif selector_type == "description":
+                    return node.description == selector_value
+
+                elif selector_type == "attr":
+                    if "=" in selector_value:
+                        key, val = selector_value.split("=", 1)
+                        return node.attrs.get(key) == val
+                    return selector_value in node.attrs
+
+                elif selector_type == "css":
+                    # Compare full CSS selector from node.get_css_selector()
+                    try:
+                        node_selector = node.get_css_selector()
+                        return node_selector == selector_value
+                    except Exception:
+                        return False
+                elif selector_type == "xpath":
+                    node_selector = node.get_node_xpath()
+                    # this is hard to implement since i don't have access to the element text
+
                 return False
 
-            if selector_type == "id":
-                return node.attrs.get("id") == selector_value
+            # Depth-first search starting from the root node
+            matching_nodes = []
+            stack = [self]
+            while stack:
+                current = stack.pop()
+                if matches(current):
+                    if not find_all:
+                        return current
+                    matching_nodes.append(current)
+                stack.extend(reversed(current.children))
 
-            elif selector_type == "class":
-                return selector_value in node.classes
-
-            elif selector_type == "tag":
-                return node.tag == selector_value
-
-            elif selector_type == "attr":
-                if "=" in selector_value:
-                    key, val = selector_value.split("=", 1)
-                    return node.attrs.get(key) == val
-                return selector_value in node.attrs
-
-            elif selector_type == "css":
-                # Compare full CSS selector from node.get_css_selector()
-                try:
-                    node_selector = node.get_css_selector()
-                    return node_selector == selector_value
-                except Exception:
-                    return False
-            elif selector_type == "xpath" :
-                node_selector == node.get_node_xpath()
-                # this is hard to implement since i don"t have access to the element text
-
-            return False
-
-        # Depth-first search starting from the root node
-        stack = [self]
-        while stack:
-            current = stack.pop()
-            if matches(current):
-                return current
-            stack.extend(reversed(current.children))
-
-        return None
+            return matching_nodes if find_all else None
     
     def get_node_xpath(self):
         return

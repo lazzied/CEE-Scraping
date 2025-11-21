@@ -121,18 +121,62 @@ with open("schemas/gaokao_v1.json", "r") as f:
 builder = TreeBuilder(driver, "https://gaokao.eol.cn/e_html/gk/gkst/", schema)
 
 root = builder.build_and_annotate()
-# experimentation: get one link and and click on it to get to the next page
 
-st1_root_test= builder.find_in_tree('id', 'st1' )
-subject_st1_test= st1_root_test.
 
 log_counter= 0
-root.print_dom_tree()
+#root.print_dom_tree()
+"""
+exam_variant_test_node = builder.find_in_tree("id","st1")
+print("this is the st8 dom")
+exam_variant_test_node.print_dom_tree()
+
+
+exam_variant_test_node.print_dom_tree()
+"""
+
+exam_variant_test_node = builder.find_in_tree("id","st1")
+print("this is the st1 dom")
+exam_variant_test_node.print_dom_tree()
+exam_subject_test_nodes = exam_variant_test_node.find_in_node("tag","li",find_all=True)
+print(type(exam_subject_test_nodes))
+ #english_test_node = exam_subject_test_nodes[0].find_in_node("tag","a") for link in exam_subject_test_nodes[0].find_in_node("tag","a") if link.webelement.text == '真题' return link
+print(len(exam_subject_test_nodes))
+#this should be 3 but it prints out 2; where's the fucking issue???
+print("avaliable subjects:",[subject.children[0].web_element.text for subject in exam_subject_test_nodes])
+exam_name= exam_subject_test_nodes[1].children[0].web_element.text #here we're accessing word xueke
+print(exam_name)
+english_links = exam_subject_test_nodes[1].find_in_node("tag","a",find_all=True)
+print(type(english_links))
+if(isinstance(english_links,list)):
+    print(len(english_links))
+
+"""
+there's a bug:
+the <a> tag elements are repeated the same;
+    i'll use the queue algorithm to solve it; same as <li>
+"""
+try:
+    english_links[0].click()
+    test_link=english_links[0].web_element.get_attribute("href")
+    print(test_link)
+except:
+    print("failed to go to the next page")
+
+
+"""
+english_test_node = next(
+    (link for link in exam_subject_test_nodes[1].find_in_node("tag", "a")
+     if link.webelement.text == '真题'),
+    None
+print("this is the target link", english_test_node.print_dom_tree())
+)
+
+
+
 #print("number of sti children:", len(root.children[1].children))
 #print("number of root children is:", len(root.children)) # should output 26 but only outputs 2
 #(builder.find_in_tree("id","st33")).print_dom_tree()
 
-"""
 current = root
 while current:
     print("this is the children of the current node:")

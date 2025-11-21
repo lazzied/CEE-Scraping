@@ -45,7 +45,6 @@
                   "tag": "span",
                   "description": "Span containing exam type text.",
                   "annotate": "True"
-
                 }
               ]
             }
@@ -76,6 +75,7 @@
     "subject_li": {
       "tag": "li",
       "description": "Represents a single subject entry.",
+      "annotate":"True",
       "children": [
         {
           "tag": "div",
