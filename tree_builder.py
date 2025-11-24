@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from my_queue import Queue
+from my_stack import Stack
 
 from test_functions import log
 import os
@@ -19,6 +20,7 @@ class TreeBuilder:
         self.schema = schema
         self.root_node = None # this is just the root node without its children it will be used for querying during scraping : its most important feature is the web_element that will be attached later
 
+        self.landmark_cache= Stack()
 
         self.template_instance_pair = {
             "exam_variant": 0,
@@ -36,9 +38,19 @@ class TreeBuilder:
                 return _attrs
             else:
                 return schema.get("attrs",{})
+            
+    def _initialize_driver(self):
+        self.driver.get(self.url)
+    
+    def _initialize_root(self):
+        root = self._create_node(self.schema)
+        self.root_node = root
+        self._annotate_root()
+        self.landmark_cache.push(self.root_node.web_element)
+        #push it to the landmark cache
 
     
-    def _create_node(self,schema,index,parent_node,template_name):
+    def _create_node(self,schema,index=0,parent_node=None,template_name=None):
 
         _attrs = self._handle_attributes(schema, index, template_name)
 
@@ -93,6 +105,114 @@ class TreeBuilder:
             selector = node.get_css_selector()
             node.web_element = closest_landmark.web_element.find_element(By.CSS_SELECTOR, selector)
 
+
+    def build_tree_layout(self, schema, index=0, parent_node=None, template_name=None, web_element=None):
+    
+        # Handle repeat blocks
+        if "repeat" in schema:
+            template_name = schema["repeat"]["template"]
+            template_count = schema["repeat"]["count"]
+            
+            try:
+                if template_count == "auto":
+                    template_count = self.get_dynamic_count(parent_node)
+            except Exception as e:
+                print(f"Dynamic count error: {e}")
+            
+            template_schema = self.schema["templates"][template_name]
+            children = []
+            
+            # Special handling for subject_li (pre-fetch all <li> elements)
+            web_elements_queue = None
+            if template_name == "subject_li":
+                landmark = self.landmark_cache.top()
+                li_elements = landmark.find_elements(By.TAG_NAME, "li")
+                web_elements_queue = Queue()
+                for li_el in li_elements:
+                    web_elements_queue.enqueue(li_el)
+            
+            # Build each template instance
+            for i in range(template_count):
+                if template_name == "exam_variant":
+                    self.template_instance_pair[template_name] += 1
+                    idx = self.template_instance_pair[template_name]
+                    
+                    if idx in (2, 4):
+                        continue
+                    
+                    # Clean stack back to root before each variant
+                    while self.landmark_cache.size() > 1:
+                        self.landmark_cache.pop()
+                    
+                    template_node = self.build_tree_layout(
+                        schema=template_schema,
+                        index=idx,
+                        template_name=template_name,
+                        parent_node=parent_node
+                    )
+                
+                elif template_name == "subject_li":
+                    web_el = web_elements_queue.front()
+                    web_elements_queue.dequeue()
+                    
+                    template_node = self.build_tree_layout(
+                        schema=template_schema,
+                        template_name=template_name,
+                        parent_node=parent_node,
+                        web_element=web_el
+                    )
+                
+                else:
+                    template_node = self.build_tree_layout(
+                        schema=template_schema,
+                        template_name=template_name,
+                        parent_node=parent_node
+                    )
+                
+                children.append(template_node)
+            
+            return children
+        
+        # Create the node (structure only, no web_element yet)
+        node = self._create_node(schema, index, parent_node, template_name)
+        
+        # PUSH to cache: Find and cache landmark elements (but DON'T attach to node yet)
+        should_cache = (
+            "annotate" in schema and 
+            schema.get("annotate") == "landmark_element" and 
+            node.description != "root"
+        )
+        
+        if should_cache:
+            landmark = self.landmark_cache.top()
+            selector = node.get_css_selector()
+            landmark_element = landmark.find_element(By.CSS_SELECTOR, selector)
+            self.landmark_cache.push(landmark_element)
+        
+        # Special case: <li> elements passed in directly (pre-fetched)
+        elif node.tag == "li" and web_element is not None:
+            self.landmark_cache.push(web_element)
+        
+        # Build children recursively (they use the cached element)
+        if "children" in schema:
+            for child_schema in schema["children"]:
+                result = self.build_tree_layout(child_schema, parent_node=node)
+                
+                if isinstance(result, list):
+                    for child in result:
+                        node.add_child(child)
+                else:
+                    node.add_child(result)
+        
+        # POP: Clean up cache when leaving this node
+        if should_cache or (node.tag == "li" and web_element is not None):
+            self.landmark_cache.pop()
+        
+        return node
+
+    def annotate_tree(self):
+        return
+    """
     # this will be harcoded for this example
     def build_tree(self,schema,index=0,parent_node=None,template_name=None, web_element=None):
 
@@ -118,16 +238,7 @@ class TreeBuilder:
         return node
 
     def handle_repeat(self, schema, parent_node):
-        """
-        Handle repeated template elements.
         
-        Args:
-            schema: Schema containing repeat configuration
-            parent_node: Parent node for the repeated elements
-        
-        Returns:
-            list: List of child nodes created from the template
-        """
         template_name = schema["repeat"]["template"]
         template_count = schema["repeat"]["count"]
         
@@ -187,81 +298,59 @@ class TreeBuilder:
             children.append(template_node)
 
         return children
+    
+    """
 
-    def get_dynamic_count(self, node):
+    def get_dynamic_count(self,node):
         """Find count of repeated children dynamically."""
-        if self.root_node.web_element is None:
-            self.annotate_root()
         
-        if not node.web_element:
-            closest_landmark = self.get_closest_landmark(node)
-            
-            try:
-                selector = node.get_css_selector()
-                node.web_element = closest_landmark.web_element.find_element(
-                    By.CSS_SELECTOR, 
-                    selector
-                )
-            except Exception as e:
-                print('eroooooooooooooor', e)
-                return 0
-        
-        child_elements = node.web_element.find_elements(By.XPATH, "./*")
+        closest_landmark = self.landmark_cache.top()
+        selector_value = node.get_css_selector()
+        el = closest_landmark.find_element(By.CSS_SELECTOR,selector_value)
+        child_elements = el.find_elements(By.XPATH, "./*")
         return len(child_elements)
-
-
-    def get_closest_landmark(self, node):
-        """Walk up tree to find nearest ancestor with web_element."""
-        # this is harcoded af: 
-        if self.root_node.web_element is None:
-            self.annotate_root()
-            return self.root_node
-        
-        current = node
-        #log(f'this is the node that we will start going up from: with id: {node.attrs.get("id")} class: {node.classes} tag: {node.tag}')
-        #log(f'this node\'s parent is with id: {node.parent.attrs.get("id")} class: {node.parent.classes} tag: {node.parent.tag}')
-
-        
-        while current:
-            #log(f'this is going up one level to find the landmark node, these are the parent\'s characteristics: id: {current.attrs["id"] if "id" in current.attrs else None} with class:{current.classes} with the tag:{current.tag} with web_element:{current.web_element}')
-            if current.web_element:
-
-                return current
-            current = current.parent
-        return self.root_node
-            
-    def annotate_root(self):
+      
+    def _annotate_root(self):
         """Find and attach the root web element."""
         try:
             if self.root_node:
                 selector_value = self.root_node.get_css_selector()
-                self.driver.get(self.url)
-                wait = WebDriverWait(self.driver, 5)
-                self.root_node.web_element = wait.until(
-                    EC.presence_of_element_located((By.CSS_SELECTOR, selector_value))
-                )
-            """
-
-            
-            """
+                self.root_node.web_element = self.driver.find_element(By.CSS_SELECTOR, selector_value)
         except Exception as e:
             print(f"failed to annotate root: {e}")
 
     #this is hardcoded for now, but later we can make it dynamic based on the templates and selectory types/values;
     #here we have a fallback func and a bit of try/except for debugging
-    
+    """
     def build_and_annotate(self):
-        """Main pipeline to run everything."""
         # self.safe_get()
         self.build_tree(self.schema)
         #for key in templates:
           #  self.annotate_template_web_elements(key)
 
         return self.root_node
-
+    """
 # parent that has multiple children; that's where we put the web_element + looped branches like the st {i} 
     
     def tree_builder_orchestrator(self):
-        self.annotate_root()
+        self._initialize_driver()
+        
+        # Initialize root FIRST
+        self.root_node = self._create_node(self.schema)
+        self._annotate_root()
+        self.landmark_cache.push(self.root_node.web_element)
+        
+        # Build children of root
+        if "children" in self.schema:
+            for child_schema in self.schema["children"]:
+                result = self.build_tree_layout(child_schema, parent_node=self.root_node)
+                
+                if isinstance(result, list):
+                    for child in result:
+                        self.root_node.add_child(child)
+                else:
+                    self.root_node.add_child(result)
+    
+        return self.root_node
         
             

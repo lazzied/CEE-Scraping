@@ -121,10 +121,9 @@ with open("schemas/gaokao_v1.json", "r") as f:
 
 builder = TreeBuilder(driver, "https://gaokao.eol.cn/e_html/gk/gkst/", schema)
 
-root = builder.build_and_annotate()
+#root = builder.build_and_annotate()
 
 
-log_counter= 0
 #root.print_dom_tree()
 """
 exam_variant_test_node = builder.find_in_tree("id","st1")
@@ -135,9 +134,14 @@ exam_variant_test_node.print_dom_tree()
 exam_variant_test_node.print_dom_tree()
 """
 
+root = builder.tree_builder_orchestrator()
+
 exam_variant_test_node = root.find_in_node("id","st1")
 print("this is the st1 dom")
 exam_variant_test_node.print_dom_tree()
+
+
+"""
 exam_subject_test_nodes = exam_variant_test_node.find_in_node("tag","li",find_all=True)
 print(type(exam_subject_test_nodes))
  #english_test_node = exam_subject_test_nodes[0].find_in_node("tag","a") for link in exam_subject_test_nodes[0].find_in_node("tag","a") if link.webelement.text == '真题' return link
@@ -150,11 +154,12 @@ english_links = exam_subject_test_nodes[1].find_in_node("tag","a",find_all=True)
 print(type(english_links))
 if(isinstance(english_links,list)):
     print(len(english_links))
-
+"""
 """
 there's a bug:
 the <a> tag elements are repeated the same;
     i'll use the queue algorithm to solve it; same as <li>
+"""
 """
 try:
     english_links[0].click()
@@ -163,7 +168,7 @@ try:
 except:
     print("failed to go to the next page")
 # testing the scraper:
-
+"""
 
 """
 english_test_node = next(
