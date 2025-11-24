@@ -110,6 +110,7 @@ this question:
 from selenium import webdriver
 import json
 from tree_builder import TreeBuilder
+from exam_solution_scraper import Scraper
 
 
 
@@ -161,6 +162,7 @@ try:
     print(test_link)
 except:
     print("failed to go to the next page")
+# testing the scraper:
 
 
 """

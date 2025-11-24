@@ -14,7 +14,25 @@ class DOMNode:
         self.is_dynamic = False
         # Don't store siblings - compute them dynamically!
 
+        # siblings algo don't work have to fix it later on
         
+    def print_attributes(self):
+        """Print all attributes of this node."""
+        attrs_dict = {
+            "tag": self.tag,
+            "classes": self.classes,
+            "attrs": self.attrs,
+            "description": self.description,
+            "template_name": self.template_name,
+            "web_element": self.web_element,
+            "is_dynamic": self.is_dynamic,
+            "parent": self.parent.tag if self.parent else None,
+            "children_count": len(self.children),
+            "siblings_count": len(self.siblings())
+        }
+        
+        for key, value in attrs_dict.items():
+            print(f"{key}: {value}")
 
     def siblings(self):
         """

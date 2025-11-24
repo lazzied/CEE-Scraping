@@ -167,7 +167,35 @@ class TreeBuilder:
                 only pass indexing for template == exam variant
                   
 
-        
+        to do list:
+            - set up exam scrapper class
+            - use the json buildtree function to build the exam page tree
+            - work on the exam page links generation algo
+                generate the base link
+                test the links?? the images aren't in caroussel so going to each page is very time consuming, just trust it
+                some exams gets repeated this is the case for the 2025 exams, how to handle it? keep a global link tracker, if it surpasses 2 flag it, every exam should have a seperate link
+            - create an mvp database just for testing
+            - save to database
+            - optimize  tree_builder:
+                - cache the landmark, keep a stack, where there's always the root_node, instead of calling get the closest landmark, get the top of the stack, and queue it everytime you add annotation
+                    if you move to the next branch (next st{index}) clear it and only keep the root_node
+                - instead of finding elements one by one like in the <a> tag, use a context object, fetch all needed elements one time and store them in a context object then distribute them during the building
+                - too many if conditions, use seperate functions to deal with them, but this will hurt the scalability
+                -  checking if idx in (2, 4) on every iteration, too many unnecessary calls
+                - Separate Schema Preprocessing
+                    Do this once at initialization:
+                    Parse which nodes need annotation (annotate: true)
+                    Identify all repeat blocks and their configs
+                    Build a "build plan" that guides tree construction
+                    No need to check schema repeatedly during building
+                - template configuration: which elements to skip/ indexing
+                - build a build_tree plan, no need to refetch the schema everytime
+            - work on re annotation algo
+            
+            
+
+
+
 
 
 
@@ -257,8 +285,11 @@ class TreeBuilder:
             #print(_attrs)
         else:
             _attrs = {}
-        
+
+        print(f"Type of schema: {type(schema)}")
+        print(f"Value of schema: {schema}")
         _classes = schema.get("classes",[])
+        #error hger
 
         node = DOMNode(
             tag = schema.get("tag",""),
