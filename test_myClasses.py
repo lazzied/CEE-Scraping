@@ -135,7 +135,7 @@ exam_variant_test_node.print_dom_tree()
 exam_variant_test_node.print_dom_tree()
 """
 
-exam_variant_test_node = builder.find_in_tree("id","st1")
+exam_variant_test_node = root.find_in_node("id","st1")
 print("this is the st1 dom")
 exam_variant_test_node.print_dom_tree()
 exam_subject_test_nodes = exam_variant_test_node.find_in_node("tag","li",find_all=True)
