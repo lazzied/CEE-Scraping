@@ -125,7 +125,11 @@ driver = webdriver.Chrome()
 with open("schemas/gaokao_v1.json", "r") as f:
     schema = json.load(f)
 
-builder = TreeBuilder(driver, "https://gaokao.eol.cn/e_html/gk/gkst/", schema)
+with open("schemas/template_config.json", "r") as l:
+    config = json.load(l)
+
+
+builder = TreeBuilder(driver, "https://gaokao.eol.cn/e_html/gk/gkst/", schema,config)
 
 #root = builder.build_and_annotate()
 

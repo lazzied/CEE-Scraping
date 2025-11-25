@@ -1,0 +1,14 @@
+ {
+    "exam_variant": {
+        "needs_indexing": "True",
+        "skip_indices": [2, 4],
+        "prefetch_elements": "False"
+    },
+    
+    "subject_li": {
+        "needs_indexing": "False",
+        "skip_indices": [],
+        "prefetch_elements": "True",
+        "prefetch_tag": "li"
+    }
+}

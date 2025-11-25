@@ -16,18 +16,19 @@ from test_functions import log, suppress_print
 import os
 
 class TreeBuilder:
-    def __init__(self, driver, url, schema):
+    def __init__(self, driver, url, schema,config=None):
         self.driver = driver
         self.url = url
         self.schema = schema
         self.root_node = None # this is just the root node without its children it will be used for querying during scraping : its most important feature is the web_element that will be attached later
+        self.config = config
+
 
         self.landmark_cache= Stack()
 
         self.template_instance_pair = {
             "exam_variant": 0,
-            "subject_li": 0
-        } # this doesn't mean anything, it just used to help tracking repeated items, and deal with inconsistencies
+        } # this doesn't mean anything, it just used to help tracking repeated items, and deal with inconsistencies, will be replaced with a context object later on probably
 
     
     def _handle_attributes(self,schema,index, template_name):
@@ -52,8 +53,8 @@ class TreeBuilder:
         #push it to the landmark cache
 
     
-    def _create_node(self,schema,index=0,parent_node=None,template_name=None):
-
+    def _create_node(self,schema,index=None,parent_node=None,template_name=None):
+        print("this is the index", index)
         _attrs = self._handle_attributes(schema, index, template_name)
 
         node = DOMNode(
@@ -108,15 +109,13 @@ class TreeBuilder:
             selector = node.get_css_selector()
             node.web_element = closest_landmark.web_element.find_element(By.CSS_SELECTOR, selector)
 
-    def build_tree_layout(self, schema, index=0, parent_node=None, template_name=None, web_element=None):
-        #the issue is span is not popped when you move on to the next branch
-        #
-        # 
-
+    def build_tree_layout(self, schema, index=None, parent_node=None, template_name=None):
+        
         # Handle repeat blocks
         if "repeat" in schema:
             template_name = schema["repeat"]["template"]
             template_count = schema["repeat"]["count"]
+            template_config = self.config.get(template_name, {}) if self.config else {}
             
             print(f"[REPEAT] Template: {template_name}, Count: {template_count}")
             
@@ -130,31 +129,43 @@ class TreeBuilder:
             template_schema = self.schema["templates"][template_name]
             children = []
             
-            # Special handling for subject_li (pre-fetch all <li> elements)
-            web_elements_queue = None
-            if template_name == "subject_li":
+            # Special handling for prefetched elements
+            if template_config and template_config.get("prefetch_elements") == "True":
                 landmark = self.landmark_cache.top()
-                print(f"[SUBJECT_LI] Pre-fetching <li> elements using this landmark: {landmark.get_attribute('class')}")
-                li_elements = landmark.find_elements(By.TAG_NAME, "li")
-                web_elements_queue = Queue()
-                for li_el in li_elements:
-                    web_elements_queue.enqueue(li_el)
-                print(f"[PREFETCH] Enqueued {len(li_elements)} <li> elements for subject_li")
+                prefetch_tag = template_config.get("prefetch_tag", "li")
+                print(f"[PREFETCH] Pre-fetching <{prefetch_tag}> elements using landmark: {landmark.get_attribute('class')}")
+                
+                prefetched_elements = landmark.find_elements(By.TAG_NAME, prefetch_tag)
+                
+                # Push in reverse so first element is on top
+                for el in reversed(prefetched_elements):
+                    self.landmark_cache.push(el)
+                
+                print(f"[PREFETCH] Pushed {len(prefetched_elements)} <{prefetch_tag}> elements | Cache size: {self.landmark_cache.size()}")
             
             # Build each template instance
-            for i in range(template_count):
-                if template_name == "exam_variant":
+            for i in range(1, template_count +1):
+                
+                if template_config and template_config.get("needs_indexing") == "True":
+                    print("passing in to the first condition")
+
+
                     self.template_instance_pair[template_name] += 1
                     idx = self.template_instance_pair[template_name]
                     
+                    
                     print(f"[EXAM_VARIANT] Processing variant #{idx}")
                     
-                    if idx in (2, 4):
-                        print(f"[EXAM_VARIANT] Skipping variant #{idx} (inconsistency)")
+                    skip_indices = template_config.get("skip_indices", [])
+
+                    if i in skip_indices:
+                        print(f"[REPEAT] Skipping index {i} for template {template_name}")
                         continue
+
                     
                     # Clean stack back to root before each variant
                     cache_size_before = self.landmark_cache.size()
+
                     while self.landmark_cache.size() > 1:
                         self.landmark_cache.pop()
                     print(f"[EXAM_VARIANT] Cleaned cache from {cache_size_before} to {self.landmark_cache.size()}")
@@ -165,20 +176,10 @@ class TreeBuilder:
                         template_name=template_name,
                         parent_node=parent_node
                     )
-                
-                elif template_name == "subject_li":
-                    web_el = web_elements_queue.front()
-                    web_elements_queue.dequeue()
-                    print(f"[SUBJECT_LI] Dequeued <li> element #{i+1}")
-                    
-                    template_node = self.build_tree_layout(
-                        schema=template_schema,
-                        template_name=template_name,
-                        parent_node=parent_node,
-                        web_element=web_el
-                    )
-                    #here i used a seperate queue for <li> elements but in the annotate_sti_branch function i used the landmark cache stack for both landmark and <li> elements; this inconsistency might cause issues later on
+
+
                 else:
+                    print("passing in to the second condition")
                     template_node = self.build_tree_layout(
                         schema=template_schema,
                         template_name=template_name,
@@ -192,14 +193,19 @@ class TreeBuilder:
         
         # Create the node (structure only, no web_element yet)
         node = self._create_node(schema, index, parent_node, template_name)
-        node_desc = f"{node.tag}{'.' + '.'.join(node.classes) if node.classes else ''} - {node.description[:50]}"
-        print(f"[NODE] Created: {node_desc}")
+        
+        # Check if this template uses prefetching
+        is_prefetched = False
+        if self.config and node.template_name:
+            template_config = self.config.get(node.template_name, {})
+            is_prefetched = template_config.get("prefetch_elements") == "True"
         
         # PUSH to cache: Find and cache landmark elements (but DON'T attach to node yet)
         should_cache = (
             "annotation" in schema and 
             schema.get("annotation") == "landmark_element" and 
-            node.description != "root"
+            node.description != "root" and 
+            not is_prefetched  # Don't push if already prefetched
         )
         
         if should_cache:
@@ -207,16 +213,10 @@ class TreeBuilder:
             selector = node.get_css_selector()
             landmark_element = landmark.find_element(By.CSS_SELECTOR, selector)
             self.landmark_cache.push(landmark_element)
-            print(f"[CACHE PUSH] Pushed landmark for: {node_desc} | Cache size: {self.landmark_cache.size()}")
-        
-        # Special case: <li> elements passed in directly (pre-fetched)
-        elif node.tag == "li" and web_element is not None:
-            self.landmark_cache.push(web_element)
-            print(f"[CACHE PUSH] Pushed prefetched <li> | Cache size: {self.landmark_cache.size()}")
+            print(f"[CACHE PUSH] Pushed landmark for {node.tag}.{'.'.join(node.classes)} | Cache size: {self.landmark_cache.size()}")
         
         # Build children recursively (they use the cached element)
         if "children" in schema:
-            print(f"[CHILDREN] Building {len(schema['children'])} children for: {node_desc}")
             for child_schema in schema["children"]:
                 result = self.build_tree_layout(child_schema, parent_node=node)
                 
@@ -227,11 +227,14 @@ class TreeBuilder:
                     node.add_child(result)
         
         # POP: Clean up cache when leaving this node
-        if should_cache or (node.tag == "li" and web_element is not None):
+        # Pop if: (1) we pushed a landmark, OR (2) this is a prefetched element
+        if should_cache:
             self.landmark_cache.pop()
-            print(f"[CACHE POP] Popped cache for: {node_desc} | Cache size: {self.landmark_cache.size()}")
+            print(f"[CACHE POP] Popped landmark for {node.tag}.{'.'.join(node.classes)} | Cache size: {self.landmark_cache.size()}")
+        elif is_prefetched:
+            self.landmark_cache.pop()
+            print(f"[CACHE POP] Popped prefetched {node.tag} | Cache size: {self.landmark_cache.size()}")
         
-        print(f"[NODE] Completed: {node_desc}")
         return node
         
 
@@ -263,7 +266,8 @@ class TreeBuilder:
             if should_cache:
                 #This is a regular landmark node
                 #this is hardcoded, need to make it more generic later on
-                # the issue is 
+                # the issue is li elements are prefetched and stored in the landmark cache before we even reach the <li> node in the tree, so when we reach the <li> node and we read "annotation":"landmark_element", we skip it since it's already in the cache
+                #so here we should  make a strategy, if the parennt has a configured landmark; meaning we're prefetching its children, then we skip pushing it again
                 if current.tag != "li":
                     landmark = self.landmark_cache.top()
                     selector = current.get_css_selector()
@@ -340,100 +344,6 @@ class TreeBuilder:
         
         print(f"\n[ANNOTATE_STI] Completed | Final cache size: {self.landmark_cache.size()}")
                     
-
-
-
-    def annotate_tree(self):
-
-        return
-    """
-    # this will be harcoded for this example
-    def build_tree(self,schema,index=0,parent_node=None,template_name=None, web_element=None):
-
-        if "repeat" in schema:
-            return self.handle_repeat(schema, parent_node)
-        
-        node = self._create_node(schema, index,parent_node, template_name)
-
-        if "annotate" in schema and node.description != "root":
-            self._annotate_node(node,web_element)
-
-        if "children" in schema:
-            for child_schema in schema["children"]:
-                
-                result = self.build_tree(child_schema,parent_node=node) # can't use extend here we always need to call the add_child function
-
-                if isinstance(result,list):
-                    for child in result:
-                        node.add_child(child) #only at the end the parent_child relationship is established
-                else:
-                    node.add_child(result)
-
-        return node
-
-    def handle_repeat(self, schema, parent_node):
-        
-        template_name = schema["repeat"]["template"]
-        template_count = schema["repeat"]["count"]
-        
-        try:
-            if template_count == "auto":
-                template_count = self.get_dynamic_count(parent_node)
-        except Exception as e:
-            print(f"this dynamic block is trippin{e}")
-        
-        template_schema = self.schema["templates"][template_name]
-        children = []
-
-        # Special handling for subject_li template
-        if template_name == "subject_li":
-            closest_landmark = self.get_closest_landmark(parent_node)
-            subjects_web_elements = closest_landmark.web_element.find_elements(By.TAG_NAME, "li")
-            q = Queue()
-            for subj_web_element in subjects_web_elements:
-                q.enqueue(subj_web_element)
-
-        # Build template instances
-        for iteration in range(template_count):
-            # Handle exam_variant template
-            if template_name == "exam_variant":
-                self.template_instance_pair[template_name] += 1
-                idx = self.template_instance_pair[template_name]
-                
-                # Skip 2 and 4 (HTML page inconsistency)
-                if idx in (2, 4):
-                    continue
-
-                template_node = self.build_tree(
-                    schema=template_schema, 
-                    index=idx, 
-                    template_name=template_name,
-                    parent_node=parent_node
-                )
-
-            # Handle subject_li template
-            elif template_name == "subject_li":
-                template_node = self.build_tree(
-                    schema=template_schema, 
-                    template_name=template_name,
-                    parent_node=parent_node, 
-                    web_element=q.front()
-                )
-                q.dequeue()
-
-            # Handle other templates
-            else:
-                template_node = self.build_tree(
-                    schema=template_schema, 
-                    template_name=template_name,
-                    parent_node=parent_node
-                )
-
-            children.append(template_node)
-
-        return children
-    
-    """
 
     def get_dynamic_count(self):
       
