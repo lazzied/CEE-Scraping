@@ -113,6 +113,12 @@ from tree_builder import TreeBuilder
 from exam_solution_scraper import Scraper
 
 
+import os, sys
+if os.path.exists("log.txt"):
+    os.remove("log.txt")
+sys.stdout = open("log.txt", "w")
+
+
 
 
 driver = webdriver.Chrome()
@@ -135,10 +141,17 @@ exam_variant_test_node.print_dom_tree()
 """
 
 root = builder.tree_builder_orchestrator()
+root.print_dom_tree()
 
 exam_variant_test_node = root.find_in_node("id","st1")
 print("this is the st1 dom")
 exam_variant_test_node.print_dom_tree()
+
+print("now we'll annotate the st1 node")
+builder.annotate_sti_branch(exam_variant_test_node)
+exam_variant_test_node.print_dom_tree()
+
+
 
 
 """

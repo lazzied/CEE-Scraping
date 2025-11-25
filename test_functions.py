@@ -1,5 +1,8 @@
 from datetime import datetime
 import re
+import sys, os
+from functools import wraps
+
 
 def log(msg):
     ts = datetime.now().strftime("%H:%M:%S.%f")[:-3]
@@ -20,5 +23,18 @@ def extract_suffix(url: str) -> str:
             print("failed to find match")
             return ""
 
-text ="https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png"
-print("this is the desired suffix",extract_suffix(text))
+
+def suppress_print(func):
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        _stdout = sys.stdout
+        sys.stdout = open(os.devnull, "w")
+        try:
+            return func(*args, **kwargs)
+        finally:
+            sys.stdout = _stdout
+    return wrapper
+
+
+    
+

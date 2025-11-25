@@ -2,7 +2,7 @@
   "tag": "div",
   "classes": ["center", "point-center"], 
   "description": "root",
-  "annotate": "landmark_element",
+  "annotation": "landmark_element",
   "children": [
     {
       "tag": "div",
@@ -30,7 +30,7 @@
       "classes": ["test"],
       "attrs": { "id": "st{index}" },
       "description": "Exam variant block #{index} — contains subject title and subject list.",
-      "annotate": "landmark_element",
+      "annotation": "landmark_element",
       "children": [
         {
           "tag": "div",
@@ -44,7 +44,7 @@
                 {
                   "tag": "span",
                   "description": "Span containing exam type text.",
-                  "annotate": "target_element"
+                  "annotation": "target_element"
                 }
               ]
             }
@@ -59,6 +59,7 @@
               "tag": "div",
               "classes": ["gkzt-xueke", "mtT_30", "clearfix"],
               "description": "Subject container  holds list items for each subject.",
+              "annotation": "landmark_element",
               "children": [
                 {
                   "repeat": {
@@ -75,22 +76,23 @@
     "subject_li": {
       "tag": "li",
       "description": "Represents a single subject entry.",
-      "annotate":"landmark_element",
+      "annotation":"landmark_element",
       "children": [
         {
           "tag": "div",
           "classes": ["word-xueke"],
           "description": "Holds subject name and links.",
-          "annotate": "target_element",
+          "annotation": "target_element",
 
           "children": [
             {
               "tag": "div",
               "classes": ["xueke-a"],
               "description": "Contains links for exam, solution, and analysis.",
+              "annotation": "landmark_element",
               "children": [
-                { "tag": "a", "description": "Link to the exam paper.",   "annotate": "target_element"},
-                { "tag": "a", "description": "Link to the solution.",   "annotate": "target_element"}  
+                { "tag": "a", "description": "Link to the exam paper.",   "annotation": "target_element"},
+                { "tag": "a", "description": "Link to the solution.",   "annotation": "target_element"}  
               ]
             }
           ]
