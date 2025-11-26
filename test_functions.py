@@ -9,20 +9,21 @@ def log(msg):
     print(f"{ts}] {msg}")
 
 
-def extract_suffix(url: str) -> str:
-            # Extract the filename: e.g. "yy01.png"
-            filename = url.split("/")[-1]
-            
-            # Remove file extension
-            name = filename.split(".")[0]  # "yy01"
-            
-            # Extract the letters before the digits
-            match = re.match(r"([a-zA-Z]+)\d+", name)
-            if match:
-                return match.group(1)
-            print("failed to find match")
-            return ""
+def extract_suffix(url: str) -> tuple[str, str]:
+    filename = url.split("/")[-1]
+    name = filename.split(".")[0]
+    
+    print(f"[DEBUG] Extracting from filename: {filename}, name: {name}")
 
+    match = re.match(r"([a-zA-Z]+)(\d+)", name)
+    if match:
+        letters = match.group(1)
+        number = match.group(2)
+        print(f"[DEBUG] Matched - letters: {letters}, number: {number}")
+        return letters, number
+    
+    print(f"[WARNING] No match for pattern in: {name}")
+    return "", ""
 
 def suppress_print(func):
     @wraps(func)
@@ -36,5 +37,5 @@ def suppress_print(func):
     return wrapper
 
 
-    
+print(extract_suffix("https://img.eol.cn/e_images/gk/2025/st/qg1/sxd06.png"))
 

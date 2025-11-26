@@ -1,17 +1,9 @@
-this is the index None
 root node has been set
-this is the index None
 [REPEAT] Template: exam_variant, Count: 8
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #1
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 1
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 3
@@ -19,30 +11,15 @@ dynamic count found: 3
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 3 <li> elements | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 3 children for template subject_li
@@ -54,13 +31,7 @@ passing in to the first condition
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #3
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 3
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 3
@@ -68,30 +39,15 @@ dynamic count found: 3
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 3 <li> elements | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 3 children for template subject_li
@@ -103,13 +59,7 @@ passing in to the first condition
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #5
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 5
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -117,84 +67,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -203,13 +108,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #6
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 6
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -217,84 +116,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -303,13 +157,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #7
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 7
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 10
@@ -317,93 +165,43 @@ dynamic count found: 10
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 10 <li> elements | Cache size: 13
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 14
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 13
 [CACHE POP] Popped prefetched li | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 10 children for template subject_li
@@ -412,13 +210,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #8
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 8
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -426,84 +218,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -514,13 +261,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #9
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 9
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -528,84 +269,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -617,13 +313,7 @@ passing in to the first condition
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #11
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 11
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -631,84 +321,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -720,13 +365,7 @@ passing in to the first condition
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #13
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 13
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -734,84 +373,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -820,13 +414,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #14
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 14
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -834,84 +422,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -920,13 +463,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #15
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 15
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -934,84 +471,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1020,13 +512,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #16
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 16
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1034,84 +520,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1120,13 +561,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #17
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 17
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1134,84 +569,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1220,13 +610,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #18
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 18
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1234,84 +618,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1320,13 +659,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #19
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 19
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1334,84 +667,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1420,13 +708,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #20
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 20
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1434,84 +716,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1520,13 +757,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #21
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 21
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1534,84 +765,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1620,13 +806,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #22
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 22
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1634,84 +814,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1720,13 +855,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #23
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 23
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1734,84 +863,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1820,13 +904,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #24
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 24
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1834,84 +912,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -1920,13 +953,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #25
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 25
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -1934,84 +961,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -2020,13 +1002,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #26
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 26
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -2034,84 +1010,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -2120,13 +1051,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #27
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 27
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -2134,84 +1059,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -2220,13 +1100,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #28
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 28
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -2234,84 +1108,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -2320,13 +1149,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #29
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 29
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -2334,84 +1157,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -2420,13 +1198,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #30
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 30
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -2434,84 +1206,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -2520,13 +1247,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #31
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 31
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -2534,84 +1255,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -2620,13 +1296,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #32
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 32
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -2634,84 +1304,39 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
@@ -2720,13 +1345,7 @@ this is the index None
 passing in to the first condition
 [EXAM_VARIANT] Processing variant #33
 [EXAM_VARIANT] Cleaned cache from 1 to 1
-this is the index 33
 [CACHE PUSH] Pushed landmark for div.test | Cache size: 2
-this is the index None
-this is the index None
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 3
 [REPEAT] Template: subject_li, Count: auto
 dynamic count found: 9
@@ -2734,1539 +1353,45 @@ dynamic count found: 9
 [PREFETCH] Pre-fetching <li> elements using landmark: gkzt-xueke mtT_30 clearfix
 [PREFETCH] Pushed 9 <li> elements | Cache size: 12
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 13
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 12
 [CACHE POP] Popped prefetched li | Cache size: 11
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 12
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 11
 [CACHE POP] Popped prefetched li | Cache size: 10
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 11
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 10
 [CACHE POP] Popped prefetched li | Cache size: 9
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 10
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 9
 [CACHE POP] Popped prefetched li | Cache size: 8
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 9
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 8
 [CACHE POP] Popped prefetched li | Cache size: 7
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 8
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 7
 [CACHE POP] Popped prefetched li | Cache size: 6
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 7
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 6
 [CACHE POP] Popped prefetched li | Cache size: 5
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 6
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 5
 [CACHE POP] Popped prefetched li | Cache size: 4
 passing in to the second condition
-this is the index None
-this is the index None
-this is the index None
 [CACHE PUSH] Pushed landmark for div.xueke-a | Cache size: 5
-this is the index None
-this is the index None
 [CACHE POP] Popped landmark for div.xueke-a | Cache size: 4
 [CACHE POP] Popped prefetched li | Cache size: 3
 [REPEAT] Built 9 children for template subject_li
 [CACHE POP] Popped landmark for div.gkzt-xueke.mtT_30.clearfix | Cache size: 2
 [CACHE POP] Popped landmark for div.test | Cache size: 1
 [REPEAT] Built 23 children for template exam_variant
-div ó classes: ['center', 'point-center'] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.23")>
-  div ó classes: ['sline'] ó webElement: None
-    div ó classes: ['test'] ó id: st1 ó webElement: None
-      div ó classes: ['topline', 'clearfix'] ó webElement: None
-        div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-          span ó classes: [] ó webElement: None
-      div ó classes: ['sline'] ó webElement: None
-        div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-    div ó classes: ['test'] ó id: st3 ó webElement: None
-      div ó classes: ['topline', 'clearfix'] ó webElement: None
-        div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-          span ó classes: [] ó webElement: None
-      div ó classes: ['sline'] ó webElement: None
-        div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-    div ó classes: ['test'] ó id: st5 ó webElement: None
-      div ó classes: ['topline', 'clearfix'] ó webElement: None
-        div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-          span ó classes: [] ó webElement: None
-      div ó classes: ['sline'] ó webElement: None
-        div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-    div ó classes: ['test'] ó id: st6 ó webElement: None
-      div ó classes: ['topline', 'clearfix'] ó webElement: None
-        div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-          span ó classes: [] ó webElement: None
-      div ó classes: ['sline'] ó webElement: None
-        div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-    div ó classes: ['test'] ó id: st7 ó webElement: None
-      div ó classes: ['topline', 'clearfix'] ó webElement: None
-        div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-          span ó classes: [] ó webElement: None
-      div ó classes: ['sline'] ó webElement: None
-        div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-    div ó classes: ['test'] ó id: st8 ó webElement: None
-      div ó classes: ['topline', 'clearfix'] ó webElement: None
-        div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-          span ó classes: [] ó webElement: None
-      div ó classes: ['sline'] ó webElement: None
-        div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-          li ó classes: [] ó webElement: None
-            div ó classes: ['word-xueke'] ó webElement: None
-              div ó classes: ['xueke-a'] ó webElement: None
-                a ó classes: [] ó webElement: None
-                a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st9 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st11 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st13 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st14 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st15 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st16 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st17 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st18 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st19 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st20 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st21 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st22 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st23 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st24 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st25 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st26 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st27 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st28 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st29 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st30 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st31 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st32 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-  div ó classes: ['test'] ó id: st33 ó webElement: None
-    div ó classes: ['topline', 'clearfix'] ó webElement: None
-      div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-        span ó classes: [] ó webElement: None
-    div ó classes: ['sline'] ó webElement: None
-      div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-        li ó classes: [] ó webElement: None
-          div ó classes: ['word-xueke'] ó webElement: None
-            div ó classes: ['xueke-a'] ó webElement: None
-              a ó classes: [] ó webElement: None
-              a ó classes: [] ó webElement: None
-this is the st1 dom
-div ó classes: ['test'] ó id: st1 ó webElement: None
-  div ó classes: ['topline', 'clearfix'] ó webElement: None
-    div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-      span ó classes: [] ó webElement: None
-  div ó classes: ['sline'] ó webElement: None
-    div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-      li ó classes: [] ó webElement: None
-        div ó classes: ['word-xueke'] ó webElement: None
-          div ó classes: ['xueke-a'] ó webElement: None
-            a ó classes: [] ó webElement: None
-            a ó classes: [] ó webElement: None
-      li ó classes: [] ó webElement: None
-        div ó classes: ['word-xueke'] ó webElement: None
-          div ó classes: ['xueke-a'] ó webElement: None
-            a ó classes: [] ó webElement: None
-            a ó classes: [] ó webElement: None
-      li ó classes: [] ó webElement: None
-        div ó classes: ['word-xueke'] ó webElement: None
-          div ó classes: ['xueke-a'] ó webElement: None
-            a ó classes: [] ó webElement: None
-            a ó classes: [] ó webElement: None
-now we'll annotate the st1 node
 [ANNOTATE_STI] Initial cache size: 1, and the respective node is:
 center point-center
 [ANNOTATE_STI] Pushed root node:
@@ -4584,24 +1709,136 @@ attrs: {}
 [CACHE POP] Popped at leaf | Cache size: 2
 
 [ANNOTATE_STI] Completed | Final cache size: 2
-div ó classes: ['test'] ó id: st1 ó webElement: None
-  div ó classes: ['topline', 'clearfix'] ó webElement: None
-    div ó classes: ['head-fl', 'clearfix'] ó webElement: None
-      span ó classes: [] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.581")>
-  div ó classes: ['sline'] ó webElement: None
-    div ó classes: ['gkzt-xueke', 'mtT_30', 'clearfix'] ó webElement: None
-      li ó classes: [] ó webElement: None
-        div ó classes: ['word-xueke'] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.582")>
-          div ó classes: ['xueke-a'] ó webElement: None
-            a ó classes: [] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.583")>
-            a ó classes: [] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.584")>
-      li ó classes: [] ó webElement: None
-        div ó classes: ['word-xueke'] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.586")>
-          div ó classes: ['xueke-a'] ó webElement: None
-            a ó classes: [] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.587")>
-            a ó classes: [] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.588")>
-      li ó classes: [] ó webElement: None
-        div ó classes: ['word-xueke'] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.590")>
-          div ó classes: ['xueke-a'] ó webElement: None
-            a ó classes: [] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.591")>
-            a ó classes: [] ó webElement: <selenium.webdriver.remote.webelement.WebElement (session="744f72429215670c77bc93bc398afb97", element="f.36EE7516790192072CF6D870AF54A4E7.d.7C180677BAEE670B11504FE27775DDB6.e.3")>
+root node has been set
+[TARGET] Annotated web_element
+[TARGET] Annotated web_element
+[TARGET] Annotated web_element
+<img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" alt="2025Âπ¥È´òËÄÉÁúüÈ¢òÂèäÁ≠îÊ°à" ignore="1" src="https://img.eol.cn/e_images/gk/2025/st/qg1/sx01.png" width="750">
+2025Âπ¥È´òËÄÉÁúüÈ¢òÂèäÁ≠îÊ°à
+[DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sx01.png
+[DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+[DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+[DEBUG] Extracting from filename: sx01.png, name: sx01
+[DEBUG] Matched - letters: sx, number: 01
+[DEBUG] Suffix: sx, Starting index: 01
+[DEBUG] Generated 4 image links
+root node has been set
+[TARGET] Annotated web_element
+[TARGET] Annotated web_element
+[TARGET] Annotated web_element
+<img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" alt="2025Âπ¥È´òËÄÉÁúüÈ¢òÂèäÁ≠îÊ°à" ignore="1" src="https://img.eol.cn/e_images/gk/2025/st/qg1/sxd00.png" width="750">
+2025Âπ¥È´òËÄÉÁúüÈ¢òÂèäÁ≠îÊ°à
+[DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd00.png
+[DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+[DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+[DEBUG] Extracting from filename: sxd00.png, name: sxd00
+[DEBUG] Matched - letters: sxd, number: 00
+[DEBUG] Suffix: sxd, Starting index: 00
+[DEBUG] Generated 8 image links
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Exam_1.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Solution_1.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Exam_2.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Solution_2.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Exam_3.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Solution_3.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Exam_4.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Solution_4.jpg
+PDF saved at C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Exam.pdf
+All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
+ Completed: 2025 ÂÖ®ÂõΩ‰∏ÄÂç∑ Êï∞Â≠¶ [Exam] - 4 pages
+div ‚Äî classes: ['main', 'container'] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="05de7512a2feac3e73ba207e12f60357", element="f.76F1DA0B7F6B3C4084ADC3974B2F2CC3.d.3D9BF5CF315AD4A8BE2CB72D445E5FF7.e.28")>
+  div ‚Äî classes: ['perpage'] ‚Äî id: perpage ‚Äî webElement: None
+    script ‚Äî classes: [] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="05de7512a2feac3e73ba207e12f60357", element="f.76F1DA0B7F6B3C4084ADC3974B2F2CC3.d.3D9BF5CF315AD4A8BE2CB72D445E5FF7.e.29")>
+  div ‚Äî classes: ['left'] ‚Äî webElement: None
+    div ‚Äî classes: ['TRS_Editor'] ‚Äî webElement: None
+      p ‚Äî classes: [] ‚Äî webElement: None
+        img ‚Äî classes: [] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="05de7512a2feac3e73ba207e12f60357", element="f.76F1DA0B7F6B3C4084ADC3974B2F2CC3.d.3D9BF5CF315AD4A8BE2CB72D445E5FF7.e.12")>
+    div ‚Äî classes: ['title'] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="05de7512a2feac3e73ba207e12f60357", element="f.76F1DA0B7F6B3C4084ADC3974B2F2CC3.d.3D9BF5CF315AD4A8BE2CB72D445E5FF7.e.30")>
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Solution_5.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Solution_6.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Solution_7.jpg
+Failed to download image from https://img.eol.cn/e_images/gk/2025/st/qg1/sxd07.png: 404
+PDF saved at C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Êï∞Â≠¶_Solution.pdf
+All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp
+ Completed: 2025 ÂÖ®ÂõΩ‰∏ÄÂç∑ Êï∞Â≠¶ [Solution] - 7 pages
+div ‚Äî classes: ['main', 'container'] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="c2d8259b15f2405f8fcc78f9e6826c5d", element="f.73D1B771B1850423D70CA0AB7749F886.d.347376FDCB2313EAD5A42512066F8C95.e.31")>
+  div ‚Äî classes: ['perpage'] ‚Äî id: perpage ‚Äî webElement: None
+    script ‚Äî classes: [] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="c2d8259b15f2405f8fcc78f9e6826c5d", element="f.73D1B771B1850423D70CA0AB7749F886.d.347376FDCB2313EAD5A42512066F8C95.e.32")>
+  div ‚Äî classes: ['left'] ‚Äî webElement: None
+    div ‚Äî classes: ['TRS_Editor'] ‚Äî webElement: None
+      p ‚Äî classes: [] ‚Äî webElement: None
+        img ‚Äî classes: [] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="c2d8259b15f2405f8fcc78f9e6826c5d", element="f.73D1B771B1850423D70CA0AB7749F886.d.347376FDCB2313EAD5A42512066F8C95.e.15")>
+    div ‚Äî classes: ['title'] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="c2d8259b15f2405f8fcc78f9e6826c5d", element="f.73D1B771B1850423D70CA0AB7749F886.d.347376FDCB2313EAD5A42512066F8C95.e.33")>
+root node has been set
+[TARGET] Annotated web_element
+[TARGET] Annotated web_element
+[TARGET] Annotated web_element
+<img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" alt="2025Âπ¥È´òËÄÉÁúüÈ¢ò" ignore="1" src="https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png" width="750">
+2025Âπ¥È´òËÄÉÁúüÈ¢ò
+[DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png
+[DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+[DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+[DEBUG] Extracting from filename: yy01.png, name: yy01
+[DEBUG] Matched - letters: yy, number: 01
+[DEBUG] Suffix: yy, Starting index: 01
+[DEBUG] Generated 8 image links
+root node has been set
+[TARGET] Annotated web_element
+[TARGET] Annotated web_element
+[TARGET] Annotated web_element
+<img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" alt="2025Âπ¥È´òËÄÉÁúüÈ¢ò" ignore="1" src="https://img.eol.cn/e_images/gk/2025/st/qg1/yyd00.png" width="750">
+2025Âπ¥È´òËÄÉÁúüÈ¢ò
+[DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd00.png
+[DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+[DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+[DEBUG] Extracting from filename: yyd00.png, name: yyd00
+[DEBUG] Matched - letters: yyd, number: 00
+[DEBUG] Suffix: yyd, Starting index: 00
+[DEBUG] Generated 17 image links
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Exam_1.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_1.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_2.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Exam_2.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_3.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Exam_3.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_4.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Exam_4.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_5.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Exam_5.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_6.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Exam_6.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_7.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Exam_7.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_8.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_9.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Exam_8.jpg
+PDF saved at C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Exam.pdf
+All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
+ Completed: 2025 ÂÖ®ÂõΩ‰∏ÄÂç∑ Ëã±ËØ≠ [Exam] - 8 pages
+div ‚Äî classes: ['main', 'container'] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="6e87c3788930942b09063ff927e58a1e", element="f.118CDAE3B09F7B27F9F275642D76E5D1.d.2A0F1DB8300C8B0E15FCF138FCE9BA6C.e.26")>
+  div ‚Äî classes: ['perpage'] ‚Äî id: perpage ‚Äî webElement: None
+    script ‚Äî classes: [] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="6e87c3788930942b09063ff927e58a1e", element="f.118CDAE3B09F7B27F9F275642D76E5D1.d.2A0F1DB8300C8B0E15FCF138FCE9BA6C.e.27")>
+  div ‚Äî classes: ['left'] ‚Äî webElement: None
+    div ‚Äî classes: ['TRS_Editor'] ‚Äî webElement: None
+      p ‚Äî classes: [] ‚Äî webElement: None
+        img ‚Äî classes: [] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="6e87c3788930942b09063ff927e58a1e", element="f.118CDAE3B09F7B27F9F275642D76E5D1.d.2A0F1DB8300C8B0E15FCF138FCE9BA6C.e.6")>
+    div ‚Äî classes: ['title'] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="6e87c3788930942b09063ff927e58a1e", element="f.118CDAE3B09F7B27F9F275642D76E5D1.d.2A0F1DB8300C8B0E15FCF138FCE9BA6C.e.28")>
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_10.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_11.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_12.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_13.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_14.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_15.jpg
+Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution_16.jpg
+Failed to download image from https://img.eol.cn/e_images/gk/2025/st/qg1/yyd16.png: 404
+PDF saved at C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_ÂÖ®ÂõΩ‰∏ÄÂç∑_Ëã±ËØ≠_Solution.pdf
+All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp
+ Completed: 2025 ÂÖ®ÂõΩ‰∏ÄÂç∑ Ëã±ËØ≠ [Solution] - 16 pages
+div ‚Äî classes: ['main', 'container'] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="2adf41d4f3e4816a1abec6652085f1a6", element="f.ED7646639DAB8D460549F59F6D968F84.d.06FF1BE868925B7FC9AE9D0E532730B7.e.30")>
+  div ‚Äî classes: ['perpage'] ‚Äî id: perpage ‚Äî webElement: None
+    script ‚Äî classes: [] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="2adf41d4f3e4816a1abec6652085f1a6", element="f.ED7646639DAB8D460549F59F6D968F84.d.06FF1BE868925B7FC9AE9D0E532730B7.e.31")>
+  div ‚Äî classes: ['left'] ‚Äî webElement: None
+    div ‚Äî classes: ['TRS_Editor'] ‚Äî webElement: None
+      p ‚Äî classes: [] ‚Äî webElement: None
+        img ‚Äî classes: [] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="2adf41d4f3e4816a1abec6652085f1a6", element="f.ED7646639DAB8D460549F59F6D968F84.d.06FF1BE868925B7FC9AE9D0E532730B7.e.9")>
+    div ‚Äî classes: ['title'] ‚Äî webElement: <selenium.webdriver.remote.webelement.WebElement (session="2adf41d4f3e4816a1abec6652085f1a6", element="f.ED7646639DAB8D460549F59F6D968F84.d.06FF1BE868925B7FC9AE9D0E532730B7.e.34")>

@@ -2,7 +2,7 @@
     "tag": "div",
     "classes": ["main","container"],
     "description": "root",
-    "annotate": "True",
+    "annotation": "landmark_element",
     "children":[ {
             "tag": "div",
             "classes": ["perpage"],
@@ -12,7 +12,7 @@
                     "tag": "script",
                     "attrs": {"language": "JavaScript"},
                     "description":"holds exam total page number",
-                    "annotate": "True"
+                    "annotation": "target_element"
             }]
     },
     {
@@ -24,7 +24,7 @@
             "tag":"div",
             "classes":["TRS_Editor"],
             "description":"container for the exam image",
-            "annotate": "True",
+            "annotate": "landmark_element",
             "children":[
                 {
                     "tag": "p",
@@ -33,7 +33,8 @@
                         {
                             "tag":"img",
                             "description":"holds image link",
-                            "annotate": "True"
+                            "attrs": {"style":"border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px"},
+                            "annotation": "target_element"
                             
                         }
                     ]
@@ -45,7 +46,7 @@
             "tag":"div",
             "classes":["title"],
             "description":["contains exam metadata"],
-            "annotate": "True"
+            "annotation": "target_element"
 
         }
     

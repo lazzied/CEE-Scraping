@@ -144,7 +144,7 @@ exam_variant_test_node.print_dom_tree()
 exam_variant_test_node.print_dom_tree()
 """
 
-root = builder.tree_builder_orchestrator()
+root = builder.full_build_layout_tree()
 root.print_dom_tree()
 
 exam_variant_test_node = root.find_in_node("id","st1")

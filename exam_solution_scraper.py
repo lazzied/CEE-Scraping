@@ -33,11 +33,10 @@ first we will test the sequential way, we'll explore parallelization later if ne
             - store data in database
 locating is easy, they are predetermined by the node descriptions/ tag/ id/ classes etc... in the json blueprint, so we just need to find the it collect the infos and move on to the next node
 
-for annotation, we use the shortest path to a landmark; we don't always use the root's node to find the web element, sometimes we use a parent node as the base to find child nodes, this is more efficient and less error-prone
+for annotation, we use the shortest path to a landmark; we don't always use the root_node's node to find the web element, sometimes we use a parent node as the base to find child nodes, this is more efficient and less error-prone
 also we don't need to compare all the landmarks, like the sti range from 1 to 33, they are all landmarks, we compare parents/ grandparents/ cousins/uncles etc... then we compare the distance to the target node, this way we can find the target node more accurately
 """
-from tree_builder import TreeBuilder
-from node import DOMNode
+
 import re
 import requests
 import os
@@ -48,13 +47,14 @@ class Scraper:
     # i need to create another class, the orchestrator, that handles the navigation and data sending between pages 
     # also i need to study the possibility building the first st1 then scrape the data there, go back to main page, build the second st2 and so on... will it boost performance? this is building a plan, for each context
     #for now the data will be built inside the scraper class!!!
-    def __init__(self,tree_builder:TreeBuilder,state:str,output_folder ):
-        self.tree_builder = tree_builder
+    
+    def __init__(self,driver,root,state:str,output_folder ):
 
-        self.root = None
+        self.root_node = root
         self.base_url = None
         self.page_links= None
         self.state= state
+        self.driver = driver
         #state is either "exam" or "solution"
 
         self.raw_url= None # this is url of the first page
@@ -62,13 +62,8 @@ class Scraper:
         self.output_folder  = output_folder
         
         
-    
-    def build_page_tree(self):
-        self.tree_builder.build_and_annotate()
-        self.root = self.tree_builder.root_node
-    
     def set_metadata(self):
-        metadata_node = self.root.find_in_node("class", "title")
+        metadata_node = self.root_node.find_in_node("class", "title")
         metadata_node_text = metadata_node.web_element.text
         def parse_title(title: str) -> dict:
             # Example format: "2025年高考全国一卷英语试题"
@@ -101,44 +96,100 @@ class Scraper:
         self.metadata = exam_data
         
     def set_base_link(self):
-        img_link_node = self.root.find_in_node("tag","img")
-        link=img_link_node.web_element.get_attribute("src")
+        img_link_node = self.root_node.find_in_node("tag", "img")
+
+        print(img_link_node.web_element.get_attribute("outerHTML"))
+        
+        if img_link_node.web_element.get_attribute("alt"):
+            print(img_link_node.web_element.get_attribute("alt"))
+        else:
+            print("cound't find the alt attribute")
+        
+        if not img_link_node:
+            print(f"[ERROR] Could not find <img> node in tree for {self.state}")
+            self.base_url = None
+            self.raw_url = None
+            return
+        
+        if not img_link_node.web_element:
+            print(f"[ERROR] <img> node exists but has no web_element for {self.state}")
+            self.base_url = None
+            self.raw_url = None
+            return
+        
+        link = img_link_node.web_element.get_attribute("src")
+        
+        if not link:
+            print(f"[ERROR] <img> has no 'src' attribute for {self.state}")
+            self.base_url = None
+            self.raw_url = None
+            return
+        
+        print(f"[DEBUG] Found image URL: {link[:100]}")
+        
+        # Check if it's a data URI
+        if link.startswith("data:"):
+            print(f"[ERROR] Got base64 data URI instead of URL for {self.state}")
+            self.base_url = None
+            self.raw_url = link
+            return
+        
         def get_base_link(url: str) -> str:
             return url.rsplit("/", 1)[0] + "/"
         
         self.base_url = get_base_link(link)
         self.raw_url = link
+        print(f"[DEBUG] Base URL: {self.base_url}")
 
     
     def generate_image_links(self):
-        links = []
-        print(self.base_url)
-        def extract_suffix(url: str) -> str:
-            # Extract the filename: e.g. "yy01.png"
-            filename = url.split("/")[-1]
-            
-            # Remove file extension
-            name = filename.split(".")[0]  # "yy01"
-            
-            # Extract the letters before the digits
-            match = re.match(r"([a-zA-Z]+)\d+", name)
-            if match:
-                return match.group(1)
-            return ""
+        # Check if we have a valid base_url
+        if not self.base_url or self.raw_url.startswith("data:"):
+            print(f"[ERROR] Cannot generate links - invalid URL for {self.state}")
+            self.page_links = []
+            return
         
-        suffix = extract_suffix(self.raw_url)
-        print("this is the suffix", suffix)
+        links = []
+        print(f"[DEBUG] Base URL: {self.base_url}")
+        
+        def extract_suffix(url: str) -> tuple[str, str]:
+            filename = url.split("/")[-1]
+            name = filename.split(".")[0]
+            
+            print(f"[DEBUG] Extracting from filename: {filename}, name: {name}")
 
-        print(self.metadata)
-        for i in range(1, self.metadata["page_count"] + 1):
-            suffix_num = f"{i:02d}"   # formats 1 → "01", 9 → "09", 10 → "10"
+            match = re.match(r"([a-zA-Z]+)(\d+)", name)
+            if match:
+                letters = match.group(1)
+                number = match.group(2)
+                print(f"[DEBUG] Matched - letters: {letters}, number: {number}")
+                return letters, number
+            
+            print(f"[WARNING] No match for pattern in: {name}")
+            return "", ""
+
+        suffix, starting_index = extract_suffix(self.raw_url)
+        
+        if not suffix or not starting_index:
+            print(f"[ERROR] Failed to extract suffix/index from: {self.raw_url}")
+            # Try alternate approach - maybe URL format is different
+            self.page_links = []
+            return
+        
+        print(f"[DEBUG] Suffix: {suffix}, Starting index: {starting_index}")
+        
+        starting_index = int(starting_index)
+        
+        for i in range(starting_index, self.metadata["page_count"] + 1):
+            suffix_num = f"{i:02d}"
             links.append(f"{self.base_url}{suffix}{suffix_num}.png")
 
-        self.page_links =  links
+        self.page_links = links
+        print(f"[DEBUG] Generated {len(links)} image links")
 
     # this is made for validation and testing
     def get_page_count(self):
-        return self.tree_builder.driver.execute_script("return _PAGE_COUNT;")
+        return self.driver.execute_script("return _PAGE_COUNT;")
 
 
         
@@ -245,13 +296,7 @@ class Scraper:
         
         Returns True if successful, False otherwise
         """
-        try:
-            # Build the DOM tree
-            self.build_page_tree()
-            if not self.root:
-                print("Error: Failed to build page tree")
-                return False
-            
+        try: 
             # Extract metadata
             self.set_metadata()
             if not self.metadata:
