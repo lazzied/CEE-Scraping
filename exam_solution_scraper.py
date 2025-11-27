@@ -1,6 +1,3 @@
-
-
-
 """
 workflow:
 each year: contains two 3 paages: the main page, the exam page and the solution page
@@ -41,6 +38,9 @@ import re
 import requests
 import os
 from PIL import Image
+from test_functions import get_logger
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
 class Scraper:
     # the dom node tree should it be built inside the scraper or be passed on already built?
@@ -60,6 +60,9 @@ class Scraper:
         self.raw_url= None # this is url of the first page
         self.metadata = None
         self.output_folder  = output_folder
+        
+        self.logger = get_logger(__name__)
+        self.logger.disabled = False
         
         
     def set_metadata(self):
@@ -98,21 +101,21 @@ class Scraper:
     def set_base_link(self):
         img_link_node = self.root_node.find_in_node("tag", "img")
 
-        print(img_link_node.web_element.get_attribute("outerHTML"))
+        self.logger.info(img_link_node.web_element.get_attribute("outerHTML"))
         
         if img_link_node.web_element.get_attribute("alt"):
-            print(img_link_node.web_element.get_attribute("alt"))
+            self.logger.info(img_link_node.web_element.get_attribute("alt"))
         else:
-            print("cound't find the alt attribute")
+            self.logger.info("cound't find the alt attribute")
         
         if not img_link_node:
-            print(f"[ERROR] Could not find <img> node in tree for {self.state}")
+            self.logger.error(f"[ERROR] Could not find <img> node in tree for {self.state}")
             self.base_url = None
             self.raw_url = None
             return
         
         if not img_link_node.web_element:
-            print(f"[ERROR] <img> node exists but has no web_element for {self.state}")
+            self.logger.error(f"[ERROR] <img> node exists but has no web_element for {self.state}")
             self.base_url = None
             self.raw_url = None
             return
@@ -120,16 +123,16 @@ class Scraper:
         link = img_link_node.web_element.get_attribute("src")
         
         if not link:
-            print(f"[ERROR] <img> has no 'src' attribute for {self.state}")
+            self.logger.error(f"[ERROR] <img> has no 'src' attribute for {self.state}")
             self.base_url = None
             self.raw_url = None
             return
         
-        print(f"[DEBUG] Found image URL: {link[:100]}")
+        self.logger.info(f"[DEBUG] Found image URL: {link[:100]}")
         
         # Check if it's a data URI
         if link.startswith("data:"):
-            print(f"[ERROR] Got base64 data URI instead of URL for {self.state}")
+            self.logger.error(f"[ERROR] Got base64 data URI instead of URL for {self.state}")
             self.base_url = None
             self.raw_url = link
             return
@@ -139,44 +142,44 @@ class Scraper:
         
         self.base_url = get_base_link(link)
         self.raw_url = link
-        print(f"[DEBUG] Base URL: {self.base_url}")
+        self.logger.info(f"[DEBUG] Base URL: {self.base_url}")
 
     
     def generate_image_links(self):
         # Check if we have a valid base_url
         if not self.base_url or self.raw_url.startswith("data:"):
-            print(f"[ERROR] Cannot generate links - invalid URL for {self.state}")
+            self.logger.error(f"[ERROR] Cannot generate links - invalid URL for {self.state}")
             self.page_links = []
             return
         
         links = []
-        print(f"[DEBUG] Base URL: {self.base_url}")
+        self.logger.info(f"[DEBUG] Base URL: {self.base_url}")
         
         def extract_suffix(url: str) -> tuple[str, str]:
             filename = url.split("/")[-1]
             name = filename.split(".")[0]
             
-            print(f"[DEBUG] Extracting from filename: {filename}, name: {name}")
+            self.logger.info(f"[DEBUG] Extracting from filename: {filename}, name: {name}")
 
             match = re.match(r"([a-zA-Z]+)(\d+)", name)
             if match:
                 letters = match.group(1)
                 number = match.group(2)
-                print(f"[DEBUG] Matched - letters: {letters}, number: {number}")
+                self.logger.info(f"[DEBUG] Matched - letters: {letters}, number: {number}")
                 return letters, number
             
-            print(f"[WARNING] No match for pattern in: {name}")
+            self.logger.warning(f"[WARNING] No match for pattern in: {name}")
             return "", ""
 
         suffix, starting_index = extract_suffix(self.raw_url)
         
         if not suffix or not starting_index:
-            print(f"[ERROR] Failed to extract suffix/index from: {self.raw_url}")
+            self.logger.error(f"[ERROR] Failed to extract suffix/index from: {self.raw_url}")
             # Try alternate approach - maybe URL format is different
             self.page_links = []
             return
         
-        print(f"[DEBUG] Suffix: {suffix}, Starting index: {starting_index}")
+        self.logger.info(f"[DEBUG] Suffix: {suffix}, Starting index: {starting_index}")
         
         starting_index = int(starting_index)
         
@@ -185,7 +188,7 @@ class Scraper:
             links.append(f"{self.base_url}{suffix}{suffix_num}.png")
 
         self.page_links = links
-        print(f"[DEBUG] Generated {len(links)} image links")
+        self.logger.info(f"[DEBUG] Generated {len(links)} image links")
 
     # this is made for validation and testing
     def get_page_count(self):
@@ -205,6 +208,18 @@ class Scraper:
         # Ensure the folder exists
         os.makedirs(self.output_folder, exist_ok=True)
 
+        # Setup session with retry logic
+        session = requests.Session()
+        retry_strategy = Retry(
+            total=3,  # Total number of retries
+            backoff_factor=1,  # Wait 1, 2, 4 seconds between retries
+            status_forcelist=[429, 500, 502, 503, 504],  # Retry on these HTTP status codes
+            raise_on_status=False
+        )
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        session.mount("http://", adapter)
+        session.mount("https://", adapter)
+
         year = self.metadata.get("year")
         exam_variant = self.metadata.get("exam_variant")
         subject = self.metadata.get("subject")
@@ -213,17 +228,31 @@ class Scraper:
         for link in self.page_links:
             # Construct the filename
             filename = f"{year}_{exam_variant}_{subject}_{self.state}_{index}.jpg"
-            index+=1
             save_path = os.path.join(self.output_folder, filename)
 
-            # Download the image
-            response = requests.get(link)
-            if response.status_code == 200:
+            try:
+                # Download the image with timeout
+                response = session.get(link, timeout=15)  # 15 second timeout
+                response.raise_for_status()  # Raises exception for 4xx/5xx status codes
+                
+                # Save the image
                 with open(save_path, "wb") as f:
                     f.write(response.content)
-                print(f"Image saved to {save_path}")
-            else:
-                print(f"Failed to download image from {link}: {response.status_code}")
+                self.logger.info(f"Image saved to {save_path}")
+                index += 1
+                
+            except requests.exceptions.Timeout:
+                self.logger.error(f"Timeout downloading image from {link}")
+            except requests.exceptions.ConnectionError as e:
+                self.logger.error(f"Connection error downloading {link}: {e}")
+            except requests.exceptions.HTTPError as e:
+                self.logger.error(f"HTTP error downloading {link}: {e}")
+            except requests.exceptions.RequestException as e:
+                self.logger.error(f"Error downloading image from {link}: {e}")
+            except Exception as e:
+                self.logger.error(f"Unexpected error saving {link}: {e}")
+        
+        session.close()
     
     def convert_document_pdf(self):
         """
@@ -236,7 +265,7 @@ class Scraper:
         image_files = [f for f in os.listdir(self.output_folder) if f.lower().endswith(".jpg")]
 
         if not image_files:
-            print("No images found in folder.")
+            self.logger.warning("No images found in folder.")
             return
 
         # Sort by index extracted from filename
@@ -263,12 +292,12 @@ class Scraper:
 
         # Save all images as a single PDF
         images[0].save(pdf_path, save_all=True, append_images=images[1:])
-        print(f"PDF saved at {pdf_path}")
+        self.logger.info(f"PDF saved at {pdf_path}")
 
         # Delete all the images
         for file in image_files:
             os.remove(os.path.join(self.output_folder, file))
-        print(f"All images deleted from {self.output_folder}")
+        self.logger.info(f"All images deleted from {self.output_folder}")
 
     
     def validation():
@@ -300,26 +329,26 @@ class Scraper:
             # Extract metadata
             self.set_metadata()
             if not self.metadata:
-                print("Error: Failed to extract metadata")
+                self.logger.error("Error: Failed to extract metadata")
                 return False
             
             # Get base link
             self.set_base_link()
             if not self.base_url:
-                print("Error: Failed to get base URL")
+                self.logger.error("Error: Failed to get base URL")
                 return False
             
 
             # Generate image links
             self.generate_image_links()
             if not self.page_links:
-                print("Error: Failed to generate image links")
+                self.logger.error("Error: Failed to generate image links")
                 return False
             """
             # Validate data
             validation_result = self.validation()
             if not validation_result["passed"]:
-                print("Error: Validation failed")
+                self.logger.error("Error: Validation failed")
                 return False
             """
 
@@ -329,17 +358,12 @@ class Scraper:
             # Convert to PDF
             self.convert_document_pdf()
             
-            print(f" Completed: {self.metadata.get('year')} {self.metadata.get('exam_variant')} {self.metadata.get('subject')} [{self.state}] - {self.metadata["page_count"]} pages")
+            self.logger.info(f" Completed: {self.metadata.get('year')} {self.metadata.get('exam_variant')} {self.metadata.get('subject')} [{self.state}] - {self.metadata['page_count']} pages")
             
             return True
             
         except Exception as e:
-            print(f" Error: {str(e)}")
+            self.logger.error(f" Error: {str(e)}")
             import traceback
             traceback.print_exc()
             return False
-        
-
-    
-    
-

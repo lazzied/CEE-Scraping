@@ -60,15 +60,15 @@ def get_optimized_chrome_options(headless=False):
 # SELENIUM DRIVER CLASS
 # --------------------------------------------------------
 class SeleniumDriver:
-    def __init__(self, headless=False, timeout=15):
+    def __init__(self, headless=False, timeout=5):
         """Initialize driver with optimized options."""
-        # chrome_options = get_optimized_chrome_options(headless)
+        chrome_options = get_optimized_chrome_options(headless)
         service = Service()
 
-        # self.driver = webdriver.Chrome(service=service, options=chrome_options)
+        self.driver = webdriver.Chrome(service=service, options=chrome_options)
         #self.driver = webdriver.Chrome(service=service)
-        self.driver= webdriver.Chrome()
-        #self.wait = WebDriverWait(self.driver, timeout)
+        #self.driver= webdriver.Chrome()
+        self.wait = WebDriverWait(self.driver, timeout)
 
         
         

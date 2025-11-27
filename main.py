@@ -5,7 +5,7 @@ from exam_solution_scraper import Scraper
 
 
 def scrape_exam(exam_url, document_schema, save_path):
-    drv = SeleniumDriver()
+    drv = SeleniumDriver(headless=True)
     drv.get(exam_url)
 
     builder = TreeBuilder(drv.driver, document_schema)
@@ -21,7 +21,7 @@ def scrape_exam(exam_url, document_schema, save_path):
 
 
 def scrape_solution(solution_url,document_schema,save_path):
-    drv = SeleniumDriver()
+    drv = SeleniumDriver(headless=True)
     drv.get(solution_url)
 
     builder = TreeBuilder(drv.driver, document_schema)
@@ -37,11 +37,8 @@ def scrape_solution(solution_url,document_schema,save_path):
 
 
 def main():
-
-    if os.path.exists("log.txt"):
-        os.remove("log.txt")
-
-    sys.stdout = open("log.txt", "w", encoding="utf-8")
+    #this will suppress all print statements in the code below
+    sys.stdout = open(os.devnull, 'w')
 
 
     with open("schemas/gaokao_v1.json") as f:
@@ -53,7 +50,7 @@ def main():
     with open("schemas/template_config.json") as f:
         config = json.load(f)
 
-    main_driver = SeleniumDriver()
+    main_driver = SeleniumDriver(headless=True)
     main_driver.get("https://gaokao.eol.cn/e_html/gk/gkst/")
 
     main_builder = TreeBuilder(main_driver.driver, main_schema, config)

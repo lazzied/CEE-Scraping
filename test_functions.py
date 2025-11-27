@@ -2,7 +2,7 @@ from datetime import datetime
 import re
 import sys, os
 from functools import wraps
-
+import logging
 
 def log(msg):
     ts = datetime.now().strftime("%H:%M:%S.%f")[:-3]
@@ -37,5 +37,31 @@ def suppress_print(func):
     return wrapper
 
 
-print(extract_suffix("https://img.eol.cn/e_images/gk/2025/st/qg1/sxd06.png"))
 
+
+LOG_DIR = "logs"
+os.makedirs(LOG_DIR, exist_ok=True)
+
+def get_logger(name: str):
+    """
+    Create a logger with a dedicated file for each module.
+    """
+    logger = logging.getLogger(name) #this creates a logger object for the given module name
+    logger.setLevel(logging.INFO)
+
+    # Prevent adding handlers multiple times
+    #A log handler is an object that decides WHERE your log messages will go.
+    if logger.handlers:
+        return logger
+
+    # File: logs/<module>.log
+    file_handler = logging.FileHandler(f"{LOG_DIR}/{name}.log")
+    
+    formatter = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    )
+    file_handler.setFormatter(formatter)
+
+    logger.addHandler(file_handler)
+
+    return logger

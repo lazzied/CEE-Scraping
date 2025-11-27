@@ -1,0 +1,66 @@
+2025-11-27 15:14:08,489 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sx01.png
+2025-11-27 15:14:08,489 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:14:08,490 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:14:08,490 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sx01.png, name: sx01
+2025-11-27 15:14:08,490 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sx, number: 01
+2025-11-27 15:14:08,496 - exam_solution_scraper - INFO - [DEBUG] Suffix: sx, Starting index: 01
+2025-11-27 15:14:08,496 - exam_solution_scraper - INFO - [DEBUG] Generated 4 image links
+2025-11-27 15:14:09,889 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd00.png
+2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sxd00.png, name: sxd00
+2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sxd, number: 00
+2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Suffix: sxd, Starting index: 00
+2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
+2025-11-27 15:14:30,953 - exam_solution_scraper - ERROR -  Error: HTTPSConnectionPool(host='img.eol.cn', port=443): Max retries exceeded with url: /e_images/gk/2025/st/qg1/sxd00.png (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002AD50610F50>, 'Connection to img.eol.cn timed out. (connect timeout=None)'))
+2025-11-27 15:14:39,031 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
+2025-11-27 15:15:18,738 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png
+2025-11-27 15:15:18,738 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:15:18,738 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:15:18,738 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yy01.png, name: yy01
+2025-11-27 15:15:18,739 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yy, number: 01
+2025-11-27 15:15:18,739 - exam_solution_scraper - INFO - [DEBUG] Suffix: yy, Starting index: 01
+2025-11-27 15:15:18,740 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
+2025-11-27 15:15:20,924 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd00.png
+2025-11-27 15:15:20,924 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:15:20,924 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:15:20,925 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yyd00.png, name: yyd00
+2025-11-27 15:15:20,925 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yyd, number: 00
+2025-11-27 15:15:20,926 - exam_solution_scraper - INFO - [DEBUG] Suffix: yyd, Starting index: 00
+2025-11-27 15:15:20,927 - exam_solution_scraper - INFO - [DEBUG] Generated 17 image links
+2025-11-27 15:16:32,940 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
+2025-11-27 15:17:07,013 - exam_solution_scraper - ERROR -  Error: HTTPSConnectionPool(host='img.eol.cn', port=443): Max retries exceeded with url: /e_images/gk/2025/st/qg1/yyd11.png (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002AD5048AE90>, 'Connection to img.eol.cn timed out. (connect timeout=None)'))
+2025-11-27 15:26:35,690 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sx01.png
+2025-11-27 15:26:35,696 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sx01.png, name: sx01
+2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sx, number: 01
+2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Suffix: sx, Starting index: 01
+2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Generated 4 image links
+2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd00.png
+2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sxd00.png, name: sxd00
+2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sxd, number: 00
+2025-11-27 15:26:47,689 - exam_solution_scraper - INFO - [DEBUG] Suffix: sxd, Starting index: 00
+2025-11-27 15:26:47,689 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
+2025-11-27 15:26:59,570 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
+2025-11-27 15:27:06,959 - exam_solution_scraper - ERROR - HTTP error downloading https://img.eol.cn/e_images/gk/2025/st/qg1/sxd07.png: 404 Client Error: Not Found for url: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd07.png
+2025-11-27 15:27:07,395 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp
+2025-11-27 15:27:28,468 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png
+2025-11-27 15:27:28,468 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yy01.png, name: yy01
+2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yy, number: 01
+2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Suffix: yy, Starting index: 01
+2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
+2025-11-27 15:27:31,689 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd00.png
+2025-11-27 15:27:31,689 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yyd00.png, name: yyd00
+2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yyd, number: 00
+2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Suffix: yyd, Starting index: 00
+2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Generated 17 image links
+2025-11-27 15:27:55,802 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
+2025-11-27 15:27:59,027 - exam_solution_scraper - ERROR - HTTP error downloading https://img.eol.cn/e_images/gk/2025/st/qg1/yyd16.png: 404 Client Error: Not Found for url: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd16.png
+2025-11-27 15:28:05,952 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp
