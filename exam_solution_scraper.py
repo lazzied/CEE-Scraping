@@ -41,6 +41,9 @@ from PIL import Image
 from test_functions import get_logger
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+from typing import Union
+
+from my_dataclasses import Exam, Solution,DocumentLink
 
 class Scraper:
     # the dom node tree should it be built inside the scraper or be passed on already built?
@@ -48,8 +51,8 @@ class Scraper:
     # also i need to study the possibility building the first st1 then scrape the data there, go back to main page, build the second st2 and so on... will it boost performance? this is building a plan, for each context
     #for now the data will be built inside the scraper class!!!
     
-    def __init__(self,driver,root,state:str,output_folder ):
-
+    def __init__(self,driver,root,state:str,output_folder, ExamSol:Union[Exam,Solution]=None,): 
+        # uppercase to differentiate between the dataclass and other type of classes
         self.root_node = root
         self.base_url = None
         self.page_links= None
@@ -63,6 +66,8 @@ class Scraper:
         
         self.logger = get_logger(__name__)
         self.logger.disabled = False
+
+        self.ExamSol=ExamSol
         
         
     def set_metadata(self):
@@ -97,7 +102,55 @@ class Scraper:
         exam_data["page_count"]=page_count
 
         self.metadata = exam_data
+
+    def get_metadata(self):
+        return self.metadata
+    
+    
+    def get_document_links_dataclass(self):
+        page_count = self.get_page_count()
+        document_links = []
+
+        page_count = int(page_count)
+
         
+        self.logger.info(f"Creating document links: page_count={page_count}, links_available={len(self.page_links)}")
+        
+        if not self.page_links:
+            self.logger.error("No page_links available!")
+            return []
+        
+        for i, subj_link in zip(range(1, page_count + 1), self.page_links):
+            document_link = DocumentLink(
+                document_state=self.ExamSol.__class__.__name__,
+                page_number=i,
+                link=subj_link,
+            )
+            document_links.append(document_link)
+            self.logger.info(f"Created link #{i}: {subj_link[:50]}...")
+        
+        self.logger.info(f"Total document links created: {len(document_links)}")
+        return document_links
+    
+    def set_examsol_values(self):
+        """Populate Exam or Solution dataclass with scraped metadata"""
+        
+        # Set document links for both Exam and Solution
+        self.ExamSol.downloaded_links = self.get_document_links_dataclass()
+        
+        if isinstance(self.ExamSol, Exam):
+            # Exam-specific fields
+            self.ExamSol.year = self.metadata["year"]
+            self.ExamSol.exam_variant = self.metadata["exam_variant"]
+            self.ExamSol.subject = self.metadata["subject"]
+            self.ExamSol.exam_url = self.raw_url
+            self.logger.info(f"Set Exam metadata: {self.ExamSol.subject}")
+            
+        elif isinstance(self.ExamSol, Solution):
+            # Solution-specific fields
+            self.ExamSol.solution_url = self.raw_url
+            self.logger.info(f"Set Solution metadata")
+
     def set_base_link(self):
         img_link_node = self.root_node.find_in_node("tag", "img")
 
@@ -326,44 +379,41 @@ class Scraper:
         Returns True if successful, False otherwise
         """
         try: 
-            # Extract metadata
+            # 1. Extract metadata
             self.set_metadata()
             if not self.metadata:
                 self.logger.error("Error: Failed to extract metadata")
                 return False
             
-            # Get base link
+            # 2. Get base link
             self.set_base_link()
             if not self.base_url:
                 self.logger.error("Error: Failed to get base URL")
                 return False
             
-
-            # Generate image links
+            # 3. Generate image links
             self.generate_image_links()
             if not self.page_links:
                 self.logger.error("Error: Failed to generate image links")
                 return False
-            """
-            # Validate data
-            validation_result = self.validation()
-            if not validation_result["passed"]:
-                self.logger.error("Error: Validation failed")
-                return False
-            """
-
-            # Download images
+            
+            # 4. Download images
             self.download_document_pages()
             
-            # Convert to PDF
+            # 5. Convert to PDF
             self.convert_document_pdf()
             
-            self.logger.info(f" Completed: {self.metadata.get('year')} {self.metadata.get('exam_variant')} {self.metadata.get('subject')} [{self.state}] - {self.metadata['page_count']} pages")
+            self.logger.info(f"Completed: {self.metadata.get('year')} {self.metadata.get('exam_variant')} {self.metadata.get('subject')} [{self.state}] - {self.metadata['page_count']} pages")
+            
+            # 6. set the dataclass values (all data is ready)
+            self.set_examsol_values()
+            
+            self.logger.info(f"Dataclass populated: year={self.ExamSol.year}, subject={getattr(self.ExamSol, 'subject', 'N/A')}")
             
             return True
             
         except Exception as e:
-            self.logger.error(f" Error: {str(e)}")
+            self.logger.error(f"Error: {str(e)}")
             import traceback
-            traceback.print_exc()
+            self.logger.error(traceback.format_exc())
             return False

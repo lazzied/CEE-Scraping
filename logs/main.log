@@ -1,0 +1,15 @@
+2025-12-02 00:03:08,285 - main - INFO - Found 2 links
+2025-12-02 00:03:08,363 - main - INFO - Exam link: 真题 -> https://gaokao.eol.cn/shiti/sx/202506/t20250607_2673303.shtml
+2025-12-02 00:03:08,404 - main - INFO - Solution link: 答案 -> https://gaokao.eol.cn/shiti/sx/202506/t20250608_2673374.shtml
+2025-12-02 00:03:08,404 - main - INFO - Processing exam: https://gaokao.eol.cn/shiti/sx/202506/t20250607_2673303.shtml
+2025-12-02 00:04:17,134 - main - INFO - Threads completed, preparing database insertion
+2025-12-02 00:04:20,939 - main - INFO - Successfully inserted exam_id=10, solution_id=9
+2025-12-02 00:04:20,939 - main - INFO - Found 2 links
+2025-12-02 00:04:20,963 - main - INFO - Exam link: 真题 -> https://gaokao.eol.cn/shiti/yy/202506/t20250612_2674288.shtml
+2025-12-02 00:04:20,991 - main - INFO - Solution link: 答案 -> https://gaokao.eol.cn/shiti/yy/202506/t20250612_2674296.shtml
+2025-12-02 00:04:20,991 - main - INFO - Processing exam: https://gaokao.eol.cn/shiti/yy/202506/t20250612_2674288.shtml
+2025-12-02 00:04:57,960 - main - INFO - Threads completed, preparing database insertion
+2025-12-02 00:05:02,964 - main - INFO - Successfully inserted exam_id=11, solution_id=10
+2025-12-02 00:05:02,964 - main - INFO - Found 2 links
+2025-12-02 00:05:02,986 - main - WARNING - Exam link is empty for '真题', skipping subject
+2025-12-02 00:05:07,791 - main - INFO - Main process completed

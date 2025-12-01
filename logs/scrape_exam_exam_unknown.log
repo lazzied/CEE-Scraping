@@ -1,0 +1,4 @@
+2025-12-02 00:03:08,414 - scrape_exam_exam_unknown - INFO - Starting exam scrape: https://gaokao.eol.cn/shiti/sx/202506/t20250607_2673303.shtml
+2025-12-02 00:04:05,678 - scrape_exam_exam_unknown - INFO - Completed exam scrape: 数学
+2025-12-02 00:04:20,999 - scrape_exam_exam_unknown - INFO - Starting exam scrape: https://gaokao.eol.cn/shiti/yy/202506/t20250612_2674288.shtml
+2025-12-02 00:04:44,396 - scrape_exam_exam_unknown - INFO - Completed exam scrape: 英语

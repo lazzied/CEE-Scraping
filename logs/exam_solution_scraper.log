@@ -1,66 +1,148 @@
-2025-11-27 15:14:08,489 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sx01.png
-2025-11-27 15:14:08,489 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:14:08,490 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:14:08,490 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sx01.png, name: sx01
-2025-11-27 15:14:08,490 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sx, number: 01
-2025-11-27 15:14:08,496 - exam_solution_scraper - INFO - [DEBUG] Suffix: sx, Starting index: 01
-2025-11-27 15:14:08,496 - exam_solution_scraper - INFO - [DEBUG] Generated 4 image links
-2025-11-27 15:14:09,889 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd00.png
-2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sxd00.png, name: sxd00
-2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sxd, number: 00
-2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Suffix: sxd, Starting index: 00
-2025-11-27 15:14:09,890 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
-2025-11-27 15:14:30,953 - exam_solution_scraper - ERROR -  Error: HTTPSConnectionPool(host='img.eol.cn', port=443): Max retries exceeded with url: /e_images/gk/2025/st/qg1/sxd00.png (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002AD50610F50>, 'Connection to img.eol.cn timed out. (connect timeout=None)'))
-2025-11-27 15:14:39,031 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
-2025-11-27 15:15:18,738 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png
-2025-11-27 15:15:18,738 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:15:18,738 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:15:18,738 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yy01.png, name: yy01
-2025-11-27 15:15:18,739 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yy, number: 01
-2025-11-27 15:15:18,739 - exam_solution_scraper - INFO - [DEBUG] Suffix: yy, Starting index: 01
-2025-11-27 15:15:18,740 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
-2025-11-27 15:15:20,924 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd00.png
-2025-11-27 15:15:20,924 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:15:20,924 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:15:20,925 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yyd00.png, name: yyd00
-2025-11-27 15:15:20,925 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yyd, number: 00
-2025-11-27 15:15:20,926 - exam_solution_scraper - INFO - [DEBUG] Suffix: yyd, Starting index: 00
-2025-11-27 15:15:20,927 - exam_solution_scraper - INFO - [DEBUG] Generated 17 image links
-2025-11-27 15:16:32,940 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
-2025-11-27 15:17:07,013 - exam_solution_scraper - ERROR -  Error: HTTPSConnectionPool(host='img.eol.cn', port=443): Max retries exceeded with url: /e_images/gk/2025/st/qg1/yyd11.png (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x000002AD5048AE90>, 'Connection to img.eol.cn timed out. (connect timeout=None)'))
-2025-11-27 15:26:35,690 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sx01.png
-2025-11-27 15:26:35,696 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sx01.png, name: sx01
-2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sx, number: 01
-2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Suffix: sx, Starting index: 01
-2025-11-27 15:26:35,697 - exam_solution_scraper - INFO - [DEBUG] Generated 4 image links
-2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd00.png
-2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sxd00.png, name: sxd00
-2025-11-27 15:26:47,688 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sxd, number: 00
-2025-11-27 15:26:47,689 - exam_solution_scraper - INFO - [DEBUG] Suffix: sxd, Starting index: 00
-2025-11-27 15:26:47,689 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
-2025-11-27 15:26:59,570 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
-2025-11-27 15:27:06,959 - exam_solution_scraper - ERROR - HTTP error downloading https://img.eol.cn/e_images/gk/2025/st/qg1/sxd07.png: 404 Client Error: Not Found for url: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd07.png
-2025-11-27 15:27:07,395 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp
-2025-11-27 15:27:28,468 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png
-2025-11-27 15:27:28,468 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yy01.png, name: yy01
-2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yy, number: 01
-2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Suffix: yy, Starting index: 01
-2025-11-27 15:27:28,469 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
-2025-11-27 15:27:31,689 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd00.png
-2025-11-27 15:27:31,689 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
-2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yyd00.png, name: yyd00
-2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yyd, number: 00
-2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Suffix: yyd, Starting index: 00
-2025-11-27 15:27:31,690 - exam_solution_scraper - INFO - [DEBUG] Generated 17 image links
-2025-11-27 15:27:55,802 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
-2025-11-27 15:27:59,027 - exam_solution_scraper - ERROR - HTTP error downloading https://img.eol.cn/e_images/gk/2025/st/qg1/yyd16.png: 404 Client Error: Not Found for url: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd16.png
-2025-11-27 15:28:05,952 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp
+2025-12-02 00:03:48,216 - exam_solution_scraper - INFO - <img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" alt="2025年高考真题及答案" ignore="1" src="https://img.eol.cn/e_images/gk/2025/st/qg1/sxd00.png" width="750">
+2025-12-02 00:03:48,278 - exam_solution_scraper - INFO - 2025年高考真题及答案
+2025-12-02 00:03:48,306 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd00.png
+2025-12-02 00:03:48,306 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-12-02 00:03:48,909 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-12-02 00:03:48,909 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sxd00.png, name: sxd00
+2025-12-02 00:03:48,910 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sxd, number: 00
+2025-12-02 00:03:48,910 - exam_solution_scraper - INFO - [DEBUG] Suffix: sxd, Starting index: 00
+2025-12-02 00:03:48,910 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
+2025-12-02 00:03:53,060 - exam_solution_scraper - INFO - <img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" alt="2025年高考真题及答案" ignore="1" src="https://img.eol.cn/e_images/gk/2025/st/qg1/sx01.png" width="750">
+2025-12-02 00:03:53,091 - exam_solution_scraper - INFO - 2025年高考真题及答案
+2025-12-02 00:03:53,104 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/sx01.png
+2025-12-02 00:03:53,104 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-12-02 00:03:53,104 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-12-02 00:03:53,105 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: sx01.png, name: sx01
+2025-12-02 00:03:53,105 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: sx, number: 01
+2025-12-02 00:03:53,105 - exam_solution_scraper - INFO - [DEBUG] Suffix: sx, Starting index: 01
+2025-12-02 00:03:53,105 - exam_solution_scraper - INFO - [DEBUG] Generated 4 image links
+2025-12-02 00:03:56,915 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_数学_Solution_1.jpg
+2025-12-02 00:03:57,704 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_数学_Solution_2.jpg
+2025-12-02 00:03:59,065 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_数学_Solution_3.jpg
+2025-12-02 00:03:59,570 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_数学_Solution_4.jpg
+2025-12-02 00:04:00,093 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_数学_Solution_5.jpg
+2025-12-02 00:04:00,672 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_数学_Solution_6.jpg
+2025-12-02 00:04:00,776 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_数学_Exam_1.jpg
+2025-12-02 00:04:01,443 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_数学_Solution_7.jpg
+2025-12-02 00:04:01,488 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_数学_Exam_2.jpg
+2025-12-02 00:04:02,409 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_数学_Exam_3.jpg
+2025-12-02 00:04:02,900 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_数学_Exam_4.jpg
+2025-12-02 00:04:05,658 - exam_solution_scraper - INFO - PDF saved at C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_数学_Exam.pdf
+2025-12-02 00:04:05,665 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
+2025-12-02 00:04:05,668 - exam_solution_scraper - INFO - Completed: 2025 全国一卷 数学 [Exam] - 4 pages
+2025-12-02 00:04:05,677 - exam_solution_scraper - INFO - Creating document links: page_count=4, links_available=4
+2025-12-02 00:04:05,677 - exam_solution_scraper - INFO - Created link #1: https://img.eol.cn/e_images/gk/2025/st/qg1/sx01.pn...
+2025-12-02 00:04:05,677 - exam_solution_scraper - INFO - Created link #2: https://img.eol.cn/e_images/gk/2025/st/qg1/sx02.pn...
+2025-12-02 00:04:05,677 - exam_solution_scraper - INFO - Created link #3: https://img.eol.cn/e_images/gk/2025/st/qg1/sx03.pn...
+2025-12-02 00:04:05,677 - exam_solution_scraper - INFO - Created link #4: https://img.eol.cn/e_images/gk/2025/st/qg1/sx04.pn...
+2025-12-02 00:04:05,678 - exam_solution_scraper - INFO - Total document links created: 4
+2025-12-02 00:04:05,678 - exam_solution_scraper - INFO - Set Exam metadata: 数学
+2025-12-02 00:04:05,678 - exam_solution_scraper - INFO - Dataclass populated: year=2025, subject=数学
+2025-12-02 00:04:10,965 - exam_solution_scraper - ERROR - HTTP error downloading https://img.eol.cn/e_images/gk/2025/st/qg1/sxd07.png: 502 Server Error: Bad Gateway for url: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd07.png
+2025-12-02 00:04:11,536 - exam_solution_scraper - INFO - PDF saved at C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_数学_Solution.pdf
+2025-12-02 00:04:11,541 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp
+2025-12-02 00:04:11,542 - exam_solution_scraper - INFO - Completed: 2025 全国一卷 数学 [Solution] - 7 pages
+2025-12-02 00:04:11,551 - exam_solution_scraper - INFO - Creating document links: page_count=7, links_available=8
+2025-12-02 00:04:11,551 - exam_solution_scraper - INFO - Created link #1: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd00.p...
+2025-12-02 00:04:11,551 - exam_solution_scraper - INFO - Created link #2: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd01.p...
+2025-12-02 00:04:11,551 - exam_solution_scraper - INFO - Created link #3: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd02.p...
+2025-12-02 00:04:11,551 - exam_solution_scraper - INFO - Created link #4: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd03.p...
+2025-12-02 00:04:11,552 - exam_solution_scraper - INFO - Created link #5: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd04.p...
+2025-12-02 00:04:11,552 - exam_solution_scraper - INFO - Created link #6: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd05.p...
+2025-12-02 00:04:11,552 - exam_solution_scraper - INFO - Created link #7: https://img.eol.cn/e_images/gk/2025/st/qg1/sxd06.p...
+2025-12-02 00:04:11,552 - exam_solution_scraper - INFO - Total document links created: 7
+2025-12-02 00:04:11,552 - exam_solution_scraper - INFO - Set Solution metadata
+2025-12-02 00:04:11,552 - exam_solution_scraper - ERROR - Error: 'Solution' object has no attribute 'year'
+2025-12-02 00:04:11,563 - exam_solution_scraper - ERROR - Traceback (most recent call last):
+  File "C:\Users\user\Desktop\CEE\SeleniumBot\exam_solution_scraper.py", line 411, in scraper_orchestrator
+    self.logger.info(f"Dataclass populated: year={self.ExamSol.year}, subject={getattr(self.ExamSol, 'subject', 'N/A')}")
+                                                  ^^^^^^^^^^^^^^^^^
+AttributeError: 'Solution' object has no attribute 'year'
+
+2025-12-02 00:04:33,320 - exam_solution_scraper - INFO - <img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" alt="2025年高考真题" ignore="1" src="https://img.eol.cn/e_images/gk/2025/st/qg1/yyd00.png" width="750">
+2025-12-02 00:04:33,453 - exam_solution_scraper - INFO - 2025年高考真题
+2025-12-02 00:04:33,488 - exam_solution_scraper - INFO - <img style="border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px" alt="2025年高考真题" ignore="1" src="https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png" width="750">
+2025-12-02 00:04:33,489 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd00.png
+2025-12-02 00:04:33,490 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-12-02 00:04:33,490 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-12-02 00:04:33,490 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yyd00.png, name: yyd00
+2025-12-02 00:04:33,491 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yyd, number: 00
+2025-12-02 00:04:33,491 - exam_solution_scraper - INFO - [DEBUG] Suffix: yyd, Starting index: 00
+2025-12-02 00:04:33,491 - exam_solution_scraper - INFO - [DEBUG] Generated 17 image links
+2025-12-02 00:04:33,516 - exam_solution_scraper - INFO - 2025年高考真题
+2025-12-02 00:04:33,529 - exam_solution_scraper - INFO - [DEBUG] Found image URL: https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.png
+2025-12-02 00:04:33,529 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-12-02 00:04:33,529 - exam_solution_scraper - INFO - [DEBUG] Base URL: https://img.eol.cn/e_images/gk/2025/st/qg1/
+2025-12-02 00:04:33,529 - exam_solution_scraper - INFO - [DEBUG] Extracting from filename: yy01.png, name: yy01
+2025-12-02 00:04:33,529 - exam_solution_scraper - INFO - [DEBUG] Matched - letters: yy, number: 01
+2025-12-02 00:04:33,530 - exam_solution_scraper - INFO - [DEBUG] Suffix: yy, Starting index: 01
+2025-12-02 00:04:33,530 - exam_solution_scraper - INFO - [DEBUG] Generated 8 image links
+2025-12-02 00:04:37,941 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_英语_Exam_1.jpg
+2025-12-02 00:04:38,157 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_1.jpg
+2025-12-02 00:04:38,720 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_英语_Exam_2.jpg
+2025-12-02 00:04:38,794 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_2.jpg
+2025-12-02 00:04:39,324 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_3.jpg
+2025-12-02 00:04:39,545 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_英语_Exam_3.jpg
+2025-12-02 00:04:39,862 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_4.jpg
+2025-12-02 00:04:40,342 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_英语_Exam_4.jpg
+2025-12-02 00:04:40,647 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_5.jpg
+2025-12-02 00:04:41,181 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_英语_Exam_5.jpg
+2025-12-02 00:04:41,187 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_6.jpg
+2025-12-02 00:04:41,698 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_7.jpg
+2025-12-02 00:04:41,971 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_英语_Exam_6.jpg
+2025-12-02 00:04:42,191 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_8.jpg
+2025-12-02 00:04:42,705 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_9.jpg
+2025-12-02 00:04:42,765 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_英语_Exam_7.jpg
+2025-12-02 00:04:43,074 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_10.jpg
+2025-12-02 00:04:43,572 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_英语_Exam_8.jpg
+2025-12-02 00:04:43,653 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_11.jpg
+2025-12-02 00:04:44,156 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_12.jpg
+2025-12-02 00:04:44,380 - exam_solution_scraper - INFO - PDF saved at C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp\2025_全国一卷_英语_Exam.pdf
+2025-12-02 00:04:44,384 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\exam_temp
+2025-12-02 00:04:44,386 - exam_solution_scraper - INFO - Completed: 2025 全国一卷 英语 [Exam] - 8 pages
+2025-12-02 00:04:44,395 - exam_solution_scraper - INFO - Creating document links: page_count=8, links_available=8
+2025-12-02 00:04:44,395 - exam_solution_scraper - INFO - Created link #1: https://img.eol.cn/e_images/gk/2025/st/qg1/yy01.pn...
+2025-12-02 00:04:44,395 - exam_solution_scraper - INFO - Created link #2: https://img.eol.cn/e_images/gk/2025/st/qg1/yy02.pn...
+2025-12-02 00:04:44,395 - exam_solution_scraper - INFO - Created link #3: https://img.eol.cn/e_images/gk/2025/st/qg1/yy03.pn...
+2025-12-02 00:04:44,396 - exam_solution_scraper - INFO - Created link #4: https://img.eol.cn/e_images/gk/2025/st/qg1/yy04.pn...
+2025-12-02 00:04:44,396 - exam_solution_scraper - INFO - Created link #5: https://img.eol.cn/e_images/gk/2025/st/qg1/yy05.pn...
+2025-12-02 00:04:44,396 - exam_solution_scraper - INFO - Created link #6: https://img.eol.cn/e_images/gk/2025/st/qg1/yy06.pn...
+2025-12-02 00:04:44,396 - exam_solution_scraper - INFO - Created link #7: https://img.eol.cn/e_images/gk/2025/st/qg1/yy07.pn...
+2025-12-02 00:04:44,396 - exam_solution_scraper - INFO - Created link #8: https://img.eol.cn/e_images/gk/2025/st/qg1/yy08.pn...
+2025-12-02 00:04:44,396 - exam_solution_scraper - INFO - Total document links created: 8
+2025-12-02 00:04:44,396 - exam_solution_scraper - INFO - Set Exam metadata: 英语
+2025-12-02 00:04:44,396 - exam_solution_scraper - INFO - Dataclass populated: year=2025, subject=英语
+2025-12-02 00:04:44,560 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_13.jpg
+2025-12-02 00:04:45,080 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_14.jpg
+2025-12-02 00:04:45,570 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_15.jpg
+2025-12-02 00:04:45,993 - exam_solution_scraper - INFO - Image saved to C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution_16.jpg
+2025-12-02 00:04:54,940 - exam_solution_scraper - ERROR - HTTP error downloading https://img.eol.cn/e_images/gk/2025/st/qg1/yyd16.png: 502 Server Error: Bad Gateway for url: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd16.png
+2025-12-02 00:04:55,619 - exam_solution_scraper - INFO - PDF saved at C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp\2025_全国一卷_英语_Solution.pdf
+2025-12-02 00:04:55,637 - exam_solution_scraper - INFO - All images deleted from C:\Users\user\Desktop\CEE\SeleniumBot\documents\solution_temp
+2025-12-02 00:04:55,638 - exam_solution_scraper - INFO - Completed: 2025 全国一卷 英语 [Solution] - 16 pages
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Creating document links: page_count=16, links_available=17
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #1: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd00.p...
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #2: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd01.p...
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #3: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd02.p...
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #4: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd03.p...
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #5: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd04.p...
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #6: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd05.p...
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #7: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd06.p...
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #8: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd07.p...
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #9: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd08.p...
+2025-12-02 00:04:55,646 - exam_solution_scraper - INFO - Created link #10: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd09.p...
+2025-12-02 00:04:55,647 - exam_solution_scraper - INFO - Created link #11: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd10.p...
+2025-12-02 00:04:55,647 - exam_solution_scraper - INFO - Created link #12: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd11.p...
+2025-12-02 00:04:55,647 - exam_solution_scraper - INFO - Created link #13: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd12.p...
+2025-12-02 00:04:55,647 - exam_solution_scraper - INFO - Created link #14: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd13.p...
+2025-12-02 00:04:55,647 - exam_solution_scraper - INFO - Created link #15: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd14.p...
+2025-12-02 00:04:55,647 - exam_solution_scraper - INFO - Created link #16: https://img.eol.cn/e_images/gk/2025/st/qg1/yyd15.p...
+2025-12-02 00:04:55,647 - exam_solution_scraper - INFO - Total document links created: 16
+2025-12-02 00:04:55,647 - exam_solution_scraper - INFO - Set Solution metadata
+2025-12-02 00:04:55,647 - exam_solution_scraper - ERROR - Error: 'Solution' object has no attribute 'year'
+2025-12-02 00:04:55,648 - exam_solution_scraper - ERROR - Traceback (most recent call last):
+  File "C:\Users\user\Desktop\CEE\SeleniumBot\exam_solution_scraper.py", line 411, in scraper_orchestrator
+    self.logger.info(f"Dataclass populated: year={self.ExamSol.year}, subject={getattr(self.ExamSol, 'subject', 'N/A')}")
+                                                  ^^^^^^^^^^^^^^^^^
+AttributeError: 'Solution' object has no attribute 'year'
+

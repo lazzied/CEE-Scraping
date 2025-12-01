@@ -3,14 +3,18 @@ from selenium.webdriver.common.by import By
 from my_queue import Queue
 from my_stack import Stack
 from test_functions import get_logger
+from my_dataclasses import Exam, Solution
+from typing import Union
+
 
 class TreeBuilder:
-    def __init__(self, driver, schema,config=None):
+    def __init__(self, driver, schema,config=None, arg:Union[Exam,Solution]=None):
         self.driver = driver
         self.schema = schema
         self.root_node = None # this is just the root node without its children it will be used for querying during scraping : its most important feature is the web_element that will be attached later
         self.config = config
 
+        self.document=arg
 
         self.landmark_cache= Stack()
 

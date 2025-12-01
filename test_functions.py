@@ -38,7 +38,6 @@ def suppress_print(func):
 
 
 
-
 LOG_DIR = "logs"
 os.makedirs(LOG_DIR, exist_ok=True)
 
@@ -46,16 +45,18 @@ def get_logger(name: str):
     """
     Create a logger with a dedicated file for each module.
     """
-    logger = logging.getLogger(name) #this creates a logger object for the given module name
+    logger = logging.getLogger(name)
     logger.setLevel(logging.INFO)
 
     # Prevent adding handlers multiple times
-    #A log handler is an object that decides WHERE your log messages will go.
     if logger.handlers:
         return logger
 
-    # File: logs/<module>.log
-    file_handler = logging.FileHandler(f"{LOG_DIR}/{name}.log")
+    # File: logs/<module>.log — USE UTF-8
+    file_handler = logging.FileHandler(
+        f"{LOG_DIR}/{name}.log",
+        encoding="utf-8"
+    )
     
     formatter = logging.Formatter(
         "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
@@ -65,3 +66,9 @@ def get_logger(name: str):
     logger.addHandler(file_handler)
 
     return logger
+
+
+def description_fetcher(node):
+    """Fetch all unique descriptions from the DOM tree."""
+    
+    return list
