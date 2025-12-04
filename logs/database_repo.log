@@ -1,8 +1,0 @@
-2025-12-02 00:04:18,780 - database_repo - INFO - Inserted exam with ID: 10
-2025-12-02 00:04:18,980 - database_repo - INFO - Inserted solution with ID: 9
-2025-12-02 00:04:19,148 - database_repo - INFO - Updated exam 10 with solution_id 9
-2025-12-02 00:04:20,939 - database_repo - INFO - Inserted 11 document links
-2025-12-02 00:04:58,584 - database_repo - INFO - Inserted exam with ID: 11
-2025-12-02 00:04:58,758 - database_repo - INFO - Inserted solution with ID: 10
-2025-12-02 00:04:58,893 - database_repo - INFO - Updated exam 11 with solution_id 10
-2025-12-02 00:05:02,958 - database_repo - INFO - Inserted 24 document links

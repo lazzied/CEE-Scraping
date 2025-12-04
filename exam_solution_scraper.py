@@ -408,7 +408,6 @@ class Scraper:
             # 6. set the dataclass values (all data is ready)
             self.set_examsol_values()
             
-            self.logger.info(f"Dataclass populated: year={self.ExamSol.year}, subject={getattr(self.ExamSol, 'subject', 'N/A')}")
             
             return True
             

@@ -1,2 +1,18 @@
-seleniumVenv/
+# ignore environment files
 .env
+*.env
+
+# ignore logs
+logs/
+*.log
+
+# ignore documents
+documents/
+documents/**
+
+# ignore temp data
+exam_temp/
+solution_temp/
+
+# Windows junk
+Thumbs.db
