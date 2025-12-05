@@ -15,8 +15,10 @@ class Exam:
     country: Optional[str] = None
     province: Optional[str] = None
     subject: Optional[str] = None
+    subject_en: Optional[str] = None
     year: Optional[int] = None
     exam_variant: Optional[str] = None
+    exam_variant_en: Optional[str] = None
     exam_url: Optional[str] = None
     local_path: Optional[str] = None
     solution_exist: Optional[bool] = None

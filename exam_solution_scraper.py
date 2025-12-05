@@ -51,7 +51,7 @@ class Scraper:
     # also i need to study the possibility building the first st1 then scrape the data there, go back to main page, build the second st2 and so on... will it boost performance? this is building a plan, for each context
     #for now the data will be built inside the scraper class!!!
     
-    def __init__(self,driver,root,state:str,output_folder, ExamSol:Union[Exam,Solution]=None,): 
+    def __init__(self,driver,root,state:str, ExamSol:Union[Exam,Solution]=None,translation_map=None): 
         # uppercase to differentiate between the dataclass and other type of classes
         self.root_node = root
         self.base_url = None
@@ -62,12 +62,14 @@ class Scraper:
 
         self.raw_url= None # this is url of the first page
         self.metadata = None
-        self.output_folder  = output_folder
+        self.output_folder  = None
         
         self.logger = get_logger(__name__)
         self.logger.disabled = False
 
         self.ExamSol=ExamSol
+
+        self.translation_map=translation_map
         
         
     def set_metadata(self):
@@ -142,8 +144,11 @@ class Scraper:
             # Exam-specific fields
             self.ExamSol.year = self.metadata["year"]
             self.ExamSol.exam_variant = self.metadata["exam_variant"]
+            self.ExamSol.exam_variant_en=self.translation_map[self.metadata["exam_variant"]]
             self.ExamSol.subject = self.metadata["subject"]
+            self.ExamSol.subject_en= self.translation_map[self.metadata["subject"]]
             self.ExamSol.exam_url = self.raw_url
+            self.ExamSol.local_path= self.output_folder
             self.logger.info(f"Set Exam metadata: {self.ExamSol.subject}")
             
         elif isinstance(self.ExamSol, Solution):
@@ -196,6 +201,20 @@ class Scraper:
         self.base_url = get_base_link(link)
         self.raw_url = link
         self.logger.info(f"[DEBUG] Base URL: {self.base_url}")
+
+    def set_exam_path(self):
+        root_path = r"C:\Users\user\Desktop\CEE\SeleniumBot\documents"
+
+        translated_exam_variant = self.translation_map.get(self.metadata.get("exam_variant"), "")
+        translated_subject = self.translation_map.get(self.metadata.get("subject"), "")
+
+        save_path = os.path.join(root_path,
+                                str(self.metadata["year"]),
+                                f"{str(self.metadata["exam_variant"])}_{translated_exam_variant}",
+                                f"{str(self.metadata["subject"])}_{translated_subject}",
+                                str(self.state))
+        os.makedirs(save_path, exist_ok=True)
+        self.output_folder = save_path
 
     
     def generate_image_links(self):
@@ -383,6 +402,11 @@ class Scraper:
             self.set_metadata()
             if not self.metadata:
                 self.logger.error("Error: Failed to extract metadata")
+                return False
+            
+            self.set_exam_path()
+            if not self.output_folder:
+                self.logger.error("Error: failed to set output folder")
                 return False
             
             # 2. Get base link
