@@ -1,14 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, List
-
-
-@dataclass
-class DocumentLink:
-    document_state: Optional[str] = None   # "Exam" or "Solution"
-    page_number: Optional[int] = None
-    link: Optional[str] = None
-    document_id: Optional[int] = None
-
+from typing import Optional
 
 @dataclass
 class Exam:
@@ -22,7 +13,7 @@ class Exam:
     solution_exist: Optional[bool] = None
     solution_id: Optional[int] = None
     exam_id: Optional[int] = None
-    downloaded_links: Optional[List[DocumentLink]] = None   
+    main_page_link: Optional[int]= None
 
 
 @dataclass
@@ -31,4 +22,5 @@ class Solution:
     local_path: Optional[str] = None
     solution_url: Optional[str] = None
     solution_id: Optional[int] = None
-    downloaded_links: Optional[List[DocumentLink]] = None   #
+    main_page_link: Optional[int]= None
+

@@ -1,0 +1,27 @@
+{
+    "tag": "div",
+    "classes": ["center", "point-center"],
+    "description": "root",
+    "children": [
+      {
+        "tag": "div",
+        "classes": ["sline"],
+        "description": "Container for the first 8 sets of exam variant blocks.",
+        "annotation": ["landmark_element"],
+        "children": [
+          {
+            "repeat": {
+              "template": "exam_variant",
+              "count": 8
+            }
+          }
+        ]
+      },
+      {
+        "repeat": {
+          "template": "exam_variant",
+          "count": 25
+        }
+      }
+    ]
+  }

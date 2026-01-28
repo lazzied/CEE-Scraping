@@ -1,36 +1,10 @@
 {
-  "tag": "div",
-  "classes": ["center", "point-center"], 
-  "description": "root",
-  "annotation": "landmark_element",
-  "children": [
-    {
-      "tag": "div",
-      "classes": ["sline"],
-      "description": "Container for the first 8 sets of exam variant blocks.",
-      "children": [
-        {
-          "repeat": {
-            "template": "exam_variant",
-            "count": 8
-          }
-        }
-      ]
-    },
-    {
-      "repeat": {
-        "template": "exam_variant",
-        "count": 25
-      }
-    }
-  ],
-  "templates": {
     "exam_variant": {
       "tag": "div",
       "classes": ["test"],
       "attrs": { "id": "st{index}" },
       "description": "Exam variant block #{index} — contains subject title and subject list.",
-      "annotation": "landmark_element",
+      "annotation": ["landmark_element"],
       "children": [
         {
           "tag": "div",
@@ -44,7 +18,12 @@
                 {
                   "tag": "span",
                   "description": "Span containing exam type text.",
-                  "annotation": "target_element"
+                  "annotation": ["target_element"],
+                  "target" : {
+                    "objective" :"debug",
+                    "types": [""]
+
+                  }
                 }
               ]
             }
@@ -58,8 +37,8 @@
             {
               "tag": "div",
               "classes": ["gkzt-xueke", "mtT_30", "clearfix"],
-              "description": "Subject container  holds list items for each subject.",
-              "annotation": "landmark_element",
+              "description": "Subject container holds list items for each subject.",
+              "annotation": ["landmark_element"],
               "children": [
                 {
                   "repeat": {
@@ -72,27 +51,52 @@
           ]
         }
       ]
-    },
+    }
+    ,
+
     "subject_li": {
       "tag": "li",
       "description": "Represents a single subject entry.",
-      "annotation":"landmark_element",
+      "annotation": ["landmark_element"],
       "children": [
         {
           "tag": "div",
           "classes": ["word-xueke"],
           "description": "Holds subject name and links.",
-          "annotation": "target_element",
+          "annotation": ["target_element"],
+          "target" : {
+                    "objective" :"debug",
+                    "types": [""]
 
+                  },
           "children": [
             {
               "tag": "div",
               "classes": ["xueke-a"],
-              "description": "Contains links for exam, solution, and analysis.",
-              "annotation": "landmark_element",
+              "description": "Contains links for exam and solution.",
+              "annotation": ["landmark_element"],
               "children": [
-                { "tag": "a", "description": "Link to the exam paper.",   "annotation": "target_element"},
-                { "tag": "a", "description": "Link to the solution.",   "annotation": "target_element"}  
+                {
+                  "tag": "a",
+                  "description": "Link to the exam paper.",
+                  "annotation": ["target_element"],
+                  "target" : {
+                    "objective" :"debug",
+                    "types": [""]
+
+                  }
+                  
+                },
+                {
+                  "tag": "a",
+                  "description": "Link to the solution.",
+                  "annotation": ["target_element"],
+                   "target" : {
+                    "objective" :"debug",
+                    "types": [""]
+
+                  }
+                }
               ]
             }
           ]
@@ -100,4 +104,3 @@
       ]
     }
   }
-}

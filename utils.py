@@ -3,6 +3,7 @@ import re
 import sys, os
 from functools import wraps
 import logging
+from selenium.common.exceptions import StaleElementReferenceException
 
 def log(msg):
     ts = datetime.now().strftime("%H:%M:%S.%f")[:-3]
@@ -24,6 +25,13 @@ def extract_suffix(url: str) -> tuple[str, str]:
     
     print(f"[WARNING] No match for pattern in: {name}")
     return "", ""
+
+def is_stale(element) -> bool:
+    try:
+        element.is_enabled()
+        return False
+    except StaleElementReferenceException:
+        return True
 
 def suppress_print(func):
     @wraps(func)
@@ -72,3 +80,6 @@ def description_fetcher(node):
     """Fetch all unique descriptions from the DOM tree."""
     
     return list
+
+
+

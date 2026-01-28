@@ -1,0 +1,11 @@
+{
+    "item_template":{
+        "needs_indexing": true,
+        "indexing_attribute": "id",
+        "placeholder":"{index}"
+    },
+    "li_items":{
+        "needs_indexing": false,
+        "skip_indices": []
+    }
+}

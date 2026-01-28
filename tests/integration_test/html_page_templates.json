@@ -1,0 +1,25 @@
+{
+  "item_template": {
+    "tag": "div",
+    "attrs": {"id": "item{index}"},
+    "classes": ["item"],
+    "annotation": ["landmark_element"],
+    "children": [
+      {
+        "tag": "span",
+        "classes": ["inner"],
+        "annotation": ["target_element"]
+      },
+      {
+        "repeat": {
+          "template": "li_items",
+          "count": "auto"
+        }
+      }
+    ]
+  },
+  "li_items": {
+    "tag": "li",
+    "description": "List item "
+  }
+}

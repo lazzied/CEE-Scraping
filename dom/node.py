@@ -1,21 +1,53 @@
-from selenium.webdriver.common.by import By
+from abc import ABC, abstractmethod
+from typing import List, Optional
 
-class DOMNode:
-    def __init__(self, tag, classes=None, attrs=None, description="", template_name=None,annotation =None):
+class SiblingMixin:
+    def siblings(self):
+        if self.parent is None:
+            raise RuntimeError("Node has no parent")
+        return [c for c in self.parent.children if c is not self]
+
+    def get_sibling_index(self):
+        return self.parent.children.index(self)
+
+    def get_next_sibling(self):
+        idx = self.get_sibling_index()
+        return self.parent.children[idx + 1] if idx + 1 < len(self.parent.children) else None
+
+    def get_previous_sibling(self):
+        idx = self.get_sibling_index()
+        return self.parent.children[idx - 1] if idx > 0 else None
+
+
+class BaseDOMNode(ABC):
+    def __init__(self,
+                schema_node: Optional[dict],
+                  tag: str,
+                    classes:List[str]=None,
+                      attrs:Optional[dict]=None,
+                        description:Optional[str]=None,
+                          annotation:Optional[List["str"]] =None,
+                            parent: Optional['BaseDOMNode']=None,
+                          ):
         # Structure (always present)
         self.tag = tag
         self.classes = classes or []
         self.attrs = attrs or {}
         self.description = description
-        self.template_name = template_name
-        self.web_element = None
-        self.children = []
-        self.parent = None
-        self.is_dynamic = False
-        self.annotation= annotation
-        # Don't store siblings - compute them dynamically!
+        self.annotation= annotation or []
 
-        # siblings algo don't work have to fix it later on
+        self.schema_node = schema_node
+
+
+        self.children : List['BaseDOMNode'] = []
+        self.parent = parent or None
+
+
+        self.web_element = None
+
+    @abstractmethod
+    def validate(self):
+        pass
 
     def print_attributes(self):
         """Print all attributes of this node."""
@@ -35,21 +67,13 @@ class DOMNode:
         for key, value in attrs_dict.items():
             print(f"{key}: {value}")
 
-    def siblings(self):
-        """
-        Dynamically compute siblings from parent's children.
-        Always up-to-date, no manual tracking needed.
-        """
-        if self.parent is None:
-            return []
-        return [child for child in self.parent.children if child is not self]
+    
     
     def add_child(self, child):
-        """Add a child and set its parent pointer."""
-        child.parent = self
-        self.children.append(child)
-        # Siblings are computed dynamically, so no manual update needed!
-    
+        """Add a child node."""
+        self.children.insert(0,child)
+
+        
     def remove_child(self, child):
         """Remove a child node."""
         if child in self.children:
@@ -66,29 +90,6 @@ class DOMNode:
             return self.web_element.text
         return None
     
-    def click(self):
-        """Click element"""
-        if self.web_element:
-            try:
-                # Debug info
-                print(f"Attempting to click: tag={self.tag}")
-                print(f"Href: {self.web_element.get_attribute("href")}")
-                print(f"Text: {self.web_element.text}")
-                print(f"Color: {self.web_element.find_element(By.TAG_NAME, "font").get_attribute("color")}")
-                print(f"Is displayed: {self.web_element.is_displayed()}")
-                print(f"Is enabled: {self.web_element.is_enabled()}")
-
-                
-               
-                # Actually, we need the driver - see fix below
-                
-                self.web_element.click()
-                print("Click executed successfully")
-                
-            except Exception as e:
-                print(f"Click failed with error: {e}")
-        else:
-            print("No web_element attached to this node!")
     
     
     def get_full_xpath(self):
@@ -126,14 +127,14 @@ class DOMNode:
             selector_parts.append(''.join(f'.{cls}' for cls in self.classes))
         
         # Add ID if present
-        if 'id' in self.attrs:
-            selector_parts.append(f"#{self.attrs['id']}")
-        
-        # Add other attributes
-        for key, value in self.attrs.items():
-            if key != 'id':
-                selector_parts.append(f'[{key}="{value}"]')
-        
+        if self.attrs:
+            # Add other attributes
+            for key, value in self.attrs.items():
+                if key != 'id':
+                    selector_parts.append(f'[{key}="{value}"]')
+                else:
+                    selector_parts.append(f"#{self.attrs['id']}")
+            
         return ''.join(selector_parts) 
 
         """
@@ -149,12 +150,7 @@ class DOMNode:
             print(node.get_css_selector())
         output: div.center#main[data-type="example"]
         """
-     
-    def get_sibling_index(self):
-        """Get this node's index among its siblings."""
-        if self.parent is None:
-            return 0
-        return self.parent.children.index(self)
+    
     
     def find_in_node(self, selector_type=None, selector_value=None, find_all=False):
             """
@@ -219,33 +215,17 @@ class DOMNode:
 
             return matching_nodes if find_all else None
     
-    def get_node_xpath(self):
-        return
     
-    def get_next_sibling(self):
-        """Get the next sibling node."""
-        if self.parent is None:
-            return None
-        idx = self.get_sibling_index()
-        if idx + 1 < len(self.parent.children):
-            return self.parent.children[idx + 1]
-        return None
     
-    def get_previous_sibling(self):
-        """Get the previous sibling node."""
-        if self.parent is None:
-            return None
-        idx = self.get_sibling_index()
-        if idx > 0:
-            return self.parent.children[idx - 1]
-        return None
+    
     
     def print_dom_tree(self,depth=0):
         indent = "  " * depth
         print(
             f'{indent}{self.tag} — classes: {self.classes}'
             + (f' — id: {self.attrs["id"]}' if "id" in self.attrs else "")
-            +(f' — webElement: {self.web_element}')
+            + (f' — webElement: {self.web_element}' if self.web_element else "")
+            + (f' - webelement content: {self.web_element.text}' if self.web_element else '')
 
         )
         for child in self.children:
@@ -269,3 +249,73 @@ class DOMNode:
             for child in self.children:
                 child.parent = None
             self.children = []
+            
+    def get_dom_tree_str(self, depth=0) -> str:
+        indent = "  " * depth
+        s = (
+            f'{indent}{self.tag} — classes: {self.classes}'
+            + (f' — id: {self.attrs["id"]}' if "id" in self.attrs else "")
+            + (f' — webElement: {self.web_element}' if self.web_element else "")
+            + "\n"
+        )
+        for child in self.children:
+            s += child.get_dom_tree_str(depth + 1)
+        return s
+    
+class RootNode(BaseDOMNode):
+    def __init__(self,
+                 schema_node: Optional[dict],
+                  tag: str,
+                    classes:List[str]=None,
+                      attrs:Optional[dict]=None,
+                 ):
+        super().__init__(
+            schema_node,
+            tag,
+              classes,
+                attrs,
+                "Root Node")
+
+        self.parent = None  # Root has no parent
+        self.annotation = None
+    
+    def validate(self):
+        # Root node is always valid
+        return True
+    
+    
+    
+
+class TemplateNode(SiblingMixin,BaseDOMNode):
+    def __init__(self,
+                 schema_node: Optional[dict],
+                  tag: str,
+                   parent:BaseDOMNode,
+                    classes:List[str]=None,
+                      attrs:Optional[dict]=None,
+                        description:Optional[str]=None,
+                          template_name:Optional[str]=None,
+                           annotation:Optional[List["str"]] =None):
+        super().__init__(schema_node, tag, classes, attrs, description, annotation)
+
+        self.template_name = template_name
+    
+    def validate(self):
+        # Example validation: ensure template_name is set
+        return self.template_name is not None
+
+class RegularNode(SiblingMixin,BaseDOMNode):
+    def __init__(self,
+                 schema_node: Optional[dict],
+                  tag: str,
+                  parent:BaseDOMNode,
+                    classes:Optional[List[str]]=None,
+                      attrs:Optional[dict]=None,
+                        description:Optional[str]=None,
+                          annotation:Optional[List["str"]] =None,
+                            ):
+        super().__init__(schema_node,tag, classes, attrs, description, annotation,parent)
+    
+    def validate(self):
+        # Example validation: ensure tag is not empty
+        return bool(self.parent)

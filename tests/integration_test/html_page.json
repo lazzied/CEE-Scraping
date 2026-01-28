@@ -1,0 +1,23 @@
+{
+    "tag": "div",
+    "classes": ["root"],
+    "description": "root",
+    "children": [
+        {
+            "tag": "div",
+            "classes": ["stre"],
+            "attrs": {"id": "container"},
+            "description": "Container for item blocks.",
+            "annotation": ["landmark_element"],
+            "children": [
+                { 
+            "repeat": {
+              "template": "item_template",
+              "count": "auto"
+                    }
+                  }
+                ]
+              }
+            ]
+        }
+     
