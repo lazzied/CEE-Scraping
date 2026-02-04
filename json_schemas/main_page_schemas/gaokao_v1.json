@@ -1,4 +1,4 @@
-{
+{ "main_schema":{
     "tag": "div",
     "classes": ["center", "point-center"],
     "description": "root",
@@ -24,4 +24,23 @@
         }
       }
     ]
-  }
+  },
+    "exam_schema": {
+      "tag": "a",
+      "description": "Link to the exam paper.",
+      "annotation": ["target_element"],
+      "target" : {
+        "target_types": ["exam"]
+      }
+
+    },
+    "solution_schema":{
+        "tag": "a",
+        "description": "Link to the solution.",
+        "annotation": ["target_element"],
+          "target" : {
+            "target_types": ["solution"]
+
+    }
+
+}}

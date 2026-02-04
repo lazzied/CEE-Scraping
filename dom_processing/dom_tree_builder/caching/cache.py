@@ -55,8 +55,20 @@ class HandleCaching:
             return False
         
         parent = self._landmark_cache.top()
-       
-        element = self._element_finder.find_single(parent, "CSS_SELECTOR", selector)
+        try:
+            element = self._element_finder.find_single(parent, "CSS_SELECTOR", selector)
+        except:
+                def _print_parent_cssselector(element):
+                    parent_id = element.get_attribute("id")
+                    parent_class = element.get_attribute("class")
+
+                    parent_selector = element.tag_name \
+                                + (f"#{parent_id}" if parent_id else "") \
+                + (f".{'.'.join(parent_class.split())}" if parent_class else "")
+                    
+                    return parent_selector
+                raise Exception(f"didn't find the element you want; the current_landmark is: {_print_parent_cssselector(parent)} and the element you want is: {selector}")
+                #will later add user inputs, when i fix global parameters and main
        
 
         if element and self._element_validator.is_valid_landmark(element):

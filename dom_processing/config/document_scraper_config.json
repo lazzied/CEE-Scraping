@@ -1,0 +1,9 @@
+{
+  "page": {
+    "url": "https://gaokao.eol.cn/e_html/gk/gkst/",
+    "description": "2025 Gaokao document page example"
+  },
+  "schema_paths": {
+    "page_schema": "json_schemas/pages_json_schemas/exam_pagev1.json"
+  }
+}

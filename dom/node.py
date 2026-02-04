@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
+import re
 
 class SiblingMixin:
     def siblings(self):
@@ -28,6 +29,10 @@ class BaseDOMNode(ABC):
                         description:Optional[str]=None,
                           annotation:Optional[List["str"]] =None,
                             parent: Optional['BaseDOMNode']=None,
+                            condition: Optional[bool]= None,
+                            condition_id:Optional[int] = None,
+                            target_types: Optional[list] = None,
+                            
                           ):
         # Structure (always present)
         self.tag = tag
@@ -44,6 +49,16 @@ class BaseDOMNode(ABC):
 
 
         self.web_element = None
+
+        if annotation and "target_element" in annotation:
+            self.metadata_types = schema_node["target"]["types"]
+        else:
+            self.metadata_types = None
+
+        self.condition = condition or False
+        self.condition_id = condition_id or None
+        self.target_types = target_types or []
+    
 
     @abstractmethod
     def validate(self):
@@ -152,70 +167,136 @@ class BaseDOMNode(ABC):
         """
     
     
+
     def find_in_node(self, selector_type=None, selector_value=None, find_all=False):
-            """
-            Recursively searches the entire tree (starting from the node)
-            for a node matching the selector.
+        """
+        Recursively searches the entire tree (starting from the node)
+        for nodes matching the selector.
+        
+        Args:
+            selector_type (str): 'id', 'class', 'tag', 'description', 'css', or 'xpath'
+            selector_value (str or callable): The value to match. Can be:
+                - A string for exact match
+                - A regex pattern (prefix with 'regex:')
+                - A range pattern (e.g., 'st{1-33}' matches st1, st2, ..., st33)
+                - A range pattern with exceptions (e.g., 'st{1-33!3,7}' excludes st3 and st7)
+                - A callable that takes a node and returns bool
+            find_all (bool): If True, returns all matching nodes. If False, returns first match.
+        
+        Returns:
+            DOMNode, list[DOMNode], or None: 
+                - If find_all=True: list of all matching nodes (empty list if none found)
+                - If find_all=False: the first matching node, or None if not found.
+        
+        Examples:
+            # Exact match
+            node.find_in_node('id', 'header', find_all=False)
             
-            Args:
-                selector_type (str): 'id', 'class', 'tag', 'attr', 'css', or 'xpath'
-                selector_value (str): The value to match.
-                find_all (bool): If True, returns all matching nodes. If False, returns first match.
+            # Range pattern
+            node.find_in_node('id', 'st{1-33}', find_all=True)
             
-            Returns:
-                DOMNode, list[DOMNode], or None: 
-                    - If find_all=True: list of all matching nodes (empty list if none found)
-                    - If find_all=False: the first matching node, or None if not found.
-            """
-
-            def matches(node):
-                if not selector_type or not selector_value:
-                    return False
-
-                if selector_type == "id":
-                    return node.attrs.get("id") == selector_value
-
-                elif selector_type == "class":
-                    return selector_value in node.classes
-
-                elif selector_type == "tag":
-                    return node.tag == selector_value
-                elif selector_type == "description":
-                    return node.description == selector_value
-
-                elif selector_type == "attr":
-                    if "=" in selector_value:
-                        key, val = selector_value.split("=", 1)
-                        return node.attrs.get(key) == val
-                    return selector_value in node.attrs
-
-                elif selector_type == "css":
-                    # Compare full CSS selector from node.get_css_selector()
-                    try:
-                        node_selector = node.get_css_selector()
-                        return node_selector == selector_value
-                    except Exception:
-                        return False
-                elif selector_type == "xpath":
-                    node_selector = node.get_node_xpath()
-                    # this is hard to implement since i don't have access to the element text
-
-                return False
-
-            # Depth-first search starting from the root node
-            matching_nodes = []
-            stack = [self]
-            while stack:
-                current = stack.pop()
-                if matches(current):
-                    if not find_all:
-                        return current
-                    matching_nodes.append(current)
-                stack.extend(reversed(current.children))
-
-            return matching_nodes if find_all else None
-    
-    
+            # Range pattern with exceptions
+            node.find_in_node('id', 'st{1-33!3,7}', find_all=True)
+            
+            # Regex pattern
+            node.find_in_node('class', 'regex:btn-.*', find_all=True)
+            
+            # Custom matcher
+            node.find_in_node('tag', lambda n: n.tag.startswith('h'), find_all=True)
+        """
+        
+        # Return early if no selector provided
+        if not selector_type or selector_value is None:
+            return [] if find_all else None
+        
+        # If selector_value is callable, use it directly as the matcher
+        if callable(selector_value):
+            matches = selector_value
+        else:
+            # Determine the matching strategy based on selector_value format
+            expanded_set = None
+            regex_pattern = None
+            exact_value = None
+            
+            # Check for regex pattern
+            if isinstance(selector_value, str) and selector_value.startswith('regex:'):
+                regex_pattern = re.compile(selector_value[6:])
+            
+            # Check for range pattern with exceptions: prefix{start-end!exc1,exc2,...}suffix
+            elif isinstance(selector_value, str):
+                match = re.match(r'^(.+)\{(\d+)-(\d+)!([0-9,]+)\}(.*)$', selector_value)
+                if match:
+                    prefix, start, end, exceptions_str, suffix = match.groups()
+                    start_num, end_num = int(start), int(end)
+                    exceptions = set(int(exc.strip()) for exc in exceptions_str.split(',') if exc.strip())
+                    expanded_set = {f"{prefix}{i}{suffix}" for i in range(start_num, end_num + 1) if i not in exceptions}
+                else:
+                    # Check for range pattern without exceptions: prefix{start-end}suffix
+                    match = re.match(r'^(.+)\{(\d+)-(\d+)\}(.*)$', selector_value)
+                    if match:
+                        prefix, start, end, suffix = match.groups()
+                        start_num, end_num = int(start), int(end)
+                        expanded_set = {f"{prefix}{i}{suffix}" for i in range(start_num, end_num + 1)}
+                    else:
+                        # It's an exact match
+                        exact_value = selector_value
+            
+            # Create the matcher function based on selector type and processed value
+            if selector_type == "id":
+                if regex_pattern:
+                    matches = lambda node: bool(regex_pattern.match(node.attrs.get("id", "")))
+                elif expanded_set:
+                    matches = lambda node: node.attrs.get("id") in expanded_set
+                else:
+                    matches = lambda node: node.attrs.get("id") == exact_value
+            
+            elif selector_type == "class":
+                if regex_pattern:
+                    matches = lambda node: any(regex_pattern.match(cls) for cls in node.classes)
+                elif expanded_set:
+                    matches = lambda node: any(cls in expanded_set for cls in node.classes)
+                else:
+                    matches = lambda node: exact_value in node.classes
+            
+            elif selector_type == "tag":
+                if regex_pattern:
+                    matches = lambda node: bool(regex_pattern.match(node.tag))
+                elif expanded_set:
+                    matches = lambda node: node.tag in expanded_set
+                else:
+                    matches = lambda node: node.tag == exact_value
+            
+            elif selector_type == "description":
+                if regex_pattern:
+                    matches = lambda node: bool(regex_pattern.match(node.description or ""))
+                elif expanded_set:
+                    matches = lambda node: node.description in expanded_set
+                else:
+                    matches = lambda node: node.description == exact_value
+            
+            elif selector_type == "css":
+                matches = lambda node: node.get_css_selector() == exact_value
+            
+            elif selector_type == "xpath":
+                matches = lambda node: node.get_node_xpath() == exact_value
+            
+            else:
+                matches = lambda node: False
+        
+        # Depth-first search
+        matching_nodes = []
+        stack = [self]
+        
+        while stack:
+            current = stack.pop()
+            if matches(current):
+                if not find_all:
+                    return current
+                matching_nodes.append(current)
+            stack.extend(reversed(current.children))
+        
+        return matching_nodes if find_all else None
+        
     
     
     

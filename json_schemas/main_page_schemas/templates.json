@@ -2,33 +2,11 @@
     "exam_variant": {
       "tag": "div",
       "classes": ["test"],
-      "attrs": { "id": "st{index}" },
+      "attrs": { "id": "{index}" },
       "description": "Exam variant block #{index} — contains subject title and subject list.",
       "annotation": ["landmark_element"],
       "children": [
-        {
-          "tag": "div",
-          "classes": ["topline", "clearfix"],
-          "description": "Top header line — contains exam type.",
-          "children": [
-            {
-              "tag": "div",
-              "classes": ["head-fl", "clearfix"],
-              "children": [
-                {
-                  "tag": "span",
-                  "description": "Span containing exam type text.",
-                  "annotation": ["target_element"],
-                  "target" : {
-                    "objective" :"debug",
-                    "types": [""]
 
-                  }
-                }
-              ]
-            }
-          ]
-        },
         {
           "tag": "div",
           "classes": ["sline"],
@@ -63,12 +41,6 @@
           "tag": "div",
           "classes": ["word-xueke"],
           "description": "Holds subject name and links.",
-          "annotation": ["target_element"],
-          "target" : {
-                    "objective" :"debug",
-                    "types": [""]
-
-                  },
           "children": [
             {
               "tag": "div",
@@ -77,25 +49,9 @@
               "annotation": ["landmark_element"],
               "children": [
                 {
-                  "tag": "a",
-                  "description": "Link to the exam paper.",
-                  "annotation": ["target_element"],
-                  "target" : {
-                    "objective" :"debug",
-                    "types": [""]
-
-                  }
-                  
-                },
-                {
-                  "tag": "a",
-                  "description": "Link to the solution.",
-                  "annotation": ["target_element"],
-                   "target" : {
-                    "objective" :"debug",
-                    "types": [""]
-
-                  }
+                  "conditional": {
+                    "condition_id": 1
+                    }
                 }
               ]
             }

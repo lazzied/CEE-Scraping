@@ -21,9 +21,9 @@ SCHEMA_FILES = {
 
 TEST_LINK = "http://127.0.0.1:5500/tests/integration_test/test.html"
 
-def load_schemas() -> dict:
+def load_schemas(schema_files: dict) -> dict:
     schemas = {}
-    for name, path in SCHEMA_FILES.items():
+    for name, path in schema_files.items():
         with open(path, "r", encoding="utf-8") as f:
             schemas[name] = json.load(f)
     return schemas
@@ -102,8 +102,8 @@ def annotate_tree(
         schema_query=schema_queries
     )
 
-def main(page_url: str):
-    schemas = load_schemas()
+def main(page_url: str, schema_files:dict):
+    schemas = load_schemas(schema_files)
     main_schema = schemas["main"]
     config_schema = schemas["config"]
     templates_schema = schemas["templates"]
@@ -146,4 +146,4 @@ def main(page_url: str):
     return tree_root, driver
 
 if __name__ == "__main__":
-    main(TEST_LINK)
+    main(TEST_LINK,SCHEMA_FILES)

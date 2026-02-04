@@ -12,7 +12,7 @@ from enum import Enum, auto
 from my_data_structures.selenium_driver import SeleniumDriver
 import json
 from dom_processing.tree_builder import TreeBuilder
-from dom_processing.exam_solution_scraper import Scraper
+from dom_processing.scraper_versions.exam_solution_scraper import Scraper
 from db.my_dataclasses import Exam, Solution
 from utils import get_logger
 from db.database_repo import DatabaseRepository
@@ -200,11 +200,13 @@ def create_exam_and_solution(
 
 def main():
     logger = get_logger("main")
+
     supabase = initialize_supabase()
     tracker = Tracker(MAIN_PAGE_URL, supabase)  # Changed from "SAVE_PATH"
     tracker.set_database_instances()
     db_repo = DatabaseRepository(supabase)
     db_prep = DatabasePreparation()
+    
     schemas = load_schemas()
     main_driver = load_link(MAIN_PAGE_URL)
     main_builder = TreeBuilder(main_driver.driver, schemas["main"], schemas["config"])

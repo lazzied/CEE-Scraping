@@ -1,6 +1,7 @@
 from dom.node import BaseDOMNode
 from dom_processing.dom_tree_builder.caching.coordinators import CachingCoordinator
 from dom_processing.dom_tree_builder.caching.interfaces import ElementFinder
+from dom_processing.dom_tree_builder.tree_building.strategies_v2 import Condition, ConditionAnnotationStrategy
 from dom_processing.json_parser import SchemaQueries
 
 
@@ -8,7 +9,7 @@ class AnnotateTree:
 
     def annotate_tree(
         self, 
-        tree_root: 'BaseDOMNode', 
+        tree_root: BaseDOMNode, 
         caching_coordinator: CachingCoordinator, 
         schema_query: SchemaQueries
     ) -> None:
@@ -32,13 +33,23 @@ class AnnotateTree:
             if phase == 'exit':
                 self._handle_exit_phase(current_node, caching_coordinator)
             else:
-                self._handle_enter_phase(
-                    current_node, 
-                    stack, 
-                    caching_coordinator, 
-                    schema_query
-                )
-    
+                if current_node.condition: #when the web element requires more than a css selector for identification
+                    self._handle_condition(current_node,caching_coordinator)
+
+                    continue
+                else:
+                    self._handle_enter_phase(
+                        current_node, 
+                        stack, 
+                        caching_coordinator, 
+                        schema_query
+                    )
+
+    def _handle_condition(self,current_node,caching_coordinator):
+        condition_id=  current_node.condition_id
+        condition_annotation = ConditionAnnotationStrategy.from_id(condition_id)
+
+        condition_annotation.apply(current_node,caching_coordinator)
     def _handle_exit_phase(
         self, 
         current_node: 'BaseDOMNode', 
@@ -83,6 +94,7 @@ class AnnotateTree:
         
         # Annotate if target node
         if schema_query.is_target(schema_node):
+            
             self._annotate_target_node(current_node, caching_coordinator)
         
         # Push children for processing
@@ -121,6 +133,7 @@ class AnnotateTree:
             caching_coordinator: Provides current landmark context
             element_finder: Finds web elements
         """
+
         parent_element = caching_coordinator._cache_handler.get_current_landmark()
         selector = current_node.get_css_selector()
         
@@ -148,3 +161,5 @@ class AnnotateTree:
         # Push children in reverse order so first child is processed first (LIFO)
         for child in reversed(current_node.children):
             stack.append((child, 'enter'))
+
+    

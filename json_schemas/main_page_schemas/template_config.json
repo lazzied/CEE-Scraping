@@ -3,11 +3,11 @@
         "needs_indexing": "True",
         "indexing_attribute": "id",
         "skip_indices": [2, 4],
-        "placeholder":"st{index}"
+        "placeholder":"{index}"
     },
     
     "subject_li": {
-        "needs_indexing": "False",
+        "needs_indexing": false,
         "skip_indices": []
     }
 }
