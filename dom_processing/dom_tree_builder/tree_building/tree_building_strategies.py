@@ -67,7 +67,6 @@ class RepeatTreeBuilderStrategy(TreeBuilderStrategy):
  
         selector = "./" + invariant_selector
         child_elements = caching_coordinator._cache_handler._element_finder.find_multiple(current_landmark, By.XPATH, selector)
-
         return len(child_elements)
     
     def _get_template_attributes(
@@ -159,7 +158,6 @@ class RepeatTreeBuilderStrategy(TreeBuilderStrategy):
     def _handle_condition(self,child_schema,parent_node,schema_queries,caching_coordinator, stack):
 
         condition_id = schema_queries.get_condition_id(child_schema)
-
         condition = Condition.from_id(condition_id)()
         result = condition.evaluate(caching_coordinator)
 
@@ -236,10 +234,8 @@ class RepeatTreeBuilderStrategy(TreeBuilderStrategy):
                             else: 
                                 start = 1
                                 end = repeat_config["count"]
-                            test_template_node_webelement_set= set()
-                            test_template_node_webelement =""
-                            template_node_num = 1
-
+                                #this is always 3, shouldn't be that waqy
+                        
                             for i in range(start, end+1):
                                 if repeat_config['needs_indexing'] and self._should_skip_index(i, repeat_config):
                                     continue
@@ -255,24 +251,11 @@ class RepeatTreeBuilderStrategy(TreeBuilderStrategy):
                                     template_name=repeat_config['template_name']
                                 )
                                 stack.append((repeat_config['template_schema'], template_node, 'enter'))
-                                current_node.add_child(template_node)
-                                """
-                                if template instances don't have id that differs them and the template nodes are landmark: 
-                                      here inside the range: in first iteration, we cache the first direct element
-                                       second iteration wee cache the second child and so on
-                                      but how to implement it? 
-                                      - first we can cache it at the end of the node creation
-
-                                      here's the algo
                                 
-                                      if template node doesn't differ from its siblings: no specific id like st{index} etc... :
-                                        get all the direct children(or specify which children, the first? the 5th you can give input
-                                        and push them to the landmark cache in the correct order
-                                        at the top, even though it says enter; we don't cache it since we already cached it beforehand
-                                        so we remove the landmark element so it doesn't get recached again in the enter phase
+                                current_node.add_child(template_node)
+                                    #this shouldn't be stuck in 3
 
-                                       templ
-                                """
+
 
                             if config_queries.get_precache_bool(repeat_config['template_name']):
                                 self.handle_precache(config_queries, caching_coordinator,template_registry,repeat_config['template_name'],current_node,"ALL")
@@ -284,20 +267,27 @@ class RepeatTreeBuilderStrategy(TreeBuilderStrategy):
                             current_node.add_child(child_node)
                             stack.append((child_schema, child_node, 'enter'))
         return root
-                           
-    def handle_precache(self,config_queries,caching_coordinator,template_registry,template_name,node,range):
+
+    @staticmethod            
+    def handle_precache(config_queries: ConfigQueries,
+                        caching_coordinator: CachingCoordinator,
+                        template_registry: TemplateRegistry,
+                        template_name: str,
+                        parent_node: BaseDOMNode,
+                        range):
         #check if the current landmark points to the parent node(current_node)
         #REMOVE TEMPLATE NAME LATER ON SINCE YOU CAN RETREIVE IT FROM THE TEMPLATE_REGISTRY
         current_landmark = caching_coordinator._cache_handler.get_current_landmark()
-        config_queries.get_precache_bool(template_name)
+        if isinstance(current_landmark,TemplateNode):
+            raise Exception("hell nah")
        
-        if generate_selector_from_webelement(current_landmark) == node.get_css_selector() :
+        if generate_selector_from_webelement(current_landmark) == parent_node.get_css_selector() :
             template_invariant_characteristics=  template_registry.get_template_invariant_characteristics(template_name,config_queries)
             template_selector = template_registry.form_template_selector(template_name,template_invariant_characteristics)
             
             template_nodes_webelement = get_direct_children_in_range(current_landmark, range,template_selector)
-            for template_node__webelement in template_nodes_webelement:
-                caching_coordinator.cache_webelement(template_node__webelement)
+            for template_node_webelement in template_nodes_webelement:
+                caching_coordinator.cache_webelement(template_node_webelement)
             
         
             

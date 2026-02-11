@@ -36,10 +36,7 @@ class BuildTree:
         return schemas
 
 
-    def load_driver(self,link: str, headless: bool = True) -> SeleniumDriver:
-        driver = SeleniumDriver(headless=headless)
-        driver.get(link)
-        return driver
+    
 
     def decide_strategy(self, schema_queries: SchemaQueries):
         if RepeatTreeBuilderStrategy.should_apply(schema_queries):
@@ -62,8 +59,8 @@ class BuildTree:
             selector_builder=selector_builder,
             schema_queries=schema_queries
         )
-
-    def get_root_web_element(self,
+    @staticmethod
+    def get_root_web_element(
         selenium_driver: SeleniumDriver,
         schema_queries: SchemaQueries
     ):
@@ -94,10 +91,9 @@ class BuildTree:
         raise ValueError("Unknown strategy")
 
 
-    def build(self,page_url: str, schema_queries,
+    def build(self,driver, schema_queries,
                                 config_queries,
                                 template_registry):
-        driver = self.load_driver(page_url)
         caching_coordinator = self.create_caching_coordinator(
             schema_queries,
             config_queries,

@@ -1,17 +1,13 @@
-from datetime import datetime
-import re
-import sys, os
-from functools import wraps
-import logging
-from selenium.common.exceptions import StaleElementReferenceException
+
 from typing import Union, List
-from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.by import By
 
 import json
 from pathlib import Path
 
-def generate_selector_from_webelement(web_element):
+from dom_processing.dom_tree_builder.caching.interfaces import WebElementInterface
+
+def generate_selector_from_webelement(web_element:WebElementInterface):
     tag = web_element.tag_name.lower()
     selector_parts = [tag]
 
@@ -46,10 +42,10 @@ def generate_selector_from_webelement(web_element):
 
 
 def get_direct_children_in_range(
-    parent: WebElement,
+    parent: WebElementInterface,
     child_range: Union[str, int, List[int]],
     selector: str
-) -> List[WebElement]:
+) -> List[WebElementInterface]:
     # Get all direct children first
     children = parent.find_elements(By.XPATH, "./*")
     total = len(children)
@@ -79,7 +75,7 @@ def get_direct_children_in_range(
     return result
 
 
-def matches_css_selector(element: WebElement, selector: str) -> bool:
+def matches_css_selector(element: WebElementInterface, selector: str) -> bool:
     """
     Check if a WebElement matches a CSS selector.
     Handles complex selectors like: div.class1.class2#id[attr='value']

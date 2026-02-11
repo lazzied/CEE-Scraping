@@ -61,36 +61,20 @@ class HandleCaching:
             return False
         
         parent = self._landmark_cache.top()
-        try:
-            element = self._element_finder.find_single(parent, "CSS_SELECTOR", selector)
-        except:
-                def _parent_css_selector(element):
-                    parent_id = element.get_attribute("id")
-                    parent_class = element.get_attribute("class")
-
-                   
-                    return (
-                element.tag_name
-                + (f"#{parent_id}" if parent_id else "")
-                + (f".{'.'.join(parent_class.split())}" if parent_class else "")
-            )
-
-                print(
-                        f"[ANNOTATION ERROR]\n"
-                        f"Current landmark: {_parent_css_selector(parent)}\n"
-                        f"Missing selector: {selector}"
-        )
-    
+        element = self._element_finder.find_single(parent, "CSS_SELECTOR", selector)
         if element and self._element_validator.is_valid_landmark(element):
             self._landmark_cache.push(element)
             return True
         
         return False
     
-    def push_webelement(self,element):
-        self._landmark_cache.push(element)
+    def push_webelement(self,element:WebElementInterface):
+        if ElementValidator.is_valid_landmark(element):
+            self._landmark_cache.push(element)
+        else:
+            raise Exception("trying to push an element that isn't web element:", element)
 
-    def pop_landmark(self) -> Optional[WebElementInterface]:
+    def pop_landmark(self) -> WebElementInterface:
         """
         Remove and return top element from cache
         
@@ -100,7 +84,7 @@ class HandleCaching:
             return self._landmark_cache.pop()
         return None
     
-    def get_current_landmark(self) -> Optional[WebElementInterface]:
+    def get_current_landmark(self) -> WebElementInterface:
         """
         Get current landmark without removing it
         

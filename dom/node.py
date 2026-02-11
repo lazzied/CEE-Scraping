@@ -2,6 +2,8 @@ from abc import ABC, abstractmethod
 from typing import List, Optional
 import re
 
+from utils import generate_selector_from_webelement
+
 class SiblingMixin:
     def siblings(self):
         if self.parent is None:
@@ -30,9 +32,7 @@ class BaseDOMNode(ABC):
                           annotation:Optional[List["str"]] =None,
                             parent: Optional['BaseDOMNode']=None,
                             condition: Optional[bool]= None,
-                            condition_id:Optional[int] = None,
-                            target_types: Optional[list] = None,
-                            
+                            condition_id:Optional[int] = None,                            
                           ):
         # Structure (always present)
         self.tag = tag
@@ -51,13 +51,12 @@ class BaseDOMNode(ABC):
         self.web_element = None
 
         if annotation and "target_element" in annotation:
-            self.metadata_types = schema_node["target_types"]
+            self.target_types = schema_node["target_types"]
         else:
-            self.metadata_types = None
+            self.target_types = None
 
         self.condition = condition or False
         self.condition_id = condition_id or None
-        self.target_types = target_types or []
     
 
     @abstractmethod
@@ -305,10 +304,13 @@ class BaseDOMNode(ABC):
         print(
             f'{indent}{self.tag} — classes: {self.classes}'
             + (f' — id: {self.attrs["id"]}' if "id" in self.attrs else "")
+            + (f' — target_types: {self.target_types}' if self.target_types  else "")
             + (f' — webElement: {self.web_element}' if self.web_element else "")
+            + (f' — webElement selector: {generate_selector_from_webelement(self.web_element)}' if self.web_element else "")
             + (f' - webelement content: {self.web_element.text}' if self.web_element else '')
 
         )
+
         for child in self.children:
             child.print_dom_tree( depth + 1)
 
@@ -376,8 +378,10 @@ class TemplateNode(SiblingMixin,BaseDOMNode):
                       attrs:Optional[dict]=None,
                         description:Optional[str]=None,
                           template_name:Optional[str]=None,
-                           annotation:Optional[List["str"]] =None):
-        super().__init__(schema_node, tag, classes, attrs, description, annotation)
+                           annotation:Optional[List["str"]] =None,
+                           condition: Optional[bool]= None,
+                            condition_id:Optional[int] = None  ):
+        super().__init__(schema_node, tag, classes, attrs, description, annotation,parent,condition,condition_id)
 
         self.template_name = template_name
     
@@ -394,8 +398,10 @@ class RegularNode(SiblingMixin,BaseDOMNode):
                       attrs:Optional[dict]=None,
                         description:Optional[str]=None,
                           annotation:Optional[List["str"]] =None,
+                          condition: Optional[bool]= None,
+                            condition_id:Optional[int] = None,
                             ):
-        super().__init__(schema_node,tag, classes, attrs, description, annotation,parent)
+        super().__init__(schema_node,tag, classes, attrs, description, annotation,parent,condition,condition_id)
     
     def validate(self):
         # Example validation: ensure tag is not empty

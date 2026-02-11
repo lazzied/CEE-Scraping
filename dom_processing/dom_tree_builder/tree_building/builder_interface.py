@@ -93,5 +93,5 @@ class TreeBuilderStrategy(ABC):
         
         # Filter to only valid parameters for this class
         filtered_kwargs = TreeBuilderStrategy.filter_kwargs_for_class(cls, all_kwargs)
-        
+       
         return cls(**filtered_kwargs)

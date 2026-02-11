@@ -17,16 +17,33 @@ class ConditionExamSolutionLinks(Condition):
         )
 
         for a in elements:
+            href = a.get_attribute("href")
             text = a.text.strip().lower()
-            color_attr = a.get_attribute("color")  # Get HTML attribute, not CSS property
-
-            if text in ("exam", "solution") and color_attr == "blue":
+            if not href:
+                continue
+            if text in ("exam", "solution")  :
                 links.append(a)
                 
         return links
 
     def is_satisfied(self, result) -> bool:
-        return len(result) > 0
+        # 1. Check if result is empty
+        if not result:
+            return False
+
+        # 2. Extract texts from the result elements to validate logic.
+        # We use a set for faster lookups and to handle duplicates.
+        found_texts = {a.text.strip().lower() for a in result}
+
+        has_exam = "exam" in found_texts
+        has_solution = "solution" in found_texts
+
+        # 3. Apply the rule: "solution" can't exist alone; it needs "exam"
+        if has_solution and not has_exam:
+            return False
+
+        # If we have only "exam", or both "exam" and "solution", return True
+        return True
 
 
 class ConditionExamSolutionBuild(ConditionBuildStrategy):
@@ -35,7 +52,6 @@ class ConditionExamSolutionBuild(ConditionBuildStrategy):
     def apply(self, parent_node,condition_result,schema_queries,stack):
         
         if not condition_result:
-            self._prune_empty_branch(parent_node)
             return []
 
         
@@ -44,7 +60,6 @@ class ConditionExamSolutionBuild(ConditionBuildStrategy):
         stack.append((exam_schema, exam_node, 'enter'))
 
         parent_node.add_child(exam_node)
-
 
 
         if len(condition_result) == 2:
@@ -57,14 +72,17 @@ class ConditionExamSolutionBuild(ConditionBuildStrategy):
         
 
     def _create(self, parent, schema, condition_id):
-        return TreeBuilderStrategy.create_node(
+        #### here is the issue; the target_nodes don't get added to the node; why is that?
+        node = TreeBuilderStrategy.create_node(
             "regular",
             schema,
             parent=parent,
             condition=True,
             condition_id=condition_id,
-            target_types=schema["target_types"]
         )
+    
+        return node
+        
 
     def _prune_empty_branch(self, node):
         current = node
@@ -78,20 +96,37 @@ class ConditionExamSolutionBuild(ConditionBuildStrategy):
 
 class ConditionExamSolutionAnnotation(ConditionAnnotationStrategy):
     id = 1
-
-    def apply(self, node,caching_coordinator):
+    def _prune_empty_branch(self, node):
+        current = node
+        while current.parent is not None:
+            parent = current.parent
+            parent.remove_child(current)
+            current = parent
+            if current.children:
+                break
+            
+    def apply(self, node, caching_coordinator):
         current_landmark = caching_coordinator._cache_handler.get_current_landmark()
+        
+        
+        elements = caching_coordinator._cache_handler._element_finder.find_multiple(
+            current_landmark, By.XPATH, "./a"
+        )
 
-        if "exam" in node.target_types:
-            element = caching_coordinator._cache_handler._element_finder.find_single(
-                current_landmark, By.XPATH,
-                "//*[contains(translate(text(), 'Exam', 'exam'), 'exam')]"
-            )
-            node.web_element = element
-
-        if "solution" in node.target_types:
-            element = caching_coordinator._cache_handler._element_finder.find_single(
-                current_landmark, By.XPATH,
-                "//*[contains(translate(text(), 'Solution', 'solution'), 'solution')]"
-            )
-            node.web_element = element
+        
+        for a in elements:
+            text = a.text.strip().lower()
+            href = a.get_attribute("href")
+            if not href or not href.strip():
+                continue
+            if text == "exam" and "exam" in node.target_types:
+                node.web_element = a
+                
+                break
+            
+            if text == "solution" and "solution" in node.target_types:
+                node.web_element = a
+                break
+        if not node.web_element:
+            raise Exception(" web element didn't get assigned")
+                            

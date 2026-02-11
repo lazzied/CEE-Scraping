@@ -30,14 +30,15 @@ class CachingCoordinator:
         """Cache a landmark node"""
         selector = node.get_css_selector()
         return self._cache_handler.push_landmark(selector)
-    def cache_webelement(self,element):
+    
+    def cache_webelement(self,element: WebElementInterface):
         return self._cache_handler.push_webelement(element)
 
     def should_cache_node(self, schema_node: dict) -> bool: # this is without prefetch template
         """Check if node should be cached"""
         return self._schema_queries.is_landmark(schema_node) 
     
-    def uncache_landmark(self) -> Optional[WebElementInterface]:
+    def uncache_landmark(self) -> WebElementInterface:
         """Remove current landmark"""
         return self._cache_handler.pop_landmark()
     

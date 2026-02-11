@@ -1,4 +1,5 @@
 
+from dom.selenium_driver import SeleniumDriver
 from dom_processing.config.scraper_config import ScraperConfig
 from dom_processing.dom_tree_builder.tree_building.tree_building_entry_point import BuildTree
 from dom_processing.dom_tree_builder.caching.cache import HandleCaching
@@ -20,6 +21,10 @@ def get_scraper_config_info(path):
 
     return page_url , schema_paths
 
+def load_driver(link: str, headless: bool = True) -> SeleniumDriver:
+        driver = SeleniumDriver(headless=headless)
+        driver.get(link)
+        return driver
 
 def main():
     # this gets a path and return 
@@ -35,16 +40,18 @@ def main():
     main_page_schema_queries = SchemaQueries(page_schema_bundle)
     main_page_config_queries = ConfigQueries(config_schema)
     main_page_template_registry = TemplateRegistry(templates_schema)
+    main_page_driver = load_driver(main_page_url)
 
-    main_page_node_tree = tree_builder.build(main_page_url,
+    main_page_node_tree = tree_builder.build(main_page_driver,
                                             main_page_schema_queries,
                                             main_page_config_queries,
                                             main_page_template_registry
                                             )
+
     main_page_node_tree.print_dom_tree()
 
-    """
     st_branch_nodes = main_page_node_tree.find_in_node("id","st{1-33!2,4}",True)
+    
 
     for st_branch_node in st_branch_nodes:
 
@@ -53,10 +60,10 @@ def main():
         cache_handler = HandleCaching(selenium_finder)
         selector_builder = SelectorBuilder(main_page_template_registry,main_page_config_queries)
         st_branch_caching_coordinator = CachingCoordinator(cache_handler,selector_builder,main_page_schema_queries)
-
-       
-        st_branch_annotator.annotate_tree(st_branch_node,st_branch_caching_coordinator,main_page_schema_queries)
-       """
+        st_branch_annotator.annotate_tree(main_page_driver,st_branch_node,st_branch_caching_coordinator,main_page_schema_queries, main_page_config_queries,main_page_template_registry)
     
+    print("finished annotation :")
+    main_page_node_tree.print_dom_tree()
+
 if __name__ == "__main__":
     main()

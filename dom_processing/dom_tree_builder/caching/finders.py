@@ -2,6 +2,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from typing import List, Optional
 
+from dom_processing.dom_tree_builder.caching.interfaces import WebElementInterface
+
 class SeleniumElementFinder:
     """Concrete Selenium implementation - only used in production"""
 
@@ -22,14 +24,14 @@ class SeleniumElementFinder:
             raise ValueError(f"Invalid by_suffix: {by_suffix}")
         return mapping[by_suffix]
 
-    def find_single(self, parent: WebElement, by_suffix: str, selector: str) -> Optional[WebElement]:
+    def find_single(self, parent: WebElementInterface, by_suffix: str, selector: str) -> WebElementInterface:
         try:
             by = self._resolve_by(by_suffix)
             return parent.find_element(by, selector)
         except Exception:
             return None
 
-    def find_multiple(self, parent: WebElement, by_suffix: str, selector: str) -> List[WebElement]:
+    def find_multiple(self, parent: WebElementInterface, by_suffix: str, selector: str) -> List[WebElementInterface]:
         try:
             by = self._resolve_by(by_suffix)
             return parent.find_elements(by, selector)

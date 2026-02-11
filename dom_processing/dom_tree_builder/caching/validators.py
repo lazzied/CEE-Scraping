@@ -1,7 +1,12 @@
+
+
+from dom_processing.dom_tree_builder.caching.interfaces import WebElementInterface
+
+
 class ElementValidator:
     """Validates element types - easily mockable"""
-    
-    def is_valid_landmark(self, element: any) -> bool:
+    @staticmethod
+    def is_valid_landmark( element: any) -> bool:
         """
         Check if element is valid for caching
         
@@ -9,5 +14,7 @@ class ElementValidator:
         Output: bool
         """
         # In production, check for WebElement
-        from selenium.webdriver.remote.webelement import WebElement
-        return isinstance(element, WebElement)
+        if isinstance(element, WebElementInterface):
+            return True
+        else:
+            raise Exception("a wrong type element is trying to get pushed to tha landmark cache")

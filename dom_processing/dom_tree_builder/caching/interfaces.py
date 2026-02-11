@@ -1,9 +1,9 @@
 
 from abc import ABC, abstractmethod
-from typing import List, Protocol, Optional
+from typing import List, Protocol, runtime_checkable
 
 
-
+@runtime_checkable
 class WebElementInterface(Protocol):
     """Protocol for web element operations - doesn't require Selenium"""
     
@@ -18,12 +18,12 @@ class ElementFinder(ABC):
     """Abstract element finder - can be mocked easily"""
     
     @abstractmethod
-    def find_single(self, parent: WebElementInterface, by: str, selector: str) -> Optional[WebElementInterface]:
+    def find_single(self, parent: WebElementInterface, by: str, selector: str) -> WebElementInterface:
         """Find single element"""
         pass
     
     @abstractmethod
-    def find_multiple(self, parent: WebElementInterface, by: str, selector: str) -> List[WebElementInterface]:
+    def find_multiple(self, parent: WebElementInterface, by: str, selector: str) -> WebElementInterface:
         """Find multiple elements"""
         pass
     
