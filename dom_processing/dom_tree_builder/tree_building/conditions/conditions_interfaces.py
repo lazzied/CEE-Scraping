@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any, Generic, TypeVar
+from typing import Generic, TypeVar
 
 T = TypeVar('T')
 
@@ -21,17 +21,12 @@ class Condition(ABC, Generic[T]):
         return cls._registry[id_]
 
     @abstractmethod
-    def evaluate(self, **context) -> T:
-        """
-        Evaluate condition and return result data.
-        
-        Typical context includes:
-        - caching_coordinator: CachingCoordinator
-        - schema_queries: SchemaQueries
-        - etc.
-        """
+    def evaluate(
+        self,
+        caching_coordinator,
+        schema_queries,
+    ) -> T:
         pass
-
     @abstractmethod
     def is_satisfied(self, result: T) -> bool:
         """Check if evaluation result satisfies the condition."""
@@ -56,19 +51,12 @@ class ConditionBuildStrategy(ABC):
         return cls._registry[id_]
 
     @abstractmethod
-    def apply(self, **context) -> Any:
-        """
-        Apply tree building based on condition result.
-        
-        Typical context includes:
-        - node: BaseDOMNode - The parent node to build from
-        - condition_result: Any - Result from condition evaluation
-        - schema_queries: SchemaQueries
-        - caching_coordinator: CachingCoordinator
-        
-        Returns:
-            List of created nodes (or None if no nodes created)
-        """
+    def apply(
+        self,
+        parent_node,
+        condition_result,
+        schema_queries,
+    ):
         pass
 
 
@@ -90,12 +78,5 @@ class ConditionAnnotationStrategy(ABC):
         return cls._registry[id_]
 
     @abstractmethod
-    def apply(self, **context) -> None:
-        """
-        Apply annotation logic to node.
-        
-        Typical context includes:
-        - node: BaseDOMNode - The node to annotate
-        - caching_coordinator: CachingCoordinator
-        """
+    def apply(self, node, caching_coordinator) -> None:
         pass

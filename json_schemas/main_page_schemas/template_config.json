@@ -1,13 +1,25 @@
- {
-    "exam_variant": {
-        "needs_indexing": "True",
+ { "exam_variant":{
+    "exam_variant_1": {
+        "needs_indexing": true,
         "indexing_attribute": "id",
         "skip_indices": [2, 4],
-        "placeholder":"{index}"
+        "placeholder":"{index}",
+        "starting_index": 1,
+        "finish_index": 8
     },
+    "exam_variant_2": {
+        "needs_indexing": true,
+        "indexing_attribute": "id",
+        "skip_indices": [2, 4],
+        "placeholder":"{index}",
+        "starting_index": 9,
+        "finish_index": 33
+    }}
+,
     
     "subject_li": {
         "needs_indexing": false,
-        "skip_indices": []
+        "skip_indices": [],
+        "precache": true
     }
 }

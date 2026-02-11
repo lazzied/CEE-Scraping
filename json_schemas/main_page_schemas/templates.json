@@ -2,7 +2,7 @@
     "exam_variant": {
       "tag": "div",
       "classes": ["test"],
-      "attrs": { "id": "{index}" },
+      "attrs": { "id": "st{index}" },
       "description": "Exam variant block #{index} — contains subject title and subject list.",
       "annotation": ["landmark_element"],
       "children": [
@@ -31,11 +31,10 @@
       ]
     }
     ,
-
     "subject_li": {
       "tag": "li",
       "description": "Represents a single subject entry.",
-      "annotation": ["landmark_element"],
+       "annotation": ["landmark_element"],
       "children": [
         {
           "tag": "div",

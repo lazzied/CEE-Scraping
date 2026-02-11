@@ -1,7 +1,6 @@
 from dom.node import BaseDOMNode
 from dom_processing.dom_tree_builder.caching.coordinators import CachingCoordinator
-from dom_processing.dom_tree_builder.caching.interfaces import ElementFinder
-from dom_processing.dom_tree_builder.tree_building.strategies_v2 import Condition, ConditionAnnotationStrategy
+from dom_processing.dom_tree_builder.tree_building.conditions.conditions_interfaces import ConditionAnnotationStrategy
 from dom_processing.json_parser import SchemaQueries
 
 
@@ -47,9 +46,10 @@ class AnnotateTree:
 
     def _handle_condition(self,current_node,caching_coordinator):
         condition_id=  current_node.condition_id
-        condition_annotation = ConditionAnnotationStrategy.from_id(condition_id)
+        condition_annotation = ConditionAnnotationStrategy.from_id(condition_id)()
 
         condition_annotation.apply(current_node,caching_coordinator)
+
     def _handle_exit_phase(
         self, 
         current_node: 'BaseDOMNode', 
@@ -67,7 +67,6 @@ class AnnotateTree:
         
         if caching_coordinator.should_cache_node(schema_node):
             caching_coordinator.uncache_landmark()
-            print(f"Uncached landmark node: {current_node}")
     
     def _handle_enter_phase(
         self,
@@ -117,7 +116,6 @@ class AnnotateTree:
         # Push exit phase first (LIFO) so we uncache after processing all children
         stack.append((current_node, 'exit'))
         caching_coordinator.cache_landmark_node(current_node)
-        print(f"Cached landmark node: {current_node} with classes: {current_node.classes}")
     
     
     def _annotate_target_node(
@@ -144,7 +142,6 @@ class AnnotateTree:
             "CSS_SELECTOR",
             selector
         )
-        print(f"Annotated target node: {current_node} with element: {current_node.web_element}")
     
     def _push_children_to_stack(
         self,

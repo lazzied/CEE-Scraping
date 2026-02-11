@@ -6,7 +6,7 @@ from dom_processing.dom_tree_builder.caching.coordinators import CachingCoordina
 from dom_processing.dom_tree_builder.caching.finders import SeleniumElementFinder
 from dom_processing.dom_tree_builder.caching.selectors import SelectorBuilder
 from dom_processing.dom_tree_builder.tree_annotation.annotate_tree import AnnotateTree
-from dom_processing.dom_tree_builder.tree_building.strategies_v2 import RepeatTreeBuilderStrategy, SimpleTreeBuilderStrategy
+from dom_processing.dom_tree_builder.tree_building.tree_building_strategies import RepeatTreeBuilderStrategy, SimpleTreeBuilderStrategy
 from dom_processing.json_parser import ConfigQueries, SchemaQueries, TemplateRegistry
 
 from pathlib import Path
@@ -131,7 +131,7 @@ def main(page_url: str, schema_files:dict):
         template_registry=template_registry,
         caching_coordinator=caching_coordinator
     )
-    
+    """"""
 
     annotator = AnnotateTree()
 

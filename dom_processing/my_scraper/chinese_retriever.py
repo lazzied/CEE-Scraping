@@ -112,9 +112,10 @@ class DriverOperations:
 class ChineseDriverOperations(DriverOperations):
     """Chinese exam website driver operations."""
     
-    def get_page_count(self) -> int:
+    def get_page_count(self, node) -> int:
         """Get page count from JavaScript variable."""
-        return self.selenium_driver.execute_script("return _PAGE_COUNT;")
+        target_node = node.find_in_node("tag","script")
+        return target_node.web_element.execute_script("return _PAGE_COUNT;")
 
 
 class ChineseDocumentRetriever(DocumentRetriever):
@@ -162,6 +163,7 @@ class ChineseDocumentRetriever(DocumentRetriever):
         base_url = self.image_patterns.get_url_base(raw_url)
 
         # Get page count and build URLs
+
         page_count = self.driver_ops.get_page_count()
         urls = self.image_patterns.build_image_urls(
             suffix=suffix,

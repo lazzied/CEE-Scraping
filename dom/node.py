@@ -51,7 +51,7 @@ class BaseDOMNode(ABC):
         self.web_element = None
 
         if annotation and "target_element" in annotation:
-            self.metadata_types = schema_node["target"]["types"]
+            self.metadata_types = schema_node["target_types"]
         else:
             self.metadata_types = None
 
@@ -86,7 +86,7 @@ class BaseDOMNode(ABC):
     
     def add_child(self, child):
         """Add a child node."""
-        self.children.insert(0,child)
+        self.children.append(child)
 
         
     def remove_child(self, child):
@@ -334,7 +334,7 @@ class BaseDOMNode(ABC):
     def get_dom_tree_str(self, depth=0) -> str:
         indent = "  " * depth
         s = (
-            f'{indent}{self.tag} — classes: {self.classes}'
+            f'{indent}{self.tag} — classes: {self.classes} -- description: {self.description}'
             + (f' — id: {self.attrs["id"]}' if "id" in self.attrs else "")
             + (f' — webElement: {self.web_element}' if self.web_element else "")
             + "\n"

@@ -1,4 +1,5 @@
 {
+  "main_schema": {
     "tag": "div",
     "classes": ["main", "container"],
     "description": "root",
@@ -14,10 +15,9 @@
             "attrs": { "language": "JavaScript" },
             "description": "holds exam total page number",
             "annotation": ["target_element"],
-            "target" : {
-                    "objective" :"fetch",
-                    "types": ["page_number"]
-                  }
+            "target": {
+              "target_types": ["total_pages_number"]
+            }
           }
         ]
       },
@@ -43,11 +43,9 @@
                       "style": "border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px"
                     },
                     "annotation": ["target_element"],
-                    "target" : {
-                      "objective" :"debug",
-                      "types": [""]
-
-                  }
+                    "target": {
+                      "target_types": ["image_url"]
+                    }
                   }
                 ]
               }
@@ -58,14 +56,12 @@
             "classes": ["title"],
             "description": "contains exam metadata",
             "annotation": ["target_element"],
-            "target" : {
-                    "objective" :"debug",
-                    "types": [""]
-
-                  }
+            "target": {
+              "target_types": ["year", "exam_variant", "subject"]
+            }
           }
         ]
       }
     ]
   }
-
+}

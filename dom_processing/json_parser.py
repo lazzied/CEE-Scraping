@@ -211,7 +211,6 @@ class TemplateRegistry:
                         selector += f"[{char}='{value}']"
         
         return selector
-            
 
 
 
@@ -223,54 +222,135 @@ class ConfigQueries:
         Input: config (dict) - Configuration settings
         """
         self._config = config
-    
-    def get_template_config(self, template_name: str) -> Dict:
+
+    def get_template_config(self, template_name: str, version_name: str = "") -> Dict:
         """
         Input: template_name (str) - Name of the template
-        Functionality: Get runtime configuration for template (indexing, skip_indices, more will be added later)
+            version_name (str) - Optional configuration version name
+        Functionality: Get runtime configuration for template
         Output: dict - Template-specific configuration settings
         """
         if template_name not in self._config:
             raise ValueError(f"Template '{template_name}' not found in configuration")
-        return self._config.get(template_name)
+        
+        template_config = self._config.get(template_name)
+        
+        # If version is specified, return that version
+        if version_name:
+            if not self._is_versioned_template(template_config):
+                # Template is not versioned, but version was requested
+                raise ValueError(
+                    f"Template '{template_name}' does not have configuration versions, "
+                    f"but version '{version_name}' was requested"
+                )
+            
+            if version_name not in template_config:
+                raise ValueError(
+                    f"Configuration version '{version_name}' not found for template '{template_name}'. "
+                    f"Available versions: {list(template_config.keys())}"
+                )
+            return template_config.get(version_name)
+        
+        # No version specified
+        if self._is_versioned_template(template_config):
+            # For selector building (structure-based queries), return first version
+            # Since all versions share the same template structure
+            first_version = next(iter(template_config.values()))
+            return first_version
+        
+        # Non-versioned template, return directly
+        return template_config
     
-    
-    def needs_indexing(self, template_name: str) -> bool:
+    def _is_versioned_template(self, template_config: Dict) -> bool:
         """
-        Input: template_name (str)
-        Functionality: Check if template requires index tracking (like exam_variant)
+        Check if a template config uses versioning structure
+        Returns True if all values are dicts (indicating versions)
+        """
+        if not template_config:
+            return False
+        
+        # Check if all top-level values are dictionaries
+        # This indicates versioned structure like: {"v1": {...}, "v2": {...}}
+        return all(isinstance(v, dict) for v in template_config.values())
+    
+    def has_versions(self, template_name: str) -> bool:
+        """
+        Check if a template has multiple versions
+        """
+        if template_name not in self._config:
+            return False
+        
+        template_config = self._config.get(template_name)
+        return self._is_versioned_template(template_config)
+    
+    def get_available_versions(self, template_name: str) -> List[str]:
+        """
+        Get list of available version names for a template
+        """
+        if not self.has_versions(template_name):
+            return []
+        
+        return list(self._config.get(template_name).keys())
+    
+    def needs_indexing(self, template_name: str, version_name: str = "") -> bool:
+        """
+        Input: template_name (str), version_name (str)
+        Functionality: Check if template requires index tracking
         Output: bool
         """
-        config = self.get_template_config(template_name)
+        config = self.get_template_config(template_name, version_name)
         return config.get("needs_indexing", False) is True
     
-    def get_placeholder(self, template_name: str) -> bool:
+    def get_placeholder(self, template_name: str, version_name: str = "") -> str:
         """
-        Input: template_name (str)
-        Functionality: get the index placeholder for the template
-        Output: str or None
+        Input: template_name (str), version_name (str)
+        Functionality: Get the index placeholder for the template
+        Output: str
         """
-        config = self.get_template_config(template_name)
-        return config.get("placeholder","")
+        config = self.get_template_config(template_name, version_name)
+        return config.get("placeholder", "")
     
-    def get_indexing_attribute(self, template_name: str) -> Optional[str]:
+    def get_indexing_attribute(self, template_name: str, version_name: str = "") -> str:
         """
-        Input: template_name (str)
+        Input: template_name (str), version_name (str)
         Functionality: Get attribute used for indexing instances of the template
-        Output: str or None
+        Output: str
         """
-        config = self.get_template_config(template_name)
-        return config.get("indexing_attribute","")
+        config = self.get_template_config(template_name, version_name)
+        return config.get("indexing_attribute", "")
     
-    def get_skip_indices(self, template_name: str) -> List[int]:
+    def get_skip_indices(self, template_name: str, version_name: str = "") -> List[int]:
         """
-        Input: template_name (str)
+        Input: template_name (str), version_name (str)
         Functionality: Get list of indices to skip during repeat
         Output: list[int]
         """
-        config = self.get_template_config(template_name)
+        config = self.get_template_config(template_name, version_name)
         return config.get("skip_indices", [])
     
+    def get_starting_index(self, template_name: str, version_name: str = "") -> int:
+        """
+        Input: template_name (str), version_name (str)
+        Functionality: Get starting index for the template
+        Output: int
+        """
+        config = self.get_template_config(template_name, version_name)
+        return config.get("starting_index", 1)
+    
+    def get_finish_index(self, template_name: str, version_name: str = "") -> int:
+        """
+        Input: template_name (str), version_name (str)
+        Functionality: Get starting index for the template
+        Output: int
+        """
+        config = self.get_template_config(template_name, version_name)
+        return config.get("finish_index")
+    
+    def get_precache_bool(self,template_name):
+        template_config = self.get_template_config(template_name)
+        if "precache" in template_config:
+            return template_config["precache"]
+
 
 
 # ==================== SCHEMA QUERIES ====================
@@ -332,7 +412,7 @@ class SchemaQueries:
         Functionality: Check if root schema or any descendant has repeat block
         Output: bool
         """
-        current = self._schema
+        current = self._schema.get("main_schema")
         stk = Stack()
         stk.push(current)
         
@@ -364,6 +444,14 @@ class SchemaQueries:
         """
         return "repeat" in schema_node
     
+    def has_conditional(self, schema_node: Dict) -> bool:
+
+        return "conditional" in schema_node
+    
+
+    def get_condition_id(self,schema_node: Dict):
+        return schema_node["conditional"]["condition_id"]
+
     def has_children(self, schema_node: Dict) -> bool:
         """
         Input: schema_node (dict)
@@ -387,12 +475,13 @@ class SchemaQueries:
         Functionality: Check if node is a landmark element for caching
         Output: bool
         """
-        annotation = schema_node.get("annotation")
+        annotation = schema_node.get("annotation","")
         
-        if isinstance(annotation, list):
-            return AnnotationType.LANDMARK.value in annotation
+        if annotation:
+            return "landmark_element" in annotation
+        else:
+            return False
         
-        return False
     
     def is_target(self, schema_node: Dict) -> bool:
         """
@@ -400,13 +489,14 @@ class SchemaQueries:
         Functionality: Check if node is a target element 
         Output: bool
         """
-        annotation = schema_node.get("annotation")
-        
+        annotation = schema_node.get("annotation","")
+
+        if annotation:
+            return "target_element" in annotation
+        else:
+            return False
        
-        if isinstance(annotation, list):
-            return AnnotationType.TARGET.value in annotation
         
-        return False
     
     def get_target_info(self, schema_node: Dict) -> Optional[Dict]:
         """
@@ -426,17 +516,6 @@ class SchemaQueries:
         if target_info and "types" in target_info:
             return target_info["types"]
         return ""
-    
-    def get_target_objective(self, schema_node: Dict) -> Optional[str]:
-        """
-        Input: schema_node (dict)
-        Functionality: Get target objective from schema node
-        Output: str or None
-        """
-        target_info = self.get_target_info(schema_node)
-        if target_info and "objective" in target_info:
-            return target_info["objective"]
-        return None
     
     def is_target_and_landmark(self, schema_node: Dict) -> bool:
         """

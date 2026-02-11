@@ -107,30 +107,6 @@ class HandleCaching:
         
         return False
     
-    def push_prefetched_elements(self, selector: str) -> int:
-        """
-        Find and push multiple elements matching selector
-        
-        Input: selector - CSS selector string
-        Output: int - Number of elements pushed
-        """
-        if self._landmark_cache.is_empty():
-            return 0
-        
-        parent = self._landmark_cache.top()
-        elements = self._element_finder.find_multiple(parent, selector)
-        
-        # Filter valid elements FIRST, then reverse
-        valid_elements = [
-            el for el in elements 
-            if self._element_validator.is_valid_landmark(el)
-        ]
-        
-        # Push in reverse so first valid element is on top
-        for element in reversed(valid_elements):
-            self._landmark_cache.push(element)
-        
-        return len(valid_elements)
     
     def pop_landmark(self) -> Optional[WebElementInterface]:
         """

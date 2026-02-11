@@ -2,9 +2,15 @@ from typing import Optional
 from selenium.webdriver.common.by import By
 from dom.my_stack import Stack
 from dom_processing.dom_tree_builder.caching.finders import SeleniumElementFinder
-from dom_processing.dom_tree_builder.caching.interfaces import ElementFinder, WebElementInterface
+from dom_processing.dom_tree_builder.caching.interfaces import WebElementInterface
 from dom_processing.dom_tree_builder.caching.validators import ElementValidator
 
+class ScraperRestartRequested(Exception):
+    """Exception raised when scraper needs to restart due to annotation errors"""
+    
+    def __init__(self, message: str):
+        self.message = message
+        super().__init__(self.message)
 
 class HandleCaching:
     """
@@ -58,51 +64,32 @@ class HandleCaching:
         try:
             element = self._element_finder.find_single(parent, "CSS_SELECTOR", selector)
         except:
-                def _print_parent_cssselector(element):
+                def _parent_css_selector(element):
                     parent_id = element.get_attribute("id")
                     parent_class = element.get_attribute("class")
 
-                    parent_selector = element.tag_name \
-                                + (f"#{parent_id}" if parent_id else "") \
+                   
+                    return (
+                element.tag_name
+                + (f"#{parent_id}" if parent_id else "")
                 + (f".{'.'.join(parent_class.split())}" if parent_class else "")
-                    
-                    return parent_selector
-                raise Exception(f"didn't find the element you want; the current_landmark is: {_print_parent_cssselector(parent)} and the element you want is: {selector}")
-                #will later add user inputs, when i fix global parameters and main
-       
+            )
 
+                print(
+                        f"[ANNOTATION ERROR]\n"
+                        f"Current landmark: {_parent_css_selector(parent)}\n"
+                        f"Missing selector: {selector}"
+        )
+    
         if element and self._element_validator.is_valid_landmark(element):
-            
             self._landmark_cache.push(element)
             return True
         
         return False
     
-    def push_prefetched_elements(self, selector: str) -> int:
-        """
-        Find and push multiple elements matching selector
-        
-        Input: selector - CSS selector string
-        Output: int - Number of elements pushed
-        """
-        if self._landmark_cache.is_empty():
-            return 0
-        
-        parent = self._landmark_cache.top()
-        elements = self._element_finder.find_multiple(parent, By.CSS_SELECTOR, ">" + selector) #direct children only
-        
-        # Filter valid elements FIRST, then reverse
-        valid_elements = [
-            el for el in elements 
-            if self._element_validator.is_valid_landmark(el)
-        ]
-        
-        # Push in reverse so first valid element is on top
-        for element in reversed(valid_elements):
-            self._landmark_cache.push(element)
-        
-        return len(valid_elements)
-    
+    def push_webelement(self,element):
+        self._landmark_cache.push(element)
+
     def pop_landmark(self) -> Optional[WebElementInterface]:
         """
         Remove and return top element from cache

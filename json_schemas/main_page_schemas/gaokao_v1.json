@@ -12,6 +12,7 @@
           {
             "repeat": {
               "template": "exam_variant",
+              "template_configuration": "exam_variant_1",
               "count": 8
             }
           }
@@ -20,6 +21,7 @@
       {
         "repeat": {
           "template": "exam_variant",
+          "template_configuration": "exam_variant_2",
           "count": 25
         }
       }
@@ -27,20 +29,18 @@
   },
     "exam_schema": {
       "tag": "a",
-      "description": "Link to the exam paper.",
+      "description": "entry point to the exam images.",
       "annotation": ["target_element"],
-      "target" : {
-        "target_types": ["exam"]
-      }
+      "target_types": ["exam"]
+
 
     },
     "solution_schema":{
         "tag": "a",
-        "description": "Link to the solution.",
+        "description": "entry point to the solution images.",
         "annotation": ["target_element"],
-          "target" : {
-            "target_types": ["solution"]
+        "target_types": ["solution"]
 
-    }
+
 
 }}

@@ -1,6 +1,6 @@
 {
   "page": {
-    "url": "https://gaokao.eol.cn/e_html/gk/gkst/",
+    "url": "http://127.0.0.1:5500/tests/integration_test/main_page_integration.html",
     "description": "2025 Gaokao main page"
   },
   "schema_paths": {

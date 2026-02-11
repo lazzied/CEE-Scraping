@@ -61,7 +61,8 @@ class TreeBuilderStrategy(ABC):
         # Filter kwargs to only include valid parameters
         return {k: v for k, v in kwargs.items() if k in valid_params}
     
-    def create_node(self,
+    @staticmethod
+    def create_node(
     node_type: str,
     schema_node: dict,
     **extra_kwargs
