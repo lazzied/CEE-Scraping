@@ -1,0 +1,15 @@
+{
+    "scroll_pages":{
+            "tag": "p",
+            "attrs": {"style":"text-align: center;"},
+            "annotation": ["landmark_element"],
+            "children": [{
+                "tag":"a",
+                "children":[{
+                    "tag":"img",
+                    "annotation": ["target_element"],
+                    "target_types":["image_url"]
+                }]
+            }]
+    }
+}

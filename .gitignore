@@ -10,6 +10,8 @@ logs/
 documents/
 documents/**
 
+downloads/
+
 # ignore temp data
 exam_temp/
 solution_temp/

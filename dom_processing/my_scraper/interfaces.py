@@ -6,21 +6,16 @@ from abc import ABC, abstractmethod
 from typing import Any
 from pathlib import Path
 
-from dom.node import DOMNode
-from models import Instance
+from dom.node import BaseDOMNode
+from .models import Instance
 
 
 class TextParser(ABC):
     """Interface for parsing text content to extract metadata."""
     
     @abstractmethod
-    def get_single_metadata_value(self, text: str, metadata_type: str) -> Any:
+    def get_metadata_value(self, target_node, target_type,driver) -> Any:
         """Extract a single metadata value from text."""
-        pass
-
-    @abstractmethod
-    def get_multiple_metadata_values(self, text: str, metadata_types: list) -> dict:
-        """Extract multiple metadata values from text."""
         pass
 
 
@@ -32,10 +27,7 @@ class ContentTransformer(ABC):
         """Translate text to English."""
         pass
 
-    @abstractmethod
-    def convert_year(self, year_str: str) -> str:
-        """Convert year format."""
-        pass
+
 
 
 class ImageURLPattern(ABC):
@@ -58,6 +50,11 @@ class DocumentRetriever(ABC):
     """Interface for retrieving and constructing documents."""
     
     @abstractmethod
-    def construct_document(self, node: DOMNode, instance: Instance, schema_queries) -> Path:
-        """Construct document from node and instance data."""
+    def construct_document(
+    self,
+    download_node: BaseDOMNode | list[BaseDOMNode],
+    root_node: BaseDOMNode,
+    instance: Instance,
+    state: str,
+    ) -> Path:
         pass

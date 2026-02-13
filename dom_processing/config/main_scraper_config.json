@@ -1,25 +1,11 @@
 {
   "page": {
-    "url": "http://127.0.0.1:5500/tests/integration_test/main_page_integration.html",
+    "url": "https://gaokao.eol.cn/e_html/gk/gkst/",
     "description": "2025 Gaokao main page"
   },
   "schema_paths": {
-    "page_schema": "json_schemas/main_page_schemas/gaokao_v1.json",
+    "page_schema": "json_schemas/main_page_schemas/gaokao_main_page.json",
     "templates": "json_schemas/main_page_schemas/templates.json",
-    "config": "json_schemas/main_page_schemas/template_config.json"
-  },
-  "targets": {
-    "china_2025": {
-      "url": "https://example.com/gaokao/2025",
-      "schema": "schemas/china/gaokao_2025_schema.json",
-      "templates": "schemas/china/gaokao_templates.json",
-      "config": "schemas/china/gaokao_config.json"
-    },
-    "china_2024": {
-      "url": "https://example.com/gaokao/2024",
-      "schema": "schemas/china/gaokao_2024_schema.json",
-      "templates": "schemas/china/gaokao_templates.json",
-      "config": "schemas/china/gaokao_config.json"
-    }
+    "templates_config": "json_schemas/main_page_schemas/templates_config.json"
   }
 }

@@ -1,6 +1,6 @@
 from db.my_dataclasses import Exam, Solution
 from utils import get_logger
-from dom_processing.english_translation import translate_to_english
+from dom_processing.chinese_to_english_dictionnary import translate_to_english
 class DatabasePreparation:
     def __init__(self):
         self.logger = get_logger(__name__)

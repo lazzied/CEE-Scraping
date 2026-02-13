@@ -304,6 +304,7 @@ class BaseDOMNode(ABC):
         print(
             f'{indent}{self.tag} — classes: {self.classes}'
             + (f' — id: {self.attrs["id"]}' if "id" in self.attrs else "")
+            + (f' — style: {self.attrs["style"]}' if "style" in self.attrs else "")
             + (f' — target_types: {self.target_types}' if self.target_types  else "")
             + (f' — webElement: {self.web_element}' if self.web_element else "")
             + (f' — webElement selector: {generate_selector_from_webelement(self.web_element)}' if self.web_element else "")

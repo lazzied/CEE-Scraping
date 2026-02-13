@@ -21,7 +21,7 @@ class ConditionExamSolutionLinks(Condition):
             text = a.text.strip().lower()
             if not href:
                 continue
-            if text in ("exam", "solution")  :
+            if text in ("真题","试题", "答案")  : #("exam", "solution")
                 links.append(a)
                 
         return links
@@ -35,8 +35,8 @@ class ConditionExamSolutionLinks(Condition):
         # We use a set for faster lookups and to handle duplicates.
         found_texts = {a.text.strip().lower() for a in result}
 
-        has_exam = "exam" in found_texts
-        has_solution = "solution" in found_texts
+        has_exam = "真题" in found_texts or "试题" in found_texts
+        has_solution = "答案" in found_texts
 
         # 3. Apply the rule: "solution" can't exist alone; it needs "exam"
         if has_solution and not has_exam:
@@ -115,18 +115,21 @@ class ConditionExamSolutionAnnotation(ConditionAnnotationStrategy):
 
         
         for a in elements:
-            text = a.text.strip().lower()
+            text = a.text.strip()
             href = a.get_attribute("href")
+            
             if not href or not href.strip():
                 continue
-            if text == "exam" and "exam" in node.target_types:
-                node.web_element = a
-                
-                break
-            
-            if text == "solution" and "solution" in node.target_types:
+
+            if text in ("真题","试题")  and "exam" in node.target_types:
                 node.web_element = a
                 break
+
+            if text == "答案"  and "solution" in node.target_types:
+                node.web_element = a
+                break
+
         if not node.web_element:
-            raise Exception(" web element didn't get assigned")
+                raise Exception("a tag element didn't get assigned")
+
                             

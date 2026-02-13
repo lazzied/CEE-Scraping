@@ -15,9 +15,7 @@
             "attrs": { "language": "JavaScript" },
             "description": "holds exam total page number",
             "annotation": ["target_element"],
-            "target": {
-              "target_types": ["total_pages_number"]
-            }
+              "target_types": ["page_count"]
           }
         ]
       },
@@ -43,9 +41,7 @@
                       "style": "border-right-width: 0px; border-top-width: 0px; border-bottom-width: 0px; border-left-width: 0px"
                     },
                     "annotation": ["target_element"],
-                    "target": {
-                      "target_types": ["image_url"]
-                    }
+                    "target_types": ["image_url"]
                   }
                 ]
               }
@@ -56,9 +52,7 @@
             "classes": ["title"],
             "description": "contains exam metadata",
             "annotation": ["target_element"],
-            "target": {
-              "target_types": ["year", "exam_variant", "subject"]
-            }
+            "target_types": ["year", "exam_variant", "subject"]
           }
         ]
       }

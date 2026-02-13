@@ -1,0 +1,12 @@
+{
+  "page": {
+    "url": "https://gaokao.eol.cn/shiti/sx/202506/t20250608_2673332.shtml",
+    "description": "2025 Gaokao fallback document page example"
+  },
+  "schema_paths": {
+    "page_schema": "json_schemas/pages_json_schemas/gaokao_fallback_document_page.json",
+    "templates": "json_schemas/pages_json_schemas/gaokao_fallback_document_page_templates.json",
+    "templates_config": "json_schemas/pages_json_schemas/gaokao_fallback_document_page_templates_config.json"
+  }
+}
+

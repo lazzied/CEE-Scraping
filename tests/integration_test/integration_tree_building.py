@@ -131,7 +131,6 @@ def main(page_url: str, schema_files:dict):
         template_registry=template_registry,
         caching_coordinator=caching_coordinator
     )
-    """"""
 
     annotator = AnnotateTree()
 
@@ -142,6 +141,8 @@ def main(page_url: str, schema_files:dict):
         schema_queries=schema_queries
     )
     tree_root.print_dom_tree()
+
+    # look for the a tags and navigate to the next page
 
     return tree_root, driver
 

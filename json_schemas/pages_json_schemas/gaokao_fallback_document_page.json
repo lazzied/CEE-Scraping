@@ -1,0 +1,54 @@
+{
+  "main_schema": {
+    "tag": "div",
+    "classes": ["main", "container"],
+    "description": "root",
+    "children": [
+      {
+        "tag": "div",
+        "classes": ["perpage"],
+        "description": "container that holds exam total page numbers",
+        "attrs": { "id": "perpage" },
+        "children": [
+          {
+            "tag": "script",
+            "attrs": { "language": "JavaScript" },
+            "description": "holds exam total page number",
+            "annotation": ["target_element"],
+            "target_types": ["page_count"]
+          }
+        ]
+      },
+      {
+        "tag": "div",
+        "classes": ["left"],
+        "description": "container for the exam image and metadata",
+        "children": [
+          {
+            "tag": "div",
+            "classes": ["TRS_Editor"],
+            "description": "container for the exam image",
+            "annotation": ["landmark_element"],
+            "children": [
+              {
+                    "repeat": {
+                      "template": "scroll_pages",
+                      "count": 3
+                    }
+                  
+                
+              }
+            ]
+          },
+          {
+            "tag": "div",
+            "classes": ["title"],
+            "description": "contains exam metadata",
+            "annotation": ["target_element"],
+            "target_types": ["year", "exam_variant", "subject"]
+          }
+        ]
+      }
+    ]
+  }
+}

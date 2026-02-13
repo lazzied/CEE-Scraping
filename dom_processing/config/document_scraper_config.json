@@ -1,9 +1,9 @@
 {
   "page": {
-    "url": "https://gaokao.eol.cn/e_html/gk/gkst/",
+    "url": "https://gaokao.eol.cn/shiti/yy/202506/t20250612_2674288.shtml",
     "description": "2025 Gaokao document page example"
   },
   "schema_paths": {
-    "page_schema": "json_schemas/pages_json_schemas/exam_pagev1.json"
+    "page_schema": "json_schemas/pages_json_schemas/gaokao_document_page.json"
   }
 }
