@@ -1,112 +1,80 @@
-from typing import List, Dict, Tuple
+from pathlib import Path
+from typing import  Dict
 from supabase import Client
-from utils import get_logger
+
+from dom_processing.my_scraper.models import Instance
 
 class Tracker:
-    def __init__(self, main_page_link: str, supabase: Client):
-        self.main_page_link = main_page_link
+    def __init__(self, supabase: Client):
         self.supabase = supabase
-        self.exam_rows: List[Dict] = []
-        self.solution_rows: List[Dict] = []
+        self.visited_urls=[]
 
-
-        self.logger = get_logger(__name__)
-
-
-
-
-    def set_database_instances(self) -> None:
-        """Fetch and cache all database instances"""
-        self.exam_rows = (
-            self.supabase
-            .table("exams")
-            .select("exam_id, exam_variant, subject, solution_exist")
-            .eq("main_page_link", self.main_page_link)
-            .execute()
-            .data
-        )
-        self.logger.info(f"fetched the current exams database {self.exam_rows}")
-
-        self.solution_rows = (
-            self.supabase
-            .table("solutions")
-            .select("solution_id, exam_id")
-            .eq("main_page_link", self.main_page_link)
-            .execute()
-            .data
-        )
-        self.logger.info(f"fetched the current exams database {self.solution_rows}")
-
-
-    def add_exam_to_cache(self, exam_dict: Dict, exam_id: int) -> None:
-        """Add newly inserted exam to cache to avoid re-scraping"""
-        self.exam_rows.append({
-            "exam_id": exam_id,
-            "exam_variant": exam_dict["exam_variant"],
-            "subject": exam_dict["subject"],
-            "solution_exist": exam_dict.get("solution_exist", False)
-        })
-        self.logger.info(f"added exam to cache {exam_dict}")
-
-    def add_solution_to_cache(self, solution_id: int, exam_id: int) -> None:
-        """Add newly inserted solution to cache"""
-        self.solution_rows.append({
-            "solution_id": solution_id,
-            "exam_id": exam_id
-        })
-
-        self.logger.info(f"added solution to cache, solution id: {solution_id}, exam_id{exam_id}")
-
-    def get_exam_id(self, instance: Dict) -> int:
-        """Get exam_id for a given instance metadata."""
-        exam_row = next(
-            (
-                row for row in self.exam_rows
-                if row["exam_variant"] == instance["exam_variant"]
-                and row["subject"] == instance["subject"]
-            ),
-            None
-        )
-
-        if not exam_row:
-            raise ValueError(
-                f"No exam found for variant '{instance['exam_variant']}' "
-                f"and subject '{instance['subject']}'"
+    def check_entry_page_exists_in_exam_db(self, instance:Instance) -> bool:
+        """Check if entry_page_url already exists in exams table."""
+        try:
+            response = (
+                self.supabase
+                .table("exams")
+                .select("exam_id")
+                .eq("entry_page_url", instance.documents.exam_entry_page_url)
+                .limit(1)
+                .execute()
             )
 
-        return exam_row["exam_id"]
+            return bool(response.data)
 
-    def is_instance_scraped(self, instance: Dict) -> Tuple[bool, bool]:
-        """
-        Returns: (exam_scraped, solution_scraped)
-        """
-        exam_variant = instance["exam_variant"]
-        subject = instance["subject"]
+        except Exception as e:
+            raise e
+    from pathlib import Path
 
-        exam_row = next(
-            (
-                row for row in self.exam_rows
-                if row["exam_variant"] == exam_variant
-                and row["subject"] == subject
-            ),
-            None
-        )
+    def check_exam_file_exists_local_db(self, instance: Instance, root_dir: Path) -> bool:
+        if not isinstance(root_dir, Path):
+            raise TypeError("root_dir must be a Path object")
 
-        if not exam_row:
-            return False, False
+        if not isinstance(instance.documents.exam_path, Path):
+            raise TypeError("relative_path must be a Path object")
 
-        exam_scraped = True
+        full_path = root_dir / instance.documents.exam_path
 
-        # Check if solution is expected
-        solution_expected = exam_row["solution_exist"]
-        if solution_expected in (False, "FALSE", None, "", 0):
-            return exam_scraped, True # this means solution doesn't exist that why we return TRUE
+        return full_path.is_file()
+    
+    def check_solution_file_exists_local_db(self, instance: Instance, root_dir: Path) -> bool:
+        if not isinstance(root_dir, Path):
+            raise TypeError("root_dir must be a Path object")
 
-        # Check if solution exists
-        exam_id = exam_row["exam_id"]
-        solution_scraped = any(
-            sol["exam_id"] == exam_id
-            for sol in self.solution_rows
-        )
+        if not isinstance(instance.documents.solution_path, Path):
+            raise TypeError("relative_path must be a Path object")
 
-        return exam_scraped, solution_scraped
+        full_path = root_dir / instance.documents.solution_path
+
+        return full_path.is_file()
+        
+
+    def check_entry_page_exists_in_solution_db(self,instance: Instance) -> bool:
+        """Check if entry_page_url already exists in exams table."""
+        try:
+            response = (
+                self.supabase
+                .table("solution")
+                .select("solution_id")
+                .eq("entry_page_url", instance.documents.solution_entry_page_url)
+                .limit(1)
+                .execute()
+            )
+
+            return bool(response.data)
+
+        except Exception as e:
+            raise e
+
+    def check_entry_page_exists_in_visited_urls(self, url: str) -> bool:
+        return url in self.visited_urls
+
+    def add_exam_entry_page_to_visited_urls(self, instance: Instance) -> None:
+        """Add newly inserted exam to cache to avoid re-scraping"""
+        if instance.documents.exam_entry_page_url:  # Fixed attribute access
+            self.visited_urls.append(instance.documents.exam_entry_page_url)  # Fixed self.self typo
+
+    def add_solution_entry_page_to_visited_urls(self, instance: Instance) -> None:
+        if instance.documents.solution_entry_page_url:  # Fixed attribute access
+            self.visited_urls.append(instance.documents.solution_entry_page_url)  # Fixed self.self typo

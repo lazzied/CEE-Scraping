@@ -243,23 +243,26 @@ class InstanceAssembler:
             print(f"Warning: No document nodes found in DOM tree (state={state})")
             return
         
-        # Determine document type attribute name
-        document_type = "exam_path" if state == "exam" else "solution_path"
         
         # Use appropriate retrieval technique based on document retriever type
         if isinstance(self.document_retriever, ChineseReferenceBasedDocumentRetriever):
-            self._set_reference_based_document(doc_nodes, root_node, instance, state, driver, document_type)
+            self._set_reference_based_document(doc_nodes, root_node, instance, state, driver)
         elif isinstance(self.document_retriever, ChineseDirectLinkDocumentRetriever):
-            self._set_direct_link_document(doc_nodes, root_node, instance, state, driver, document_type)
+            self._set_direct_link_document(doc_nodes, root_node, instance, state, driver)
         else:
             raise TypeError(f"Unknown document retriever type: {type(self.document_retriever).__name__}")
 
-    def _set_reference_based_document(self, doc_nodes, root_node, instance, state, driver, document_type):
+    def _set_reference_based_document(self, doc_nodes, root_node, instance, state, driver):
         """Handle reference-based document retrieval (uses first node only)."""
-        target_node = doc_nodes[0]
         
+        target_node = doc_nodes[0]
+
+        document_path_type = "exam_path" if state == "exam" else "solution_path"
+        document_urls_type = "exam_urls" if state == "exam" else "solution_urls"
+        document_page_count_type = "exam_page_count" if state == "exam" else "solution_page_count"
+
         try:
-            document_path = self.document_retriever.construct_document(
+            document_path, document_urls = self.document_retriever.construct_document(
                 target_node, root_node, instance, state, driver
             )
         except Exception as e:
@@ -267,19 +270,31 @@ class InstanceAssembler:
         
         if not document_path:
             raise RuntimeError(f"Empty document_path returned for {state}")
+        if not document_urls:
+            raise RuntimeError(f"Empty document_urls returned for {state}")
         
-        if not hasattr(instance.documents, document_type):
-            raise AttributeError(f"Instance documents has no attribute '{document_type}'")
         
         try:
-            setattr(instance.documents, document_type, document_path)
+            setattr(instance.documents, document_path_type, document_path)
         except Exception as e:
-            raise RuntimeError(f"Failed to set instance.documents.{document_type}: {e}")
-
-    def _set_direct_link_document(self, doc_nodes, root_node, instance, state, driver, document_type):
-        """Handle direct-link document retrieval (processes all nodes)."""
+            raise RuntimeError(f"Failed to set instance.documents.{document_path}: {e}")
         try:
-            document_path = self.document_retriever.construct_document(
+            setattr(instance.documents, document_urls_type, document_urls)
+        except Exception as e:
+            raise RuntimeError(f"Failed to set instance.documents.{document_urls_type}: {e}")
+        try: 
+            setattr(instance.documents, document_page_count_type, len(document_urls))
+        except Exception as e:
+            raise RuntimeError(f"Failed to set instance.documents.{document_page_count_type}: {e}")
+
+    def _set_direct_link_document(self, doc_nodes, root_node, instance, state, driver):
+        """Handle direct-link document retrieval (processes all nodes)."""
+        document_path_type = "exam_path" if state == "exam" else "solution_path"
+        document_urls_type = "exam_urls" if state == "exam" else "solution_urls"
+        document_page_count_type = "exam_page_count" if state == "exam" else "solution_page_count"
+
+        try:
+            document_path,document_urls = self.document_retriever.construct_document(
                 doc_nodes, root_node, instance, state, driver
             )
         except Exception as e:
@@ -288,10 +303,21 @@ class InstanceAssembler:
         if not document_path:
             raise RuntimeError(f"Empty document_path returned for {state}")
         
-        if not hasattr(instance.documents, document_type):
-            raise AttributeError(f"Instance documents has no attribute '{document_type}'")
+        if not document_urls:
+            raise RuntimeError(f"Empty document_urls returned for {state}")
+        
+        if not hasattr(instance.documents, document_path_type):
+            raise AttributeError(f"Instance documents has no attribute '{document_path_type}'")
         
         try:
-            setattr(instance.documents, document_type, document_path)
+            setattr(instance.documents, document_path_type, document_path)
         except Exception as e:
-            raise RuntimeError(f"Failed to set instance.documents.{document_type}: {e}")
+            raise RuntimeError(f"Failed to set instance.documents.{document_path}: {e}")
+        try:
+            setattr(instance.documents, document_urls_type, document_urls)
+        except Exception as e:
+            raise RuntimeError(f"Failed to set instance.documents.{document_urls_type}: {e}")
+        try: 
+            setattr(instance.documents, document_page_count_type, len(document_urls))
+        except Exception as e:
+            raise RuntimeError(f"Failed to set instance.documents.{document_page_count_type}: {e}")

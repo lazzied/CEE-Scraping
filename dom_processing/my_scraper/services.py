@@ -589,35 +589,45 @@ class PDFConverter:
         return images
 
     def _save_as_pdf(
-        self,
-        save_path: str,
-        images: List[Image.Image],
-        stem: str
-    ) -> str:
-        """Save images as single PDF."""
-        if not save_path:
-            raise ValueError("save_path cannot be empty")
-        if not isinstance(images, list):
-            raise TypeError(f"images must be a list, got {type(images).__name__}")
-        if not images:
-            raise ValueError("images list cannot be empty")
-        if not stem:
-            raise ValueError("stem cannot be empty")
-        
-        try:
-            pdf_filename = f"{stem}.pdf"
-            pdf_path = os.path.join(save_path, pdf_filename)
+            self,
+            save_path: str,
+            images: List[Image.Image],
+            stem: str
+        ) -> str:
+            """Save images as single PDF."""
+            if not save_path:
+                raise ValueError("save_path cannot be empty")
+            if not isinstance(images, list):
+                raise TypeError(f"images must be a list, got {type(images).__name__}")
+            if not images:
+                raise ValueError("images list cannot be empty")
+            if not stem:
+                raise ValueError("stem cannot be empty")
             
-            images[0].save(pdf_path, save_all=True, append_images=images[1:])
-            
-            return pdf_path
-        except PermissionError:
-            raise PermissionError(f"Permission denied when saving PDF to: {save_path}")
-        except Exception as e:
-            raise RuntimeError(
-                f"Failed to save PDF '{stem}.pdf' to '{save_path}' "
-                f"({len(images)} images): {type(e).__name__}: {e}"
-            )
+            try:
+                pdf_filename = f"{stem}.pdf"
+                pdf_path = os.path.join(save_path, pdf_filename)
+                
+                # Handle duplicate filenames
+                if os.path.exists(pdf_path):
+                    index = 1
+                    while True:
+                        pdf_filename = f"{stem}_{index}.pdf"
+                        pdf_path = os.path.join(save_path, pdf_filename)
+                        if not os.path.exists(pdf_path):
+                            break
+                        index += 1
+                
+                images[0].save(pdf_path, save_all=True, append_images=images[1:])
+                
+                return pdf_path
+            except PermissionError:
+                raise PermissionError(f"Permission denied when saving PDF to: {save_path}")
+            except Exception as e:
+                raise RuntimeError(
+                    f"Failed to save PDF '{pdf_filename}' to '{save_path}': "
+                    f"{type(e).__name__}: {e}"
+                )
 
     def _delete_images(
         self,

@@ -533,7 +533,6 @@ class ScraperOrchestrator:
                                 document_retriever_strategy = ChineseReferenceBasedDocumentRetriever()
                                 document_page_scraper = PageScraper(self.document_query_services,document_retriever_strategy)
                                 exam_tree_copy = clone_tree_structure(document_tree)
-                                exam_page_url = self.document_query_services.page_url
 
                             else:
                                 # Second attempt: Use fallback scraper and tree
@@ -543,10 +542,9 @@ class ScraperOrchestrator:
                                 document_page_scraper = PageScraper(self.fallback_document_query_services,document_retriever_strategy)
                                 exam_tree_copy = clone_tree_structure(fallback_document_tree)
                             
-                                exam_page_url = self.fallback_document_query_services.page_url
                             
                             document_page_scraper.scrape_page(
-                                exam_page_url,
+                                documents_url_dict["exam_page_url"],
                                 exam_tree_copy,
                                 "exam",
                                 instance
@@ -578,7 +576,7 @@ class ScraperOrchestrator:
                                 else:
                                     # Final attempt failed
                                     print(f"Error: Exam scraping failed after {max_retries} attempts")
-                                    print(f"  URL: {exam_page_url}")
+                                    print(f"  URL: {documents_url_dict["exam_page_url"]}")
                                     print(f"  Error: {e}")
                                     break
                             else:
@@ -608,7 +606,6 @@ class ScraperOrchestrator:
                                 document_retriever_strategy = ChineseReferenceBasedDocumentRetriever()
                                 document_page_scraper = PageScraper(self.document_query_services,document_retriever_strategy)
                                 solution_tree_copy = clone_tree_structure(document_tree)
-                                solution_page_url = self.document_query_services.page_url
 
                             else:
                                 # Second attempt: Use fallback scraper and tree
@@ -616,10 +613,9 @@ class ScraperOrchestrator:
                                 document_retriever_strategy = ChineseDirectLinkDocumentRetriever() #  to develop
                                 document_page_scraper = PageScraper(self.fallback_document_query_services,document_retriever_strategy)
                                 solution_tree_copy = clone_tree_structure(fallback_document_tree)
-                                solution_page_url = self.fallback_document_query_services.page_url
 
                             document_page_scraper.scrape_page(
-                                solution_page_url,
+                                documents_url_dict["solution_page_url"],
                                 solution_tree_copy,
                                 "solution",
                                 instance
@@ -651,7 +647,7 @@ class ScraperOrchestrator:
                                 else:
                                     # Final attempt failed
                                     print(f"Error: Exam scraping failed after {max_retries} attempts")
-                                    print(f"  URL: {exam_page_url}")
+                                    print(f"  URL: {documents_url_dict["solution_page_url"]}")
                                     print(f"  Error: {e}")
                                     break
                             else:
@@ -668,7 +664,6 @@ class ScraperOrchestrator:
                         print(f"Instance: {instance}")
                     else:
                         print("\n✗ FAILURE: Could not scrape exam after all attempts")
-
 # Entry Point
 def clone_tree_structure(node):
     """Recursively clone tree structure without web elements."""
@@ -686,6 +681,7 @@ def clone_tree_structure(node):
         new_node.children = [clone_tree_structure(child) for child in node.children]
     
     return new_node
+
 def main():
     try:
         orchestrator = ScraperOrchestrator(

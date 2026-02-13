@@ -97,6 +97,7 @@ class ChineseDirectLinkDocumentRetriever(DocumentRetriever):
             raise RuntimeError(f"Failed to initialize user-agent pool: {type(e).__name__}: {e}")
         
         # Download all pages
+        document_urls= []
         for i, target_node in enumerate(reversed(doc_nodes),start=1):
             # Validate node structure
             if not hasattr(target_node, 'target_types'):
@@ -118,6 +119,7 @@ class ChineseDirectLinkDocumentRetriever(DocumentRetriever):
                 # Extract image URL
                 try:
                     image_url = self.image_patterns.get_raw_url(target_node)
+                    document_urls.append(image_url)
                 except Exception as e:
                     raise RuntimeError(f"Failed to get raw URL from node {i}: {e}")
                 
@@ -143,7 +145,7 @@ class ChineseDirectLinkDocumentRetriever(DocumentRetriever):
                 f"Failed to convert images to PDF in '{save_path}' (state={state}): {e}"
             )
         
-        return save_path
+        return save_path, document_urls
             
 
 
@@ -315,4 +317,4 @@ class ChineseReferenceBasedDocumentRetriever(DocumentRetriever):
                 f"Failed to convert images to PDF in '{save_path}' (state={state}): {e}"
             )
         
-        return save_path
+        return save_path, all_images_urls
