@@ -63,5 +63,5 @@ class Instance(BaseModel):
     
     @computed_field
     def solution_exists(self) -> bool:
-        return self.documents.solution_url is not None or self.documents.solution_path is not None
+        return self.documents.solution_entry_page_url is not None or self.documents.solution_path is not None
 

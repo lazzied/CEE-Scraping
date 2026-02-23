@@ -1,9 +1,6 @@
+from datetime import datetime
 from supabase import Client
 from db.database_models import ExamRecord, SolutionRecord
-from db.mappers import InstanceToRecordMapper
-from dom_processing.my_scraper.models import Instance
-from utils import get_logger
-from typing import Optional, Tuple
 from dataclasses import asdict
 
 
@@ -18,6 +15,10 @@ class DatabaseRepository:
             exam_dict = {k: v for k, v in asdict(exam_record).items() 
                         if v is not None and k != 'exam_id'}
             
+            for key, value in exam_dict.items():
+                if isinstance(value, datetime):
+                    exam_dict[key] = value.isoformat()
+                
             response = self.supabase.table("exams").insert(exam_dict).execute()
             exam_id = response.data[0]["exam_id"]
             return exam_id
@@ -31,6 +32,10 @@ class DatabaseRepository:
             solution_dict = {k: v for k, v in asdict(solution_record).items() 
                            if v is not None and k not in ['solution_id', 'exam_id']}
             solution_dict["exam_id"] = exam_id
+
+            for key, value in solution_dict.items():
+                if isinstance(value, datetime):
+                    solution_dict[key] = value.isoformat()
             
             response = self.supabase.table("solutions").insert(solution_dict).execute()
             solution_id = response.data[0]["solution_id"]
@@ -38,7 +43,7 @@ class DatabaseRepository:
             # Update exam with solution_id
             self.supabase.table("exams").update({
                 "solution_id": solution_id,
-                "solution_exist": True
+                "solution_exists": True
             }).eq("exam_id", exam_id).execute()
             
             return solution_id

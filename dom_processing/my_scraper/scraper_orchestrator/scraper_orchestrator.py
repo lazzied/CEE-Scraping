@@ -3,6 +3,7 @@ from db.database_repo import DatabaseRepository
 from db.mappers import InstanceToRecordMapper
 from dom.selenium_driver import SeleniumDriver
 from dom_processing.dom_tree_builder.tree_building.tree_building_entry_point import BuildTree
+from dom_processing.instance_tracker import Tracker
 from dom_processing.my_scraper.document_retriever_implementations import ChineseDirectLinkDocumentRetriever, ChineseReferenceBasedDocumentRetriever
 from dom_processing.my_scraper.models import Instance
 from dom_processing.my_scraper.scraper_orchestrator.factory_functions import FactoryFunctions
@@ -20,7 +21,8 @@ class ScraperOrchestrator:
         main_scraper_config_path: str,
         document_scraper_config_path: str,
         fallback_document_scraper_config_path:str,
-        database_repository: DatabaseRepository  # Add this parameter
+        database_repository: DatabaseRepository, # Add this parameter
+        instance_tracker: Tracker
 
     ):
         if not main_scraper_config_path:
@@ -47,7 +49,8 @@ class ScraperOrchestrator:
         self.factory_functions = FactoryFunctions()
         self.tree_builder = BuildTree()
         self.mapper = InstanceToRecordMapper()  # Initialize mapper
-
+        self.database_repository = database_repository  # ← this line is absent
+        self.instance_tracker = instance_tracker
 
 
     def _build_page_tree(self, query_services, description="page"):
@@ -242,120 +245,187 @@ class ScraperOrchestrator:
         else:
             return "failed", "No exam or solution URLs found"
         
-    def _process_branch(self, branch_node, main_driver, main_tree,document_tree,fallback_document_tree):
-            """Process a single subject type branch."""
-            if not branch_node:
-                raise ValueError("branch_node cannot be None")
-            if not main_driver:
-                raise ValueError("main_driver cannot be None")
-            if not main_tree:
-                raise ValueError("main_tree cannot be None")
-            
-            # Annotate branch
+    def _process_branch(self, branch_node, main_driver, main_tree, document_tree, fallback_document_tree):
+        """Process a single subject type branch."""
+        if not branch_node:
+            raise ValueError("branch_node cannot be None")
+        if not main_driver:
+            raise ValueError("main_driver cannot be None")
+        if not main_tree:
+            raise ValueError("main_tree cannot be None")
+
+        # Annotate branch
+        try:
+            annotator, coordinator = self.factory_functions.create_tree_annotator(
+                self.main_query_services.template_registry,
+                self.main_query_services.config_queries,
+                self.main_query_services.schema_queries
+            )
+        except Exception as e:
+            raise RuntimeError(f"Failed to create tree annotator for branch: {e}")
+
+        try:
+            annotator.annotate_tree(
+                main_driver, branch_node, coordinator,
+                self.main_query_services.schema_queries,
+                self.main_query_services.config_queries,
+                self.main_query_services.template_registry
+            )
+        except Exception as e:
+            raise RuntimeError(f"Failed to annotate branch tree: {type(e).__name__}: {e}")
+
+        # Process each subject
+        try:
+            subject_nodes = branch_node.find_in_node("tag", "li", True)
+        except Exception as e:
+            raise RuntimeError(f"Failed to find subject nodes in branch: {e}")
+
+        if not subject_nodes:
+            print("Warning: No subject nodes (<li> tags) found in branch")
+            return
+
+        for i, subject_node in enumerate(subject_nodes, 1):
             try:
-                annotator, coordinator = self.factory_functions.create_tree_annotator(
-                    self.main_query_services.template_registry,
-                    self.main_query_services.config_queries,
-                    self.main_query_services.schema_queries
-                )
+                documents_url_dict = self.subject_navigator.get_documents_url(subject_node)
             except Exception as e:
-                raise RuntimeError(f"Failed to create tree annotator for branch: {e}")
-            
-            try:
-                annotator.annotate_tree(
-                    main_driver, branch_node, coordinator,
-                    self.main_query_services.schema_queries,
-                    self.main_query_services.config_queries,
-                    self.main_query_services.template_registry
-                )
-            except Exception as e:
-                raise RuntimeError(f"Failed to annotate branch tree: {type(e).__name__}: {e}")
-            
-            # Process each subject
-            try:
-                subject_nodes = branch_node.find_in_node("tag", "li", True)
-            except Exception as e:
-                raise RuntimeError(f"Failed to find subject nodes in branch: {e}")
-            
-            if not subject_nodes:
-                print("Warning: No subject nodes (<li> tags) found in branch")
-                return
-            
-            for i, subject_node in enumerate(subject_nodes, 1):
+                print(f"Error extracting URLs from subject node {i}/{len(subject_nodes)}: {e}")
+                continue
+
+            if not documents_url_dict:
+                print(f"Info: No URLs found for subject node {i}/{len(subject_nodes)}")
+                continue
+
+            has_exam = "exam_page_url" in documents_url_dict
+            has_solution = "solution_page_url" in documents_url_dict
+
+            # Initialise defaults so they're always defined
+            instance = Instance()
+            exam_id = None
+            exam_success = False
+            solution_success = False
+
+            if has_exam:
+                exam_url = documents_url_dict["exam_page_url"]
+
+                try:
+                    already_visited = self.instance_tracker.check_entry_page_exists_in_visited_urls(exam_url)
+                except Exception as e:
+                    print(f"Error checking visited URLs for exam '{exam_url}': {e}")
+                    pass
+
+                if already_visited:
                     try:
-                        documents_url_dict = self.subject_navigator.get_documents_url(subject_node)
+                        exam_id = self.instance_tracker.get_exam_id_by_url(exam_url)
                     except Exception as e:
-                        print(f"Error extracting URLs from subject node {i}/{len(subject_nodes)}: {e}")
-                        continue
-                    
-                    if not documents_url_dict:
-                        print(f"Info: No URLs found for subject node {i}/{len(subject_nodes)}")
-                        continue
-                    
-                    has_exam = "exam_page_url" in documents_url_dict
-                    has_solution = "solution_page_url" in documents_url_dict
-                    
-                    # Create ONE instance for both exam and solution
-                    
-                    
-                    if has_exam:
-                        instance = Instance()
+                        print(f"Error retrieving exam_id from tracker for '{exam_url}': {e}")
+                        pass
+                else:
+                    try:
+                        exists_in_db = self.instance_tracker.check_entry_page_exists_in_exam_db(exam_url)
+                    except Exception as e:
+                        print(f"Error checking exam DB for '{exam_url}': {e}")
+                        pass
+
+                    if exists_in_db:
+                        try:
+                            exam_id = self.instance_tracker.get_exam_id_by_url(exam_url)
+                        except Exception as e:
+                            print(f"Error retrieving exam_id from DB for '{exam_url}': {e}")
+                            pass
+
+                        try:
+                            self.instance_tracker.add_exam_entry_page_to_visited_urls(exam_url)
+                        except Exception as e:
+                            print(f"Warning: Failed to cache exam URL '{exam_url}' in visited list: {e}")
+
+                    else:
                         exam_success = self.scrape_document_with_retry(
                             document_type="exam",
-                            url=documents_url_dict["exam_page_url"],
+                            url=exam_url,
                             document_tree=document_tree,
                             fallback_document_tree=fallback_document_tree,
                             instance=instance,
                             subject_index=i,
                             total_subjects=len(subject_nodes)
                         )
-                        
+
                         if exam_success:
                             print("\n✓ SUCCESS: Exam scraped successfully")
                             print(f"Instance: {instance}")
-                            if len(instance.exam_variant)==1:
+                            if len(instance.exam_variant) == 1:
                                 exam_record = self.mapper.map_to_single_exam_record(instance)
-                                exam_id= self.database_repository.insert_exam_record(exam_record)
-                                    
+                                exam_id = self.database_repository.insert_exam_record(exam_record)
                             else:
                                 exam_records = self.mapper.map_to_multiple_exam_records(instance)
                                 for exam_record in exam_records:
-                                    exam_id=self.database_repository.insert_exam_record(exam_record)
+                                    exam_id = self.database_repository.insert_exam_record(exam_record)
 
-                            
+                            try:
+                                self.instance_tracker.add_exam_entry_page_to_visited_urls(exam_url)
+                            except Exception as e:
+                                print(f"Warning: Failed to cache exam URL '{exam_url}' in visited list: {e}")
                         else:
                             print("\n✗ FAILURE: Could not scrape exam after all attempts")
-                        
-                    if has_solution:
-                        setattr(instance.documents,"solution_exists",True)
 
-                        solution_success = self.scrape_document_with_retry(
-                        document_type="solution",
-                        url=documents_url_dict["solution_page_url"],
-                        document_tree=document_tree,
-                        fallback_document_tree=fallback_document_tree,
-                        instance=instance,
-                        subject_index=i,
-                        total_subjects=len(subject_nodes)
-                    )
-                    
-                    if solution_success:
-                        print("\n✓ SUCCESS: Solution scraped successfully")
-                        print(f"Instance: {instance}")
-                        solution_record = self.mapper.map_to_solution_record(instance)
-                        self.database_repository.insert_exam_record(solution_record,exam_id)
+            if has_solution:
+                solution_url = documents_url_dict["solution_page_url"]
 
+                try:
+                    already_visited = self.instance_tracker.check_entry_page_exists_in_visited_urls(solution_url)
+                except Exception as e:
+                    print(f"Error checking visited URLs for solution '{solution_url}': {e}")
+                    already_visited = False
+
+                if already_visited:
+                    pass
+                else:
+                    try:
+                        exists_in_db = self.instance_tracker.check_entry_page_exists_in_solution_db(solution_url)
+                    except Exception as e:
+                        print(f"Error checking solution DB for '{solution_url}': {e}")
+                        exists_in_db = False
+
+                    if exists_in_db:
+                        try:
+                            self.instance_tracker.add_solution_entry_page_to_visited_urls(solution_url)
+                        except Exception as e:
+                            print(f"Warning: Failed to cache solution URL '{solution_url}' in visited list: {e}")
                     else:
-                        print("\n✗ FAILURE: Could not scrape solution after all attempts")
+                        setattr(instance.documents, "solution_exists", True)
+                        solution_success = self.scrape_document_with_retry(
+                            document_type="solution",
+                            url=solution_url,
+                            document_tree=document_tree,
+                            fallback_document_tree=fallback_document_tree,
+                            instance=instance,
+                            subject_index=i,
+                            total_subjects=len(subject_nodes)
+                        )
 
-                    instance.scraping_status, instance.error_message = self._determine_scraping_status(
-                    has_exam, has_solution, exam_success, solution_success
-                    )
-                    instance.scraped_at = datetime.now()
+                        if solution_success:
+                            print("\n✓ SUCCESS: Solution scraped successfully")
+                            print(f"Instance: {instance}")
+                            if exam_id is None:
+                                print("Warning: solution scraped but no exam_id available — skipping DB insert")
+                            else:
+                                solution_record = self.mapper.map_to_solution_record(instance)
+                                self.database_repository.insert_solution_record(solution_record, exam_id)
 
-                    print(f"\n{'='*50}")
-                    print(f"Final Status: {instance.scraping_status.upper()}")
-                    if instance.error_message:
-                        print(f"Error: {instance.error_message}")
-                    print(f"{'='*50}\n")
-                    
+                            try:
+                                self.instance_tracker.add_solution_entry_page_to_visited_urls(solution_url)
+                            except Exception as e:
+                                print(f"Warning: Failed to cache solution URL '{solution_url}' in visited list: {e}")
+                        else:
+                            print("\n✗ FAILURE: Could not scrape solution after all attempts")
+            
+            
+            instance.scraping_status, instance.error_message = self._determine_scraping_status(
+                has_exam, has_solution, exam_success, solution_success
+            )
+            instance.scraped_at = datetime.now()
+
+            print(f"\n{'='*50}")
+            print(f"Final Status: {instance.scraping_status.upper()}")
+            if instance.error_message:
+                print(f"Error: {instance.error_message}")
+            print(f"{'='*50}\n")

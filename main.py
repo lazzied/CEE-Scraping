@@ -233,7 +233,7 @@ class PageScraper:
             except Exception as e:
                 raise RuntimeError(f"Failed to annotate tree: {e}")
             
-            instance_document_url_name = state + "_url"
+            instance_document_url_name = state + "entry_page_url"
             setattr(instance.documents, instance_document_url_name, url)
             
             if state == "exam":

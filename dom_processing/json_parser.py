@@ -31,8 +31,7 @@ TargetTypes = [
     "subject",
     "year",
     "exam_variant",
-    "exam_url",
-    "solution_url",
+    "image_url",
     "page_number",
 ]
 

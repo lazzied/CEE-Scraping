@@ -3,7 +3,7 @@
 # ============================================================================
 
 from datetime import datetime
-from typing import List, Tuple, Optional
+from typing import List, Optional
 from db.database_models import ExamRecord, SolutionRecord
 from dom_processing.my_scraper.interfaces_implementations import ChineseContentTransformer
 from dom_processing.my_scraper.models import Instance
@@ -45,17 +45,16 @@ class InstanceToRecordMapper:
                     year=int(instance.year) if instance.year else None,
 
                     # URLs and paths
-                    exam_url=instance.documents.exam_url,
                     local_path=str(instance.documents.exam_path)
                     if instance.documents.exam_path else None,
-                    entry_page_link=instance.documents.exam_entry_page_link,
+                    entry_page_url=instance.documents.exam_entry_page_url,
 
                     # File metadata
                     file_format=instance.file_format,
                     page_count=instance.documents.exam_page_count,
 
                     # Solution relationship
-                    solution_exist=instance.solution_exists,
+                    solution_exists=instance.documents.solution_exists,
 
                     # Scraping metadata
                     scraped_at=instance.scraped_at or datetime.now(),
@@ -78,21 +77,20 @@ class InstanceToRecordMapper:
             # Metadata
             subject=instance.subject,
             subject_en=self.translator.translate_to_english(instance.subject) if instance.subject else None,
-            exam_variant=instance.exam_variant,
-            exam_variant_en=self.translator.translate_to_english(instance.exam_variant) if instance.exam_variant else None,
+            exam_variant=instance.exam_variant[0],
+            exam_variant_en=self.translator.translate_to_english(instance.exam_variant[0]) if instance.exam_variant else None,
             year=int(instance.year) if instance.year else None,
             
             # URLs and paths
-            exam_url=instance.documents.exam_url,
             local_path=str(instance.documents.exam_path) if instance.documents.exam_path else None,
-            entry_page_link=instance.documents.exam_entry_page_link,
+            entry_page_url=instance.documents.exam_entry_page_url,
             
             # File metadata
             file_format=instance.file_format,
             page_count=instance.documents.exam_page_count,
             
             # Solution relationship
-            solution_exist=instance.solution_exists,
+            solution_exists=instance.documents.solution_exists,
             
             # Scraping metadata
             scraped_at=instance.scraped_at or datetime.now(),
@@ -103,14 +101,13 @@ class InstanceToRecordMapper:
     def map_to_solution_record(self, instance: Instance) -> Optional[SolutionRecord]:
         """Convert Instance to SolutionRecord (if solution exists)."""
         
-        if not instance.solution_exists:
+        if not instance.documents.solution_exists:
             return None
         
         return SolutionRecord(
             # URLs and paths
-            solution_url=instance.documents.solution_url,
             local_path=str(instance.documents.solution_path) if instance.documents.solution_path else None,
-            entry_page_link=instance.documents.solution_entry_page_link,
+            entry_page_url=instance.documents.solution_entry_page_url,
             
             # File metadata
             file_format=instance.file_format,
